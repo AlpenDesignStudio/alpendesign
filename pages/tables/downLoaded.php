@@ -1,6 +1,51 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<?php include "templates/header.php";?> 
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $(".popup_image").on('click', function() {
+    w2popup.open({
+      title: 'Image',
+      body: '<div class="w2ui-centered"><img height="500" width="500" src="' + $(this).attr('src') + '"></img></div>'
+    });
+  });
+
+});
+</script>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- JQuery DataTable Css -->
+    <link href="../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+</head>
 
 <body class="theme-red">
     <!-- Page Loader -->
@@ -438,7 +483,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
                             <span>Tables</span>
@@ -447,7 +492,7 @@
                             <li>
                                 <a href="../../pages/tables/normal-tables.html">Normal Tables</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="../../pages/tables/jquery-datatable.html">Jquery Datatables</a>
                             </li>
                             <li>
@@ -492,7 +537,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">content_copy</i>
                             <span>Example Pages</span>
@@ -507,7 +552,7 @@
                             <li>
                                 <a href="../../pages/examples/forgot-password.html">Forgot Password</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="../../pages/examples/blank.html">Blank Page</a>
                             </li>
                             <li>
@@ -764,9 +809,86 @@
 
     <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>BLANK PAGE</h2>
+          
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                DOWNLOADED IMAGE
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <?php include "check.php"; ?>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Name</th>
+                                            <!-- <th>URL</th> -->
+                                            <th>Type</th>
+                                            <th>Image</th>
+                                         
+                                        </tr>
+                                    </thead>
+                                <!--     <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                          
+                                        </tr>
+                                    </tfoot> -->
+                                    <tbody>
+                                 <?php
+  if($_SERVER['REQUEST_METHOD'] == "GET")
+  {        
+            $res=mysqli_query($con,"Select * from pic");
+
+       
+         while($r=mysqli_fetch_row($res))
+         {
+            // print_r($r);die;
+          echo "<tr>";
+                 echo "<td align='center'>$r[0]</td>";
+                 echo "<td alig='center' width=''> $r[1]</td>";
+                 // echo "<td alig='center' width=''> $r[2]</td>";
+                 echo "<td alig='center' width=''> $r[3]</td>";
+                 echo "<td alig='center' width=''><img class='btn popup_image' height='100' width='100' src='".$r[2]."'></td>";
+                 echo "</tr>";
+        }
+    }
+?> 
+          
+                                      
+                                    </tbody>
+ 
+       
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- #END# Basic Examples -->
+            <!-- Exportable Table -->
+           
+            <!-- #END# Exportable Table -->
         </div>
     </section>
 
@@ -785,8 +907,20 @@
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/tables/jquery-datatable.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>

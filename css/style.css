@@ -1,4 +1,17 @@
-﻿/* Navbar ====================================== */
+﻿/* Saman's CSS */
+.view {
+
+    background-color: #E91E63;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* Navbar ====================================== */
 @import url(materialize.css);
 .navbar {
   font-family: "Roboto", sans-serif;

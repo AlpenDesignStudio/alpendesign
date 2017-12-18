@@ -1,6 +1,35 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<?php include "templates/header.php";?> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Dialogs | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Sweetalert Css -->
+    <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+</head>
 
 <body class="theme-red">
     <!-- Page Loader -->
@@ -334,7 +363,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
                             <span>User Interface (UI)</span>
@@ -349,7 +378,6 @@
                             <li>
                                 <a href="../../pages/ui/badges.html">Badges</a>
                             </li>
-
                             <li>
                                 <a href="../../pages/ui/breadcrumbs.html">Breadcrumbs</a>
                             </li>
@@ -362,7 +390,7 @@
                             <li>
                                 <a href="../../pages/ui/colors.html">Colors</a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="../../pages/ui/dialogs.html">Dialogs</a>
                             </li>
                             <li>
@@ -492,7 +520,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">content_copy</i>
                             <span>Example Pages</span>
@@ -507,7 +535,7 @@
                             <li>
                                 <a href="../../pages/examples/forgot-password.html">Forgot Password</a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="../../pages/examples/blank.html">Blank Page</a>
                             </li>
                             <li>
@@ -765,7 +793,49 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>BLANK PAGE</h2>
+                <h2>
+                    DIALOGS
+                    <small>Taken by <a href="https://github.com/t4t5/sweetalert" target="_blank">github.com/t4t5/sweetalert</a></small>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>EXAMPLES</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                      <!--       <button type="submit" name="btn-upload" class="btn btn-danger waves-effect" style="width: 50%;margin-right: 50%;">
+                                                    <i class="material-icons">touch_app</i>
+                                                    <span>UPLOAD</span>
+                                                </button> -->
+                                                 <div class="col-sm-6">
+                                                <input name="file" style="margin-left: 50%" type="file" multiple />
+                                            </div>
+
+
+                            <div class="row clearfix js-sweetalert">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <p>A basic message</p>
+                                    <button type="submit" name="btn-upload" class="btn btn-primary waves-effect" data-type="basic">UPLOAD</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -782,11 +852,18 @@
     <!-- Slimscroll Plugin Js -->
     <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
+    <!-- SweetAlert Plugin Js -->
+    <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
+
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/ui/dialogs.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
