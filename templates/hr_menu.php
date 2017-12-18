@@ -59,6 +59,13 @@
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="pages/hr/timesheet.php" >
+                            <i class="material-icons">folder</i>
+                            <span>Timesheet</span>
+                        </a>
+                    </li>
+
                  </ul>   
             </div>
             <!-- #Menu -->

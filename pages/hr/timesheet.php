@@ -2,14 +2,14 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.2.min.js"></script>
 <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title></title>
+    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -67,27 +67,28 @@
             <i class="material-icons">close</i>
         </div>
     </div>
-
-     <!-- #END# Search Bar -->
-        <!-- Top Bar -->
-        <?php include ("../../templates/top.php"); ?>
-            <!-- #Top Bar -->
-            <section>
-                <!-- Left Sidebar -->
-                <aside id="leftsidebar" class="sidebar">
-                    <!-- User Info -->
-                    <?php include ("../../templates/userInfo.php"); ?>
-                        <!-- #User Info -->
-                        <!-- Menu -->
-
-                        <?php include ("../../templates/hr_menu.php"); ?>
-                            <!-- #Menu -->
-                            <!-- Footer -->
-                            <?php include ("../../templates/footer.php"); ?>
-                                <!-- #Footer -->
-                </aside>
-
-            </section>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+     <?php include ("../../templates/top.php"); ?>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+             <?php include ("../../templates/userInfo.php"); ?>
+             <!-- #User Info -->
+            <!-- Menu -->
+             <?php include ("../../templates/hr_menu.php"); ?>
+            <!-- #Menu -->
+            <!-- Footer -->
+             <?php include ("../../templates/footer.php"); ?>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        
+        <!-- #END# Right Sidebar -->
+    </section>
 
     <section class="content">
         <div class="container-fluid">
@@ -98,32 +99,72 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                            EXCEL UPLOAD
+                                TIMESHEET
                             </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
+                        <?php include "check.php"; ?>
                         <div class="body">
-  
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                        <th> SR.NO</th>
+                                        <th> Name</th>
+                                            <th> Dpartment</th> 
+                                            <th> Start Time</th>
+                                            <th>  End Time</th> 
+                                         
+                                        </tr>
+                                    </thead>
+                                <!--     <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                          
+                                        </tr>
+                                    </tfoot> -->
+                                    <tbody>
 
-    <form method="POST" action="afterUpload.php" enctype="multipart/form-data">
-        <div class="row clearfix">
-         <div class="col-sm-6">
-           
-            <input type="file" name="file" style="margin-left: 50%;border: 0px solid #fff;" >
-        </div>
-        <div class="col-sm-6">
-            <button type="submit" name="Submit" class="btn1 btn-danger waves-effect" style="width: 50%;margin-right: 50%;border: none;height: 35px;"><i class="material-icons">touch_app</i>
-            <span style="position: relative;top: -2px;margin-left: 3px;">UPLOAD
-            </span>
-            </button>
+ <?php
+  if($_SERVER['REQUEST_METHOD'] == "GET")
+  {        
+            $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time from  timesheet");
 
-
-
-
-
-        </div>
-        </div>
-    </form>
-</div>
+       
+         while($r=mysqli_fetch_row($res))
+         {
+            // print_r($r);die;
+          echo "<tr>";
+                 echo "<td align='center'>$r[0]</td>";
+                 echo "<td alig='center' width=''> $r[1]</td>";
+                  echo "<td alig='center' width=''> $r[2]</td>";
+                 echo "<td alig='center' width=''> $r[3]</td>";
+                  echo "<td alig='center' width=''> $r[4]</td>";
+               
+                 echo "</tr>";
+        }
+    }
+?> 
+                            </tbody>
+ 
+       
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -133,6 +174,7 @@
             <!-- #END# Exportable Table -->
         </div>
     </section>
+
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
