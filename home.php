@@ -38,7 +38,7 @@ $uname = $_GET['uname'];
             <!-- #User Info -->
             <!-- Menu -->
         <?php if($dpt == 1){
-            include('templates/menu/admin_menu.php');
+            include('templates/admin_menu.php');
         }
         if($dpt == 2){
             include('templates/hr_menu.php');

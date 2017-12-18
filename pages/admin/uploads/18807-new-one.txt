@@ -1,0 +1,426 @@
+<?php include "templates/header.php";?>
+<?php //$industry = json_decode(get_all_settings($category = 1),true);
+// echo print_array($settings);die;
+$contest=$this->input->get('data');
+?>           
+    <div class="mdl-grid start1_div">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+        <div class="wrap demo-card-wide mdl-card mdl-shadow--2dp">
+          <h4 class="investor_form_heading1">INVESTOR KYC FORM</h4>
+          <div class="mdl-card__formInfo">      
+            <form id="investor-form" action="#">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet  mdl-cell--12-col-phone">
+                  <div class="mdl-breadcrum">
+                    <div class="breadcrumb flat"><a href="#" class="active">Basic Details</a><a href="#">Contact Details</a><a href="#">Address Details</a><a href="#">Confirm</a></div>
+                  </div>  
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone first_step">
+
+                 <div class = "mdl-grid">
+
+               <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorName" tabindex="-1">person</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorName" >Name</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input class="mdl-textfield__input" type="text" id="investor_name" autofocus>
+                          <label class="mdl-textfield__label" for="investor_name">Name</label>
+                        </div>
+                      </div>
+               </div>
+               <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                
+                <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorFirstName" tabindex="-1">account_circle</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorFirstName" > First Name</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input class="mdl-textfield__input" type="text" id="investor_first_name">
+                          <label class="mdl-textfield__label" for="investor_first_name">First Name</label>
+                        </div>
+                      </div> 
+               </div>
+               <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                 
+                 <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorSex" tabindex="-1">label</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorSex">Sex</div>
+                        </span>      
+                        <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                        <select id="investor_sex" class="mdl-selectfield__select">
+                          <option select="selected" >Select</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
+                        <label class="mdl-selectfield__label" for="investor_sex">Sex</label>
+                      </div>  
+                    </div>
+               </div>
+            </div>
+
+            <div class = "mdl-grid">
+               <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                 <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorInvestedAmt" tabindex="-1">payment</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorInvestedAmt" > Amount to be Invested</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input class="mdl-textfield__input" type="text" id="investor_invested_amt">
+                          <label class="mdl-textfield__label" for="investor_invested_amt">Amount to be Invested</label>
+                    </div>
+                  </div>
+               </div>
+               <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                <div class="info_details"><i class="material-icons"></i>
+                        <span class="info_icon_2"><i class="material-icons" id="investorDOB" tabindex="-1">date_range</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorDOB">Date of Birth</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_dob" placeholder=" ">
+                          <label class="mdl-textfield__label" for="investor_dob">Date of Birth</label>
+                        </div>
+                      </div>
+                 
+               </div>
+               <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                      <div class="info_details"><i class="material-icons"></i>
+                        <span class="info_icon_2"><i class="material-icons" id="investorReference" tabindex="-1">contacts</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorReference">Contact Reference</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield">
+                          <input class="mdl-textfield__input" type="text" id="investor_reference">
+                          <label class="mdl-textfield__label" for="investor_reference">Contact Reference</label>
+                        </div>
+                      </div>
+                    
+                  </div>
+            </div>
+
+            <div class = "mdl-grid">
+              <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                <div class="info_details"><i class="material-icons"></i>
+                        <span class="info_icon_2"><i class="material-icons" id="investorPassport" tabindex="-1">format_list_numbered</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorPassport">Passport</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <label class="mdl-textfield__label" for="investor_passport">Passport</label>
+                          <input class="mdl-textfield__input" type="file" id="investor_passport" placeholder=" ">
+                        </div>
+                      </div>
+              </div>
+              <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorAddressPhoto" tabindex="-1">insert_photo</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddressPhoto">Address Proof</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <label class="mdl-textfield__label" for="investor_address_doc">Address Proof</label>
+                          <input class="mdl-textfield__input" type="file" id="investor_address_doc" placeholder=" ">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class = "mdl-cell mdl-cell--4-col graybox" style="text-align: center;">
+                  </div>
+              </div>  
+            </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                  <button style="float:right" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent next_first_btn">
+                    Next
+                  </button>
+                </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone second_step hidden">
+                  <div style="border:1px solid black" class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorEmail" tabindex="-1">email</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorEmail" > Email</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_email">
+                          <label class="mdl-textfield__label" for="investor_email">Email</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorContactNo" tabindex="-1">contact_phone</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorContactNo" >Contact Number</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input investor_contact" type="tel" id="investor_contact1" placeholder=" ">
+                          <label class="mdl-textfield__label" for="investor_contact1">Contact Number</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorPhone" tabindex="-1">phone</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorPhone" > Contact Number</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input investor_contact" type="tel" id="investor_contact2" placeholder=" ">
+                          <label class="mdl-textfield__label" for="investor_contact2">Contact Number</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                      <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorPid" tabindex="-1">lock</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorPid">Password</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="password" id="investor_pid">
+                          <label class="mdl-textfield__label" for="investor_pid">Password</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                      <div class="info_details">
+                        <span class="info_icon_2"><i class="material-icons" id="investorConfirmPid" tabindex="-1">lock</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorConfirmPid">Confirm Password</div>
+                        </span>      
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="password" id="investor_cm_pid" placeholder=" ">
+                          <label class="mdl-textfield__label" for="investor_cm_pid">Confirm Password</label>
+                        </div>
+                        <span class="info_icon_2 error_conf_msg hidden">
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="confirmPassMsg">Passwords do not match</div>
+                          <i style="color:#F44336" class="material-icons" id="confirmPassMsg" tabindex="-1">info_outline</i>
+                        </span>
+                        
+                      </div>
+                    </div>
+                  
+                  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                    <button style="float:left" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent prev_second_btn">
+                      Prev
+                    </button>
+                    <button style="float:right" type="button"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent next_second_btn">
+                      Next
+                    </button>
+                  </div>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone third_step hidden">
+                  <div style="border:1px solid black" class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                      <div class="info_details">
+                        <div style="display:flex;margin-left:20px">
+                          <i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <p style="font-size:1.2em;margin-left:15px"><b>Address</b></p>      
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">  
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1"> location_on</i>
+                        <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Address</div>
+                      </span>
+                      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="investor_address_building">
+                        <label class="mdl-textfield__label" for="investor_address_building">House/Building</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">  
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1"> location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_address_street">
+                          <label class="mdl-textfield__label" for="investor_address_street">Street Name</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_address_town">
+                          <label class="mdl-textfield__label" for="investor_address_town">Town</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_address_state">
+                          <label class="mdl-textfield__label" for="investor_address_state">State</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_address_postal">
+                          <label class="mdl-textfield__label" for="investor_address_postal">Postal Code</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="investor_address_country">
+                          <label class="mdl-textfield__label" for="investor_address_country">Country</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone third_step hidden">
+                  <div style="border:1px solid black" class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">   
+                      <div class="info_details">
+                        <div style="display:flex;margin-left:20px">
+                          <i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <p style="font-size:1.2em;margin-left:15px"><b>Correspondence Address</b></p>      
+                        </div>
+                      </div>
+                    </div>
+                    <div style="float:right" class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone"> 
+                      <div style="margin:inherit">
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="same_address_check">
+                          <input type="checkbox" id="same_address_check" class="mdl-checkbox__input">
+                          <span class="mdl-checkbox__label">Same As Entered</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">   
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Correspondence Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input  placeholder=" " class="mdl-textfield__input" type="text" id="correspondence_address_building">
+                          <label class="mdl-textfield__label" for="correspondence_address_building">House/Building</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">   
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Correspondence Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input  placeholder=" " class="mdl-textfield__input" type="text" id="correspondence_address_street">
+                          <label class="mdl-textfield__label" for="correspondence_address_street">Street Name</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">   
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Correspondence Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input  placeholder=" " class="mdl-textfield__input" type="text" id="correspondence_address_town">
+                          <label class="mdl-textfield__label" for="correspondence_address_town">Town</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone">   
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Correspondence Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input  placeholder=" " class="mdl-textfield__input" type="text" id="correspondence_address_state">
+                          <label class="mdl-textfield__label" for="correspondence_address_state">State</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone"> 
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Correspondence Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input  placeholder=" " class="mdl-textfield__input" type="text" id="correspondence_address_postal">
+                          <label class="mdl-textfield__label" for="correspondence_address_postal">Postal Code</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-phone"> 
+                      <div class="info_details">
+                        <span style="visibility:hidden" class="info_icon_2"><i class="material-icons" id="investorAddress" tabindex="-1">location_on</i>
+                          <div class="mdl-tooltip mdl-tooltip--bottom" for="investorAddress" >Correspondence Address</div>
+                        </span>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input  placeholder=" " class="mdl-textfield__input" type="text" id="correspondence_address_country">
+                          <label class="mdl-textfield__label" for="correspondence_address_country">Country</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone third_step_btn">
+                  <button style="float:left" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent prev_third_btn hidden">
+                    Prev
+                  </button>
+                  <button style="float:right" type="button"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent next_third_btn hidden">
+                    Next
+                  </button>
+                </div>
+                
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone contest-div" data-contest="<?=$contest;?>"></div>
+
+                <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent form-btn submit_btn hidden">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+      $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+        var response = JSON.stringify(data, null, 2);
+        // console.log(response);
+
+        if(response.country_code =="US" || response.country_code == "CN" || response.country_code == "SG"){
+            // alert("Hello");
+            swal({
+              title: "Sorry offer not available to residents and/or nationals of USA, China and Singapore",
+              type: "error",
+              showCancelButton: false,
+              closeOnConfirm: false,
+              closeOnCancel: false
+            },
+            function(isConfirm) {
+              if (isConfirm) {
+                window.location.href="home";
+              }
+            });
+          }
+      });
+      $('#investor_contact1').intlTelInput({
+        excludeCountries: ['us','cn','sg']
+      });
+      $('#investor_contact2').intlTelInput({
+        excludeCountries: ['us','cn','sg']
+      });
+    });
+    </script>
+  <script src="<?php echo base_url().'assets/js/investor.js';?>"></script>
+<?php include "templates/footer.php";?>
