@@ -25,6 +25,14 @@
 
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="pages/legal/timesheet.php" >
+                            <i class="material-icons">folder</i>
+                            <span>Timesheet</span>
+                        </a>
+                    </li>
+                    
                  </ul>   
             </div>
             <!-- #Menu -->

@@ -3,7 +3,7 @@
                 <ul class="list">
                     <li class="header">HR DASHBOARD</li>
                     <li class="active">
-                        <a href="index.php">
+                        <a href="#">
                             <i class="material-icons">home</i>
                             <span>Admin</span>
                         </a>
@@ -16,7 +16,11 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/hr/fileupload.php">Files Upload/Download</a>
+                                <a href="pages/hr/fileupload.php" id="fileupload">Files Upload/Download</a>
+                            </li>
+
+                            <li>
+                                <a href="pages/hr/view.php" id="view">View Uploaded Files</a>
                             </li>
 
                         </ul>
@@ -30,11 +34,11 @@
                         <ul class="ml-menu">
 
                             <li>
-                                <a href="pages/hr/excel.php">Leave Register</a>
+                                <a href="pages/hr/excel.php" id="leave_reg">Leave Register</a>
                             </li>
 
                             <li>
-                                <a href="pages/hr/excelSheet.php">Uploaded Sheet</a>
+                                <a href="pages/hr/excelSheet.php" id="uploaded">Uploaded Sheet</a>
                             </li>
 
                         </ul>
@@ -48,19 +52,19 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/hr/leave.php">Leave Policy</a>
+                                <a href="pages/hr/leave.php" id="leave">Leave Policy</a>
                             </li>
                             <li>
-                                <a href="pages/hr/IAS.php">Interview Assessment Policy</a>
+                                <a href="pages/hr/IAS.php" id="ias">Interview Assessment Policy</a>
                             </li>
                             <li>
-                                <a href="pages/hr/coverletter.php">Cover Letter</a>
+                                <a href="pages/hr/coverletter.php" id="cover">Cover Letter</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="pages/hr/timesheet.php" >
+                        <a href="pages/hr/timesheet.php" id="timesheet">
                             <i class="material-icons">folder</i>
                             <span>Timesheet</span>
                         </a>
@@ -69,3 +73,37 @@
                  </ul>   
             </div>
             <!-- #Menu -->
+                    
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+
+            <script type="text/javascript">
+
+                $(document).ready(function(){
+                    console.log(window.location.pathname);
+                    if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
+                            // alert('Home');
+                        $('#fileupload').attr('href','pages/hr/fileupload.php');
+                        $('#leave_reg').attr('href','pages/hr/excel.php');
+                        $('#uploaded').attr('href','pages/hr/excelSheet.php');
+                        $('#view').attr('href','pages/hr/view.php');
+                        $('#leave').attr('href','pages/hr/leave.php');
+                        $('#ias').attr('href','pages/hr/IAS.php');
+                        $('#cover').attr('href','pages/hr/coverletter.php');
+                        $('#timesheet').attr('href','pages/hr/timesheet.php');
+                    }else{
+                        // alert('HR');
+                        $('#fileupload').attr('href','fileupload.php');
+                        $('#leave_reg').attr('href','excel.php');
+                        $('#uploaded').attr('href','excelSheet.php');
+                        $('#view').attr('href','view.php');
+                        $('#leave').attr('href','leave.php');
+                        $('#ias').attr('href','IAS.php');
+                        $('#cover').attr('href','coverletter.php');
+                        $('#timesheet').attr('href','timesheet.php');
+                    }
+                });
+            </script>
