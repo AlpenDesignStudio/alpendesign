@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+    <title>Timesheet</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -96,23 +96,11 @@
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
+                    <div class="card" >
+                        <div class="header" style="background-color: #673AB7;" >
+                            <h2 style="text-align: center;color: #ffffff;">
                                 TIMESHEET
                             </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                         <?php include "check.php"; ?>
                         <div class="body">
@@ -120,11 +108,11 @@
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                        <th> SR.NO</th>
-                                        <th> Name</th>
-                                            <th> Dpartment</th> 
-                                            <th> Start Time</th>
-                                            <th>  End Time</th> 
+                                        <th class="view"> SR.NO</th>
+                                        <th class="view"> Name</th>
+                                            <th class="view"> Dpartment</th> 
+                                            <th class="view"> Start Time</th>
+                                            <th class="view">  End Time</th> 
                                          
                                         </tr>
                                     </thead>
