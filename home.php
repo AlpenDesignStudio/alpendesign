@@ -44,7 +44,7 @@ $uname = $_GET['uname'];
             include('templates/hr_menu.php');
         }
         if($dpt == 3){
-            include('templates/menu/tech_menu.php');
+            include('templates/tech_menu.php');
         }
         if($dpt == 4){
             include('templates/menu/legal_menu.php');
