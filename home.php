@@ -50,7 +50,7 @@ $uname = $_GET['uname'];
             include('templates/legal_menu.php');
         }
         if($dpt == 5){
-            include('templates/menu/marketing_menu.php');
+            include('templates/marketing_menu.php');
         }
         if($dpt == 6){
             include('templates/menu/creative_menu.php');

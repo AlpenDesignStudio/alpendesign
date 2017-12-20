@@ -96,7 +96,7 @@ mysqli_close($con);
 </body>
 
 <?php // header('Location: reg.php?vid='.$last_id.'&dpt='.$dpt.'&uname='.$userName); ?>
-<?php  header ('Location: sign-in.html'); ?>
+<?php  header ('Location: sign-in.php'); ?>
 </html>
 
    
