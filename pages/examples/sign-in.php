@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Sign In | Bootstrap Based Admin Template - Material Design</title>
+    <title>Sign In</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -29,7 +29,7 @@
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
-            <small>Befor Login Contact to Admin</small>
+            <small>WELCOME TO ALPEN DESIGN</small>
         </div>
         <div class="card">
             <div class="body">

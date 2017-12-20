@@ -8,7 +8,7 @@ include_once 'dbconfig.php';
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>ADSL</title>
+    <title>ADSL Documents</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -92,7 +92,7 @@ include_once 'dbconfig.php';
                             <div class="card" >
                                 <div class="header" style="background-color: #673AB7;">
                                     <h2 style="text-align: center;color: #ffffff;">
-                                ADSL - FILE UPLOAD - DRAG & DROP OR WITH CLICK & CHOOSE
+                                ADSL DOCUMENTS - FILE UPLOAD - DRAG & DROP OR WITH CLICK & CHOOSE
                             </h2>
                                 </div>
                                 <div class="body">
@@ -146,7 +146,7 @@ include_once 'dbconfig.php';
     ?>
 
     <?php
-    $sql="SELECT * FROM tbl_adsl";
+    $sql="SELECT * FROM tbl_adsldocuments";
     // echo $sql;die();
     $result_set=mysql_query($sql);
     // echo $result_set;die();
@@ -155,7 +155,7 @@ include_once 'dbconfig.php';
 
         ?>
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
-        <a href="adslupload/<?php echo $row['file'] ?>"  class="btn bg-orange btn-lg btn-block waves-effect" type="button" target="_blank"><?php echo $row['file'] ?></a></div>
+        <a href="adsldocumentsupload/<?php echo $row['file'] ?>"  class="btn bg-orange btn-lg btn-block waves-effect" type="button" target="_blank"><?php echo $row['file'] ?></a></div>
                                             
                                                 
                                             <?php
@@ -170,7 +170,7 @@ if(isset($_POST['btn-upload']))
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
-    $folder="adslupload/";
+    $folder="adsldocumentsupload/";
     
     // new file size in KB
     $new_size = $file_size/1024;  
@@ -184,12 +184,12 @@ if(isset($_POST['btn-upload']))
     
     if(move_uploaded_file($file_loc,$folder.$final_file))
     {
-        $sql="INSERT INTO tbl_adsl(file,type,size) VALUES('$final_file','$file_type','$new_size')";
+        $sql="INSERT INTO tbl_adsldocuments(file,type,size) VALUES('$final_file','$file_type','$new_size')";
         mysql_query($sql);
         ?>
         <script>
         /*alert('successfully uploaded');*/
-        window.location.href='adsl.php?success';
+        window.location.href='adsldocuments.php?success';
         
         </script>
         <?php
@@ -199,13 +199,12 @@ if(isset($_POST['btn-upload']))
         ?>
         <script>
         /*alert('error while uploading file');*/
-        window.location.href='adsl.php?fail';
+        window.location.href='adsldocuments.php?fail';
         </script>
         <?php
     }
 }
 ?>
-
                                             </div>
                                         </div>
                                     </form>

@@ -88,7 +88,7 @@
                     <div class="card">
                         <div class="header" style="background-color: #673AB7;">
                             <h2 style="text-align: center;color: #ffffff;">
-                                DOWNLOADED IMAGE
+                                UPLOADED SHEET
                             </h2>
                         </div>
                         <?php include "check.php"; ?>

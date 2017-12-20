@@ -96,7 +96,7 @@ include_once 'dbconfig.php';
                             </h2>
                                 </div>
                                 <div class="body">
-                                    <form action="ndaupload.php" id="" class="" method="post" enctype="multipart/form-data">
+                                    <form action="" id="" class="" method="post" enctype="multipart/form-data">
                                         <div class="row clearfix">
                                             <div class="col-sm-6">
                                                 <input name="file" style="margin-left: 50%" type="file" multiple />
@@ -161,6 +161,52 @@ include_once 'dbconfig.php';
                                             <?php
     }
     ?> 
+
+    <?php
+include_once 'dbconfig.php';
+if(isset($_POST['btn-upload']))
+{    
+     
+    $file = $_FILES['file']['name'];
+    $file_loc = $_FILES['file']['tmp_name'];
+    $file_size = $_FILES['file']['size'];
+    $file_type = $_FILES['file']['type'];
+    $folder="ndaupload/";
+    
+    // new file size in KB
+    $new_size = $file_size/1024;  
+    // new file size in KB
+    
+    // make file name in upper case
+    $new_file_name = strtoupper($file);
+    // make file name in lower case
+    
+    $final_file=str_replace(' ','-',$new_file_name);
+    
+    if(move_uploaded_file($file_loc,$folder.$final_file))
+    {
+        $sql="INSERT INTO tbl_nda(file,type,size) VALUES('$final_file','$file_type','$new_size')";
+        mysql_query($sql);
+        ?>
+        <script>
+        /*alert('successfully uploaded');*/
+        window.location.href='nda.php';
+        
+        </script>
+        <?php
+    }
+    else
+    {
+        ?>
+        <script>
+        /*alert('error while uploading file');*/
+        window.location.href='nda.php?fail';
+        </script>
+        <?php
+    }
+}
+?>
+
                                             </div>
                                         </div>
                                     </form>
