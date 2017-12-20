@@ -1,11 +1,13 @@
-
+<?php
+include_once 'dbconfig.php';
+?>
     <!DOCTYPE html>
     <html>
 
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>INTERVIEW ASSESSMENT SHEET</title>
+        <title>File Upload</title>
 
         <!-- Favicon-->
         <link rel="icon" href="../../favicon.ico" type="image/x-icon">
@@ -104,7 +106,7 @@
                         <!-- #User Info -->
                         <!-- Menu -->
 
-                        <?php include ("../../templates/hr_menu.php"); ?>
+                        <?php include ("../../templates/legal_menu.php"); ?>
                             <!-- #Menu -->
                             <!-- Footer -->
                             <?php include ("../../templates/footer.php"); ?>
@@ -112,32 +114,81 @@
                 </aside>
 
             </section>
-           <section class="content">
+            <section class="content">
                 <div class="container-fluid">
-                    <!-- <div class="block-header">
-                <h2 >LEAVE POLICY</h2>
-            </div> -->
-                    <!-- Body Copy -->
-                    <div class="row clearfix">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                            <div class="card">
-                                <div class="header">
-                                    <h2 style="text-align: center;">
-                                <b>INTERVIEW ASSESSMENT SHEET</b>
+
+                    <!-- File Upload | Drag & Drop OR With Click & Choose -->
+                    <div class="row clearfix" style="text-align: center;">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card" >
+                                <div class="header" style="background-color: #673AB7;">
+                                    <h2 style="text-align: center;color: #ffffff;">
+                                FILE UPLOAD - DRAG & DROP OR WITH CLICK & CHOOSE
                             </h2>
+                                </div>
+                                <div class="body">
+                                    <form action="upload.php" id="" class="" method="post" enctype="multipart/form-data">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-6">
+                                                <input name="file" style="margin-left: 50%" type="file" multiple />
+                                            </div>
 
-                                    <div class="body">
-                                        <object width="920" height="500" data="InterviewAssessmentsheet.pdf">
-                                        </object>
-                                        
+                                            <div class="col-sm-6">
+                                                <button type="submit" name="btn-upload" class="btn btn-danger waves-effect" style="width: 50%;margin-right: 50%;">
+                                                    <i class="material-icons">touch_app</i>
+                                                    <span>UPLOAD</span>
+                                                </button>
 
-                                    </div>
+
+
+                                            </div>
+                                             
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <?php
+    if(isset($_GET['success']))
+    {
+        ?>
+                                                    <div class="alert bg-green">
+                                                        FILE UPLOADED SUCCESSFULLY<br>
+                                                        <a href="view.php" class="alert-link">CLICK HERE TO VIEW</a>.
+                                                    </div>
+
+                                                    <?php
+    }
+    else if(isset($_GET['fail']))
+    {
+        ?>
+                                                        <div class="alert bg-red">
+                                                            PROBLEM WHILE FILE UPLOADING !
+
+                                                        </div>
+
+                                                        <?php
+    }
+    else
+    {
+        ?>
+                                                            <div class="alert bg-pink">
+                                                                TRY TO UPLOAD ANY FILES
+
+                                                            </div>
+
+                                                            <?php
+    }
+    ?>
+                                            </div>
+
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- #END# File Upload | Drag & Drop OR With Click & Choose -->
+
                 </div>
             </section>
+
             <!-- Jquery Core Js -->
             <script src="../../plugins/jquery/jquery.min.js"></script>
 
