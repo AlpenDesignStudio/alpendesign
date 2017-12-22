@@ -37,7 +37,7 @@ $email = $_GET['email'];
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-        <?php include "templates/userInfo1.php";?> 
+        <?php include "templates/userInfo.php";?> 
             <!-- #User Info -->
             <!-- Menu -->
         <?php if($dpt == 1){
