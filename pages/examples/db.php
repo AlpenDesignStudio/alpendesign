@@ -8,8 +8,7 @@
        
         // $status = $_POST['status'];
         $dpt = $_POST['dpt'];
-        $userName = $_POST['uname'];
-        $password = $_POST['pword'];
+        $pass = $_POST['password'];
         $FirstName = $_POST['fname'];
         $LastName = $_POST['lname'];
         $email = $_POST['email'];
@@ -21,16 +20,22 @@
         $dt = date('Y-m-d H:i:s');
 
 
+       // password encrypt using SHA256();
+        $password = hash('sha256', $pass);
+
       $query=mysqli_query($con,"INSERT INTO ar_visitor 
-      (dpt,uname,pword,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES(".$dpt.",'".$userName."','".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
+      (dpt,password,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
+
+
+
 
 
 $last_id =mysqli_insert_id($con);
 
     $query1=mysqli_query($con,"INSERT INTO ar_login 
-      (uname,email,pword,visitor_id,status,start_time,end_time)
+      (dpt,email,password,visitor_id,status,start_time,end_time)
    values
-   ('".$userName."','".$email."','".$password."','".$last_id."',1,'".$dt."','".$dt."')");
+   ('".$dpt."','".$email."','".$password."','".$last_id."',1,'".$dt."','".$dt."')");
 
 
 $data  = ($query)?  true : die(mysqli_error());
@@ -39,7 +44,7 @@ $data1 = ($query1)? true : die(mysqli_error());
  //to insert input records into a table - address
 
 
-$queryy=mysqli_query($con,"select * from ar_visitor where uname='$userName' "); // Fetch all the records from the table address
+$queryy=mysqli_query($con,"select * from ar_visitor where email='$email' "); // Fetch all the records from the table address
 
 ?>
 <h3> Page to display the stored data </h3>
@@ -47,7 +52,6 @@ $queryy=mysqli_query($con,"select * from ar_visitor where uname='$userName' "); 
 <table border="1">
 <thead>
 <th> ID </th>
-<th> Name</th>
 <th>Password </th>
 <th> First Name</th>
 <th>  Last Name</th> 
@@ -68,8 +72,7 @@ while($data = mysqli_fetch_array($queryy))
 // we are running a while loop to print all the rows in a table
 echo'<tr>'; // printing table row
 echo '<td>'.$data['visitor_id'].'</td>
-      <td>'.$data['uname'].'</td>
-      <td>'.$data['pword'].'</td>
+      <td>'.$data['password'].'</td>
       <td>'.$data['fname'].'</td>
       <td>'.$data['lname'].'</td>
       <td>'.$data['email'].'</td>
@@ -96,7 +99,7 @@ mysqli_close($con);
 </body>
 
 <?php // header('Location: reg.php?vid='.$last_id.'&dpt='.$dpt.'&uname='.$userName); ?>
-<?php  header ('Location: sign-in.php'); ?>
+<?php  header ('Location: sign-in.php?&password='.$password.'&email='.$email); ?>
 </html>
 
    
