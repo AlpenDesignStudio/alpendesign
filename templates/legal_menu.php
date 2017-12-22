@@ -5,7 +5,7 @@
         <li class="active">
             <a href="#">
                 <i class="material-icons">home</i>
-                <span>Admin</span>
+                <span>Home</span>
             </a>
         </li>
 
@@ -143,6 +143,9 @@
                     <a href="pages/legal/wudtools.php" id="wudtools">Wudtools</a>
                 </li>
 
+
+               
+
             </ul>
         </li>
 
@@ -152,6 +155,15 @@
                 <span>Timesheet</span>
             </a>
         </li>
+
+        <li>
+            <a href="pages/legal/editor.php" id="editor">
+                <i class="material-icons">assignment</i>
+                <span>Editor</span>
+            </a>
+        </li>
+
+    
 
     </ul>
 </div>
@@ -179,6 +191,7 @@
             $('#adsldocuments').attr('href', 'pages/legal/adsldocuments.php');
             $('#wudtools').attr('href', 'pages/legal/wudtools.php');
             $('#timesheet').attr('href', 'pages/legal/timesheet.php');
+             $('#editor').attr('href', 'pages/legal/editor.php');
 
             
             $('#timesheet').attr('href', 'pages/legal/');
@@ -198,6 +211,7 @@
             $('#adsldocuments').attr('href', 'adsldocuments.php');
             $('#wudtools').attr('href', 'wudtools.php');
             $('#timesheet').attr('href', 'timesheet.php');
+            $('#editor').attr('href', 'editor.php');
         }
     });
 </script>
