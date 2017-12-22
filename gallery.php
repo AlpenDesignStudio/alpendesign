@@ -7,29 +7,29 @@
     <title>Image Gallery </title>
 
     <!-- Favicon-->
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Light Gallery Plugin Css -->
-    <link href="../../plugins/light-gallery/css/lightgallery.css" rel="stylesheet">
+    <link href="plugins/light-gallery/css/lightgallery.css" rel="stylesheet">
 
     <!-- Custom Css -->
-    <link href="../../css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -65,20 +65,20 @@
     </div>
     <!-- #END# Search Bar -->
         <!-- Top Bar -->
-        <?php include ("../../templates/top.php"); ?>
+        <?php include ("templates/top.php"); ?>
             <!-- #Top Bar -->
             <section>
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- User Info -->
-                    <?php include ("../../templates/userInfo.php"); ?>
+                    <?php include ("templates/userInfo.php"); ?>
                         <!-- #User Info -->
                         <!-- Menu -->
 
-                        <?php include ("../../templates/menu.php"); ?>
+                        <?php include ("templates/menu.php"); ?>
                             <!-- #Menu -->
                             <!-- Footer -->
-                            <?php include ("../../templates/footer.php"); ?>
+                            <?php include ("templates/footer.php"); ?>
                                 <!-- #Footer -->
                 </aside>
 
@@ -119,103 +119,103 @@
                         <div class="body">
                             <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/1.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-1.jpg">
+                                    <a href="images/image-gallery/1.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-1.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/2.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-2.jpg">
+                                    <a href="images/image-gallery/2.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-2.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/3.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-3.jpg">
+                                    <a href="images/image-gallery/3.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-3.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/4.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-4.jpg">
+                                    <a href="images/image-gallery/4.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-4.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/5.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-5.jpg">
+                                    <a href="images/image-gallery/5.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-5.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/6.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-6.jpg">
+                                    <a href="images/image-gallery/6.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-6.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/7.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-7.jpg">
+                                    <a href="images/image-gallery/7.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-7.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/8.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-8.jpg">
+                                    <a href="images/image-gallery/8.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-8.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/9.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-9.jpg">
+                                    <a href="images/image-gallery/9.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-9.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/10.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-10.jpg">
+                                    <a href="images/image-gallery/10.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-10.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/11.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-11.jpg">
+                                    <a href="images/image-gallery/11.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-11.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/12.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-12.jpg">
+                                    <a href="images/image-gallery/12.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-12.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/13.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-13.jpg">
+                                    <a href="images/image-gallery/13.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-13.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/14.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-14.jpg">
+                                    <a href="images/image-gallery/14.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-14.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/15.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-15.jpg">
+                                    <a href="images/image-gallery/15.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-15.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/16.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-16.jpg">
+                                    <a href="images/image-gallery/16.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-16.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/17.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-17.jpg">
+                                    <a href="images/image-gallery/17.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-17.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/18.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-18.jpg">
+                                    <a href="images/image-gallery/18.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-18.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/19.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-19.jpg">
+                                    <a href="images/image-gallery/19.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-19.jpg">
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                    <a href="../../images/image-gallery/20.jpg" data-sub-html="Demo Description">
-                                        <img class="img-responsive thumbnail" src="../../images/image-gallery/thumb/thumb-20.jpg">
+                                    <a href="images/image-gallery/20.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-20.jpg">
                                     </a>
                                 </div>
                             </div>
@@ -227,29 +227,29 @@
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="../../plugins/node-waves/waves.js"></script>
+    <script src="plugins/node-waves/waves.js"></script>
 
     <!-- Light Gallery Plugin Js -->
-    <script src="../../plugins/light-gallery/js/lightgallery-all.js"></script>
+    <script src="plugins/light-gallery/js/lightgallery-all.js"></script>
 
     <!-- Custom Js -->
-    <script src="../../js/pages/medias/image-gallery.js"></script>
-    <script src="../../js/admin.js"></script>
+    <script src="js/pages/medias/image-gallery.js"></script>
+    <script src="js/admin.js"></script>
 
     <!-- Demo Js -->
-    <script src="../../js/demo.js"></script>
+    <script src="js/demo.js"></script>
 </body>
 
 </html>
