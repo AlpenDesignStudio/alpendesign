@@ -1,6 +1,6 @@
 
 <?php $dpt = $_GET['dpt'];
-$uname = $_GET['uname'];
+$email = $_GET['email'];
 
 // $dpt = $_POST['dpt'];
 // $uname = $_POST['uname'];
