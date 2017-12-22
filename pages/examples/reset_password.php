@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Sign In</title>
+    <title>Forgot Password | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -25,58 +26,77 @@
     <link href="../../css/style.css" rel="stylesheet">
 </head>
 
-<body class="login-page">
-    <div class="login-box">
+<body class="fp-page">
+    <div class="fp-box">
         <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
             <small>WELCOME TO ALPEN DESIGN</small>
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST" action="login_db.php">
-                    <div class="msg">Sign in to start your session</div>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="email" required autofocus>
-                        </div>
-                       <!--  <div class="form-line">
-                            <input type="text" class="form-control" name="uname" placeholder="Username" required autofocus>
-                        </div> -->
+                <form id="forgot_password" method="POST" onSubmit="return validate_password_reset();">
+
+                
+
+                    <div class="msg">
+                       Reset Your Password AnyTime
                     </div>
+
+
+                    <?php if(!empty($success_message)) { ?>
+	<div class="success_message"><?php echo $success_message; ?></div>
+	<?php } ?>
+
+	<div id="validation-message">
+		<?php if(!empty($error_message)) { ?>
+	<?php echo $error_message; ?>
+	<?php } ?>
+	</div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
+                            <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="pword" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Old Password" required autofocus>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-8 p-t-5">
-                            <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
-                            <label for="rememberme">Remember Me</label>
-                        </div>
-                        <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit" value="submit">SIGN IN</button>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required autofocus>
                         </div>
                     </div>
-                    <div class="row m-t-15 m-b--20">
-                        <div class="col-xs-6">
-                            <a href="sign-up.php">Register Now!</a>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirm Password" required autofocus>
                         </div>
-                        <div class="col-xs-6 align-right">
-                            <a href="forgot-password.php">Forgot Password?</a>
-                        </div>
+                    </div>
+
+
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" id="reset-password" value="Reset Password" name="reset-password" >RESET MY PASSWORD</button>
+
+                    <div class="row m-t-20 m-b--5 align-center">
+                        <a href="sign-in.php">Sign In!</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Jquery Core Js -->
+
+
+
+
+				
+				 <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
@@ -90,7 +110,7 @@
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
-    <script src="../../js/pages/examples/sign-in.js"></script>
+    <script src="../../js/pages/examples/forgot-password.js"></script>
 </body>
 
 </html>

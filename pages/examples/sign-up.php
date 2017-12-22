@@ -88,7 +88,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="town" placeholder="Town " required autofocus>
+                            <input type="text" class="form-control" name="town" placeholder="Town / City " required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -107,6 +107,7 @@
                             <input type="text" class="form-control" name="country" placeholder="Country" required autofocus>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -161,7 +162,7 @@
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
 
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="sign-in.html">You already have a membership?</a>
+                        <a href="sign-in.php">You already have a membership?</a>
                     </div>
                 </form>
             </div>

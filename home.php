@@ -1,6 +1,9 @@
 
 <?php $dpt = $_GET['dpt'];
 $uname = $_GET['uname'];
+
+// $dpt = $_POST['dpt'];
+// $uname = $_POST['uname'];
 ?>
 
 
@@ -11,7 +14,7 @@ $uname = $_GET['uname'];
 
 <body class="theme-red">
     <!-- Page Loader -->
-   <?php include "templates/pageloader.php";?>   
+   <?php //include "templates/pageloader.php";?>   
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -34,7 +37,7 @@ $uname = $_GET['uname'];
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-        <?php include "templates/userInfo.php";?> 
+        <?php include "templates/userInfo1.php";?> 
             <!-- #User Info -->
             <!-- Menu -->
         <?php if($dpt == 1){

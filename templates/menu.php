@@ -2,6 +2,7 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MENU</li>
+                    
 
                     <!-- Home tab -->
                     <li class="active">
@@ -52,20 +53,20 @@
                     </li>
 
                     <!-- Sign-in tab -->
-                    <li>
+               <!--      <li>
                         <a href="pages/examples/sign-in.php">
                             <i class="material-icons">vpn_key</i>
                             <span>Sign in</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- Sign-up tab -->
-                    <li>
+                 <!--    <li>
                         <a href="pages/examples/sign-up.php">
                             <i class="material-icons">person_add</i>
                             <span>Sign up</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- Tools tab -->
 
