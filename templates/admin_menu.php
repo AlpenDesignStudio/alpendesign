@@ -3,7 +3,7 @@
                 <ul class="list">
                     <li class="header">ADMIN DASHBOARD</li>
                     <li class="active">
-                        <a href="index.php">
+                        <a href="#">
                             <i class="material-icons">home</i>
                             <span>Admin</span>
                         </a>
@@ -16,7 +16,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/admin/fileupload.php">Files Upload/Download</a>
+                                <a href="pages/admin/fileupload.php" id="fileupload">Files Upload/Download</a>
                             </li>
 
                         </ul>
@@ -30,11 +30,11 @@
                         <ul class="ml-menu">
 
                             <li>
-                                <a href="pages/admin/excel.php">Leave Register</a>
+                                <a href="pages/admin/excel.php" id="excel">Leave Register</a>
                             </li>
 
                             <li>
-                                <a href="pages/admin/excelSheet.php">Uploaded Sheet</a>
+                                <a href="pages/admin/excelSheet.php" id="sheet">Uploaded Sheet</a>
                             </li>
 
                         </ul>
@@ -48,19 +48,19 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/admin/leave.php">Leave Policy</a>
+                                <a href="pages/admin/leave.php" id="leave">Leave Policy</a>
                             </li>
                             <li>
-                                <a href="pages/admin/IAS.php">Interview Assessment Policy</a>
+                                <a href="pages/admin/IAS.php" id="ias">Interview Assessment Policy</a>
                             </li>
                             <li>
-                                <a href="pages/admin/coverletter.php">Cover Letter</a>
+                                <a href="pages/admin/coverletter.php" id="coverletter">Cover Letter</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="pages/admin/timesheet.php" >
+                        <a href="pages/admin/timesheet.php" id="timesheet">
                             <i class="material-icons">folder</i>
                             <span>Timesheet</span>
                         </a>
@@ -69,3 +69,36 @@
                  </ul>   
             </div>
             <!-- #Menu -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+
+            <script type="text/javascript">
+
+                $(document).ready(function(){
+                    console.log(window.location.pathname);
+                    if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
+                            // alert('Home');
+                        $('#fileupload').attr('href','pages/admin/fileupload.php');
+                        $('#excel').attr('href','pages/admin/excel.php');
+                        $('#sheet').attr('href','pages/admin/excelSheet.php');
+                        $('#leave').attr('href','pages/admin/leave.php');
+                        $('#ias').attr('href','pages/admin/IAS.php');
+                        $('#coverletter').attr('href','pages/admin/coverletter.php');
+                        $('#timesheet').attr('href','pages/admin/timesheet.php');
+                        
+                    }else{
+                        // alert('HR');
+                        $('#fileupload').attr('href','fileupload.php');
+                        $('#excel').attr('href','excel.php');
+                        $('#sheet').attr('href','excelSheet.php');
+                        $('#leave').attr('href','leave.php');
+                        $('#ias').attr('href','IAS.php');
+                        $('#coverletter').attr('href','coverletter.php');
+                         $('#timesheet').attr('href','timesheet.php');
+                        
+                    }
+                });
+            </script>
