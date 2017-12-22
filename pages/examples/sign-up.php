@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -24,49 +26,45 @@
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
-    <!-- Bootstrap Material Datetime Picker Css -->
+     <!-- Bootstrap Material Datetime Picker Css -->
     <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
-    <!-- Bootstrap Select Css -->
+     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
 </head>
 
 <body class="signup-page">
     <div class="signup-box">
-        <div class="logo">
+      <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
-            <small>WELCOME TO ALPEN DESIGN</small>
+            <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
             <div class="body">
                 <form id="sign_up" name="contact-form" method="POST" action="db.php">
+
+                 
+
                     <div class="msg">Register a new Employee</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="dpt" class="form-control show-tick">
-                                <option value="">Please select Department</option>
+                             <select id="select" name="dpt" class="form-control show-tick">
+                                        <option value="">Please select Department</option>
 
-                                <option value="1">Admin</option>
-                                <option value="2">HR</option>
-                                <option value="3">Technical</option>
-                                <option value="4">Legal</option>
-                                <option value="5">Marketing</option>
-                                <option value="6">Creative</option>
-                            </select>
+                                 <option value="1" >Admin</option>
+                                <option value="2" >HR</option>
+                                <option value="3" >Technical</option>
+                                <option value="4" >Legal</option>
+                                <option value="5" >Marketing</option>
+                                <option value="6" >Creative</option>
+                                    </select>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-                        <div class="form-line">
-                            <input type="text" class="form-control" name="uname" placeholder="User Name " required autofocus>
-                        </div>
-                    </div>
+                    
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -107,16 +105,16 @@
                             <input type="text" class="form-control" name="country" placeholder="Country" required autofocus>
                         </div>
                     </div>
-                    <div class="input-group">
+                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="sex" class="form-control show-tick">
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
-
-                            </select>
+                             <select id="select" name="sex" class="form-control show-tick">
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                        
+                                    </select>
                         </div>
                     </div>
                     <div class="input-group">
@@ -132,10 +130,10 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="pword" minlength="6" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
                         </div>
                     </div>
-                    <!--   <div class="input-group">
+                  <!--   <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
                         </span>
@@ -143,15 +141,15 @@
                             <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm cpword" required>
                         </div>
                     </div> -->
-                    <div class="input-group">
+                     <div class="input-group">
 
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
-                        <div class="form-line">
-                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
-                            <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
-                        </div>
+                                        <div class="form-line">
+                                        <input type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
+                                            <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
+                                        </div>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
@@ -168,10 +166,16 @@
         </div>
     </div>
 
-    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+
+
+
+
+
+
+     <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
-    <!-- Select Plugin Js -->
+      <!-- Select Plugin Js -->
     <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
@@ -189,7 +193,7 @@
     <!-- Validation Plugin Js -->
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
-
+   
     <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Custom Js -->
