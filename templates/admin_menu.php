@@ -1,14 +1,13 @@
- <!-- Menu -->
+<!-- Menu -->
             <div class="menu">
                 <ul class="list">
                     <li class="header">ADMIN DASHBOARD</li>
                     <li class="active">
                         <a href="#">
                             <i class="material-icons">home</i>
-                            <span>Admin</span>
+                            <span>Home</span>
                         </a>
                     </li>
-
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">folder</i>
@@ -18,29 +17,22 @@
                             <li>
                                 <a href="pages/admin/fileupload.php" id="fileupload">Files Upload/Download</a>
                             </li>
-
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">supervisor_account</i>
                             <span>HR Activities</span>
                         </a>
                         <ul class="ml-menu">
-
                             <li>
                                 <a href="pages/admin/excel.php" id="excel">Leave Register</a>
                             </li>
-
                             <li>
                                 <a href="pages/admin/excelSheet.php" id="sheet">Uploaded Sheet</a>
                             </li>
-
                         </ul>
                     </li>
-
-
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">library_books</i>
@@ -58,14 +50,12 @@
                             </li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="pages/admin/timesheet.php" id="timesheet">
                             <i class="material-icons">folder</i>
                             <span>Timesheet</span>
                         </a>
                     </li>
-
                  </ul>   
             </div>
             <!-- #Menu -->
@@ -74,9 +64,7 @@
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous">
 </script>
-
             <script type="text/javascript">
-
                 $(document).ready(function(){
                     console.log(window.location.pathname);
                     if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){

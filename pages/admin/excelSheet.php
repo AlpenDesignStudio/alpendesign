@@ -64,7 +64,7 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-             <?php include ("../../templates/userInfo.php"); ?>
+             <?php include ("userInfo_admin.php"); ?>
              <!-- #User Info -->
             <!-- Menu -->
              <?php include ("../../templates/admin_menu.php"); ?>

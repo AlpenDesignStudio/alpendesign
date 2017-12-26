@@ -26,10 +26,27 @@
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="seperator" class="divider"></li>
-                            <li><a href="pages/examples/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="pages/hr/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
- 
+ <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    console.log(window.location.pathname);
+                    if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
+                            // alert('Home');
+                        $('#logout').attr('href','pages/hr/logout.php');          
+                        
+                    }else{
+                        // alert('HR');
+                        $('#logout').attr('href','logout.php');                     
+                    }
+                });
+            </script>
