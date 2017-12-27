@@ -1,5 +1,6 @@
 <?php
 session_start(); 
+
 //set vars
 $email = $_POST['email'];
 $pass = $_POST['password'];
@@ -9,29 +10,35 @@ if ($email&&$pass){
 include('check.php');
  $password = hash('sha256', $pass); // password hashing using SHA256
 
-$query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' ");
+//print_r($password);die();
 
-   $row_data = mysqli_fetch_array($query,MYSQLI_ASSOC);
+$query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
+
+  
 $numrows = mysqli_num_rows($query);
-$p=$row_data['password'];
-// echo $p;die();
-if ($numrows!=0 && $p==$password){
 
-
-
-
-  // print_r($row_data);die;
+if ($numrows!=0){
+  $row_data = mysqli_fetch_array($query,MYSQLI_ASSOC);
   $dpt = $row_data['dpt'];
-  // $vid = $row_data['visitor_id'];
+
   $email = $row_data['email'];
-   header('Location: ../../home.php?&dpt='.$dpt.'&email='.$email);
-  // header('Location: ./admin/admin.php?vid='.$vid.'&dpt='.$dpt.'&uname='.$uname);
+  $_SESSION['email']=$email;
+  $_SESSION['password']=$row_data['password'];
+  $_SESSION['dpt']=$dpt;
+ $row_data['password']=$pass;
+//print_r($_SESSION);die();
+   header('Location: ../../home.php');
+  
 }else{
       die("incorrect username/password!");
+session_destroy();
+
 }
 }else{
 echo "user does not exist!";
+session_destroy();
 }
+
 // else{
 //   echo "user11 does not exist!";
 //     // die("please enter a username and password!");

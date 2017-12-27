@@ -61,6 +61,15 @@
            <div class="form-group">
                <button type="submit" class="btn btn-block bg-pink waves-effect" name="btn-login">Sign In</button>
            </div>
+
+           <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="sign-up.php">Register Now!</a>
+                        </div>
+                        <div class="col-xs-6 align-right">
+                            <a href="forgot-password.php">Forgot Password?</a>
+                        </div>
+                    </div>
 </form>
 </div>
 </div>  
