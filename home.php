@@ -40,7 +40,27 @@ $password = $_SESSION['password'];
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-        <?php include "templates/userInfo.php";?> 
+        <?php if($dpt == 1){
+         include('pages/admin/userInfo_admin.php');
+        }
+        if($dpt == 2){
+            include('pages/hr/userInfo_hr.php');
+        }
+        if($dpt == 3){
+            include('pages/tech/userInfo_tech.php');
+        }
+        if($dpt == 4){
+            include('pages/legal/userInfo_legal.php');
+        }
+        if($dpt == 5){
+            include('pages/marketing/userInfo_marketing.php');
+        }
+        if($dpt == 6){
+            include('pages/creative/userInfo_creative.php');
+        }
+        ?>
+
+        
             <!-- #User Info -->
             <!-- Menu -->
         <?php if($dpt == 1){
@@ -59,7 +79,7 @@ $password = $_SESSION['password'];
             include('templates/marketing_menu.php');
         }
         if($dpt == 6){
-            include('templates/menu/creative_menu.php');
+            include('templates/creative_menu.php');
         }
         ?>
             <!-- #Menu -->

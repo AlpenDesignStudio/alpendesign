@@ -62,10 +62,10 @@
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a href="pages/tech/fileupload.php" id="fileupload">Files Upload/Download</a>
+                    <a href="pages/marketing/fileupload.php" id="fileupload">Files Upload/Download</a>
                 </li>
                 <li>
-                    <a href="pages/tech/view.php" id="view">View Uploded</a>
+                    <a href="pages/marketing/view.php" id="view">View Uploded</a>
                 </li>
 
             </ul>
@@ -87,20 +87,20 @@
         console.log(window.location.pathname);
         if (window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php') {
             // alert('Home');
-            $('#socialmedia').attr('href', 'pages/legal/socialmedia.php');
-            $('#digital').attr('href', 'pages/legal/Digital.php');
-            $('#presentation').attr('href', 'pages/legal/presentation.php');
-            $('#nda').attr('href', 'pages/legal/nda.php');
-            $('#ico').attr('href', 'pages/legal/ico.php');
-            $('#mailer').attr('href', 'pages/legal/mailer.php');
-            $('#rates').attr('href', 'pages/legal/rates.php');
-            $('#events').attr('href', 'pages/legal/events.php');
-            $('#zip').attr('href', 'pages/legal/zip.php');
-            $('#others').attr('href', 'pages/legal/others.php');
-            $('#roadshows').attr('href', 'pages/legal/roadshows.php');
-            $('#fileupload').attr('href', 'pages/legal/fileupload.php');
-            $('#view').attr('href', 'pages/legal/view.php');
-            $('#timesheet').attr('href', 'pages/legal/timesheet.php');
+            $('#socialmedia').attr('href', 'pages/marketing/socialmedia.php');
+            $('#digital').attr('href', 'pages/marketing/Digital.php');
+            $('#presentation').attr('href', 'pages/marketing/presentation.php');
+            $('#nda').attr('href', 'pages/marketing/nda.php');
+            $('#ico').attr('href', 'pages/marketing/ico.php');
+            $('#mailer').attr('href', 'pages/marketing/mailer.php');
+            $('#rates').attr('href', 'pages/marketing/rates.php');
+            $('#events').attr('href', 'pages/marketing/events.php');
+            $('#zip').attr('href', 'pages/marketing/zip.php');
+            $('#others').attr('href', 'pages/marketing/others.php');
+            $('#roadshows').attr('href', 'pages/marketing/roadshows.php');
+            $('#fileupload').attr('href', 'pages/marketing/fileupload.php');
+            $('#view').attr('href', 'pages/marketing/view.php');
+            $('#timesheet').attr('href', 'pages/marketing/timesheet.php');
         } else {
             // alert('HR');
             $('#socialmedia').attr('href', 'socialmedia.php');

@@ -76,7 +76,7 @@
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- User Info -->
-                    <?php include ("../../templates/userInfo.php"); ?>
+                    <?php include ("userInfo_admin.php"); ?>
                         <!-- #User Info -->
                         <!-- Menu -->
 
@@ -96,8 +96,8 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <h2>
+                        <div class="header" style="background-color: #673AB7;text-align: center;">
+                            <h2 style="color: #ffffff;">
                             EXCEL UPLOAD
                             </h2>
                         </div>

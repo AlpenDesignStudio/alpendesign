@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+    <title>Timesheet</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -75,7 +75,7 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-             <?php include ("../../templates/userInfo.php"); ?>
+             <?php include ("userInfo_admin.php"); ?>
              <!-- #User Info -->
             <!-- Menu -->
              <?php include ("../../templates/admin_menu.php"); ?>
@@ -97,8 +97,8 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <h2>
+                        <div class="header" style="background-color: #673AB7;text-align: center;">
+                            <h2 style="color: #ffffff;">
                                 TIMESHEET
                             </h2>
                             <ul class="header-dropdown m-r--5">

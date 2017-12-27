@@ -102,11 +102,11 @@ include_once 'dbconfig.php';
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- User Info -->
-                    <?php include ("../../templates/userInfo.php"); ?>
+                    <?php include ("userInfo_tech.php"); ?>
                         <!-- #User Info -->
                         <!-- Menu -->
 
-                        <?php include ("../../templates/hr_menu.php"); ?>
+                        <?php include ("../../templates/tech_menu.php"); ?>
                             <!-- #Menu -->
                             <!-- Footer -->
                             <?php include ("../../templates/footer.php"); ?>
