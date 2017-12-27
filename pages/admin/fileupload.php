@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+$fname = $_SESSION['fname']; 
+$email = $_SESSION['email']; 
+?>
+<?php
 include_once 'dbconfig.php';
 ?>
     <!DOCTYPE html>

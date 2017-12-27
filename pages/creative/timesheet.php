@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$fname = $_SESSION['fname']; 
+$email = $_SESSION['email']; 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -75,7 +81,7 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-             <?php include ("userInfo_legal.php"); ?>
+             <?php include ("userInfo_creative.php"); ?>
              <!-- #User Info -->
             <!-- Menu -->
              <?php include ("../../templates/creative_menu.php"); ?>

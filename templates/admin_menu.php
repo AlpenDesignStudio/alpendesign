@@ -22,7 +22,7 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">supervisor_account</i>
-                            <span>HR Activities</span>
+                            <span>ADMIN Activities</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
