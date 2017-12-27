@@ -1,7 +1,10 @@
 
-<?php $dpt = $_GET['dpt'];
-$email = $_GET['email'];
-
+<?php 
+session_start();
+$dpt = $_SESSION['dpt'];
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
+//print_r($password);die();
 // $dpt = $_POST['dpt'];
 // $uname = $_POST['uname'];
 ?>

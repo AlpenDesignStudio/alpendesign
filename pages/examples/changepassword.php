@@ -1,18 +1,26 @@
 <?php
 session_start();
+
+$_SESSION['password'];
+//print_r($opwd);die();
+//print_r($_SESSION);die();
 include("check.php");
 
-$email = $_GET['email'];
-$password = $_GET['pword'];
 
 
 if(isset($_POST['Submit']))
 {
-$sql=mysql_query("SELECT pword FROM  ar_visitor where pword='".$password."' && email='".$email."'");
-$num=mysql_fetch_array($sql);
-if($num>0)
-{
- $con=mysql_query("update ar_visitor set pword='".$password."' where email='".$email."'");
+$sql=mysql_query("SELECT password FROM  ar_visitor where password='".$_SESSION['password']."' && email='".$_SESSION['email']."'");
+
+  
+$row_data = mysqli_num_rows($sql);
+
+print_r($row_data);die();
+if ($row_data!=0){
+
+  $num = mysqli_fetch_array($sql,MYSQLI_ASSOC);
+
+ $con=mysql_query("update ar_visitor set password='".$_POST['npwd']."' where email='".$_SESSION['email']."'");
 $_SESSION['msg1']="Password Changed Successfully !!";
 //header('location:user.php');
 }
@@ -84,7 +92,8 @@ return true;
         <div class="row">
             <div class="col-lg-12 text-center">
                
-                   <p style="color:red;"><?php echo $_SESSION['msg1'];?><?php echo $_SESSION['msg1']="";?></p>
+                   <p style="color:red;"><?php echo $_SESSION['msg1'];?>
+                   <?php echo $_SESSION['msg1']="";?></p>
              <form name="chngpwd" action="" method="post" onSubmit="return valid();">
               <table align="center">
               <tr height="50">

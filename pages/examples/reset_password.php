@@ -1,4 +1,35 @@
+<?php
+session_start();
 
+$_SESSION['password'];
+
+include("check.php");
+
+if(isset($_POST['Submit']))
+{
+$sql=mysqli_query($con,"SELECT password FROM  ar_visitor where password='".$_SESSION['password']."' && email='".$_SESSION['email']."'");
+
+  
+$row = mysqli_fetch_row($sql);
+
+
+if ($row!=0){
+
+  $row_data = mysqli_fetch_array($sql,MYSQLI_ASSOC);
+
+$pp=$_POST['npwd'];
+$npwd = hash('sha256', $pp); // password hashing using SHA256
+ $con=mysqli_query($con,"update ar_visitor set password='".$npwd."' where email='".$_SESSION['email']."'");
+$_SESSION['msg1']="Password Changed Successfully !!";
+//header('location:user.php');
+}
+else
+{
+$_SESSION['msg1']="Old Password not match !!";
+}
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,6 +55,38 @@
 
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
+
+
+    <script type="text/javascript">
+function valid()
+{
+if(document.chngpwd.opwd.value=="")
+{
+alert("Old Password Filed is Empty !!");
+document.chngpwd.opwd.focus();
+return false;
+}
+else if(document.chngpwd.npwd.value=="")
+{
+alert("New Password Filed is Empty !!");
+document.chngpwd.npwd.focus();
+return false;
+}
+else if(document.chngpwd.cpwd.value=="")
+{
+alert("Confirm Password Filed is Empty !!");
+document.chngpwd.cpwd.focus();
+return false;
+}
+else if(document.chngpwd.npwd.value!= document.chngpwd.cpwd.value)
+{
+alert("Password and Confirm Password Field do not match  !!");
+document.chngpwd.cpwd.focus();
+return false;
+}
+return true;
+}
+</script>
 </head>
 
 <body class="fp-page">
@@ -34,6 +97,7 @@
         </div>
         <div class="card">
             <div class="body">
+           
                 <form id="forgot_password" method="POST" onSubmit="return validate_password_reset();">
 
                 
@@ -43,22 +107,15 @@
                     </div>
 
 
-                    <?php if(!empty($success_message)) { ?>
-	<div class="success_message"><?php echo $success_message; ?></div>
-	<?php } ?>
-
-	<div id="validation-message">
-		<?php if(!empty($error_message)) { ?>
-	<?php echo $error_message; ?>
-	<?php } ?>
-	</div>
+    <p style="color:red;"><?php echo $_SESSION['msg1'];?>
+                   <?php echo $_SESSION['msg1']="";?></p>
 
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Old Password" required autofocus>
+                            <input type="password" class="form-control" name="opwd" id="opwd" placeholder="Old Password" required autofocus>
                         </div>
                     </div>
 
@@ -67,7 +124,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required autofocus>
+                            <input type="password" class="form-control" name="npwd" id="npwd" placeholder="New Password" required autofocus>
                         </div>
                     </div>
 
@@ -76,12 +133,12 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="confirm Password" required autofocus>
+                            <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="confirm Password" required autofocus>
                         </div>
                     </div>
 
 
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" id="reset-password" value="Reset Password" name="reset-password" >RESET MY PASSWORD</button>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" id="reset-password" value="Reset Password" name="Submit" >RESET MY PASSWORD</button>
 
                     <div class="row m-t-20 m-b--5 align-center">
                         <a href="sign-in.php">Sign In!</a>
