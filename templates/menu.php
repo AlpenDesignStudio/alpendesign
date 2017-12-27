@@ -46,7 +46,7 @@
 
                     <!-- Contact tab -->
                     <li>
-                        <a href="">
+                        <a href="contact.php">
                             <i class="material-icons">contacts</i>
                             <span>Contact Us</span>
                         </a>
