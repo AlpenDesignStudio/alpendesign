@@ -4,18 +4,8 @@ $fname = $_SESSION['fname'];
 $email = $_SESSION['email']; 
      //echo $id;die();
 ?>
-<<<<<<< HEAD
-<div class="user-info">
-                <div class="image">
-                    <img src="images/user.png" width="48" height="48" alt="User" />
-                </div>
-                <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fname ?></div>
-                    <div class="email"><?php echo $email ?></div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-=======
+
+
     <div class="user-info">
         <div class="image">
             <img src="images/user.png" width="48" height="48" alt="User" />
@@ -26,7 +16,7 @@ $email = $_SESSION['email'];
             <div class="btn-group user-helper-dropdown">
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                 <ul class="dropdown-menu pull-right">
->>>>>>> f10b6ba1234646251d2674003443d786d7d0b6fb
+
 
                     <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li>
                     <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
