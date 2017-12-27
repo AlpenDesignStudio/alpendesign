@@ -1,3 +1,9 @@
+<?php
+session_start();
+$fname = $_SESSION['fname']; 
+$email = $_SESSION['email']; 
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

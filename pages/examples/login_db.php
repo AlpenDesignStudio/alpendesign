@@ -21,11 +21,20 @@ if ($numrows!=0){
   $row_data = mysqli_fetch_array($query,MYSQLI_ASSOC);
   $dpt = $row_data['dpt'];
 
-  $email = $row_data['email'];
+  //$email = $row_data['email'];
   $_SESSION['email']=$email;
+
   $_SESSION['password']=$row_data['password'];
+   $row_data['password']=$pass;
+
   $_SESSION['dpt']=$dpt;
- $row_data['password']=$pass;
+
+    $fname = $row_data['fname'];
+    $_SESSION['fname']=$fname;
+
+    $id = $row_data['visitor_id'];
+     $_SESSION['visitor_id']=$id;
+
 //print_r($_SESSION);die();
    header('Location: ../../home.php');
   

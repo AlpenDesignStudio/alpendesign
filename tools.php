@@ -104,7 +104,7 @@
                                     <h2>Advance Search</h2>
                                 </div>
                                 <div  class="col-xs-12 col-sm-6">
-                                    <a type="button" style="float: right;" class="btn btn-primary waves-effect" href="pages/tables/downLoaded.php">Show Downloaded Images</a>
+                                    <a type="button" style="float: right;" class="btn btn-primary waves-effect" href="downLoaded.php">Show Downloaded Images</a>
                                 </div>
                             </div>
                             

@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$fname = $_SESSION['fname']; 
+$email = $_SESSION['email']; 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -88,13 +94,13 @@
                     <div class="card">
                         <div class="header" style="background-color: #673AB7;">
                             <h2 style="text-align: center;color: #ffffff;">
-                                DOWNLOADED IMAGE
+                                UPLOADED SHEET
                             </h2>
                         </div>
                         <?php include "check.php"; ?>
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
                                             <th class="view"> Sr No</th>

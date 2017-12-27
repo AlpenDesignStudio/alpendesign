@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+$fname = $_SESSION['fname']; 
+$email = $_SESSION['email']; 
+?>
+
+<?php
 
 require('library/php-excel-reader/excel_reader2.php');
 require('library/SpreadsheetReader.php');

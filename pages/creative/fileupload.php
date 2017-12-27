@@ -1,5 +1,8 @@
 <?php
+session_start();
 include_once 'dbconfig.php';
+$fname = $_SESSION['fname']; 
+$email = $_SESSION['email']; 
 ?>
     <!DOCTYPE html>
     <html>
@@ -102,7 +105,7 @@ include_once 'dbconfig.php';
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- User Info -->
-                    <?php include ("userInfo_legal.php"); ?>
+                    <?php include ("userInfo_creative.php"); ?>
                         <!-- #User Info -->
                         <!-- Menu -->
 
