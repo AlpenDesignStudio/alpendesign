@@ -8,6 +8,21 @@
                             <span>Home</span>
                         </a>
                     </li>
+                     <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">folder</i>
+                            <span>Leaves</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="pages/admin/addLeave.php" id="addLeave">Add Leaves</a>
+                            </li>
+                            <li>
+                                <a href="pages/admin/viewleave.php" id="viewleave">All Leaves</a>
+                            </li>
+                        </ul>
+                    
+                    </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">folder</i>
@@ -76,6 +91,8 @@
                         $('#ias').attr('href','pages/admin/IAS.php');
                         $('#coverletter').attr('href','pages/admin/coverletter.php');
                         $('#timesheet').attr('href','pages/admin/timesheet.php');
+                         $('#addLeave').attr('href','pages/admin/addLeave.php');
+                          $('#viewleave').attr('href','pages/admin/viewleave.php');
                         
                     }else{
                         // alert('HR');
@@ -86,6 +103,8 @@
                         $('#ias').attr('href','IAS.php');
                         $('#coverletter').attr('href','coverletter.php');
                          $('#timesheet').attr('href','timesheet.php');
+                         $('#addLeave').attr('href','addLeave.php');
+                         $('#viewleave').attr('href','viewleave.php');
                         
                     }
                 });

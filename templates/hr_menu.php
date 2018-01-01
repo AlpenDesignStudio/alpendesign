@@ -69,6 +69,12 @@
                             <span>Timesheet</span>
                         </a>
                     </li>
+                      <li>
+            <a href="pages/hr/allLeaves.php" id="allLeaves">
+                <i class="material-icons">folder</i>
+                <span>Leaves</span>
+            </a>
+        </li>
 
                  </ul>   
             </div>
@@ -93,6 +99,7 @@
                         $('#leave').attr('href','pages/hr/leave.php');
                         $('#ias').attr('href','pages/hr/IAS.php');
                         $('#cover').attr('href','pages/hr/coverletter.php');
+                         $('#allLeaves').attr('href', 'pages/hr/allLeaves.php');
                         $('#timesheet').attr('href','pages/hr/timesheet.php');
                     }else{
                         // alert('HR');
@@ -103,6 +110,7 @@
                         $('#leave').attr('href','leave.php');
                         $('#ias').attr('href','IAS.php');
                         $('#cover').attr('href','coverletter.php');
+                        $('#allLeaves').attr('href', 'allLeaves.php');
                         $('#timesheet').attr('href','timesheet.php');
                     }
                 });

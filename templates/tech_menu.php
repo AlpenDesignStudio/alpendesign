@@ -98,6 +98,12 @@
                 <span>Timesheet</span>
             </a>
         </li>
+          <li>
+            <a href="pages/tech/allLeaves.php" id="allLeaves">
+                <i class="material-icons">folder</i>
+                <span>Leaves</span>
+            </a>
+        </li>
 
     </ul>
 </div>
@@ -125,6 +131,7 @@
                         $('#blockchain').attr('href','pages/tech/blockchain.php');
                         $('#fileupload').attr('href','pages/tech/fileupload.php');
                         $('#view').attr('href','pages/tech/view.php');
+                         $('#allLeaves').attr('href', 'pages/tech/allLeaves.php');
                         $('#timesheet').attr('href','pages/tech/timesheet.php');
                     }else{
                         // alert('HR');
@@ -138,6 +145,7 @@
                         $('#blockchain').attr('href','blockchain.php');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#view').attr('href','view.php');
+                        $('#allLeaves').attr('href', 'allLeaves.php');
                         $('#timesheet').attr('href','timesheet.php');
                     }
                 });
