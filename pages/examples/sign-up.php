@@ -150,6 +150,8 @@
                                             <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
                                         </div>
                     </div>
+
+
                     <div class="form-group">
                         <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
                         <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>

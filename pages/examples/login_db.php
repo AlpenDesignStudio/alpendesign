@@ -35,6 +35,9 @@ if ($numrows!=0){
     $id = $row_data['visitor_id'];
      $_SESSION['visitor_id']=$id;
 
+     $pic = $row_data['pic'];
+     $_SESSION['pic']=$pic;
+
 //print_r($_SESSION);die();
    header('Location: ../../home.php');
   

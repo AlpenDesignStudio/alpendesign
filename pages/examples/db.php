@@ -18,13 +18,12 @@
         $Sex = $_POST['sex'];
         $DateOfBirth = $_POST['dob'];
         $dt = date('Y-m-d H:i:s');
-
-
+        
        // password encrypt using SHA256();
         $password = hash('sha256', $pass);
 
       $query=mysqli_query($con,"INSERT INTO ar_visitor 
-      (dpt,password,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
+      (dpt,password,fname,lname,email,town,state,country,sex,dob,pic,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
 
 
 

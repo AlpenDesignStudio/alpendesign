@@ -2,13 +2,16 @@
 // $id = $_SESSION['visitor_id'];
 $fname = $_SESSION['fname']; 
 $email = $_SESSION['email'];
-    //echo $id;die();
+
+    //echo $pic;die();
 ?>
 
 
    <div class="user-info">
        <div class="image">
-           <img src="images/user.png" width="48" height="48" alt="User" />
+         <!--   <img src="images/user.png" width="48" height="48" alt="User" /> -->
+      
+
        </div>
        <div class="info-container">
            <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
@@ -21,7 +24,7 @@ $email = $_SESSION['email'];
                    <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li>
                    <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
 
-                   <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                   <li><a href="pages/examples/profile1.php"><i class="material-icons">person</i>Profile</a></li>
                    <li role="seperator" class="divider"></li>
                    <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
                    <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
