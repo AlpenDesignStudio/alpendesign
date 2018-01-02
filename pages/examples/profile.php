@@ -84,10 +84,10 @@ $email = $_SESSION['email'];
             $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
 
             // Insert record
-            $query = "insert into profile(fname,image) values('".$fname."','".$image."')";
+            //$query = "insert into profile(fname,image) values('".$fname."','".$image."')";
 
 
-
+            $query = "UPDATE profile SET image='".$image."' where fname='".$fname."' ";
            
             mysqli_query($con,$query) or die(mysqli_error($con));
 

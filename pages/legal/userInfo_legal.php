@@ -6,7 +6,7 @@ $email = $_SESSION['email'];
 
 ?>
 <div class="user-info">
-                <div class="image">
+                <div class="image" >
                 <?php
                 include 'check.php';
                 
@@ -15,7 +15,7 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
        
          while($r=mysqli_fetch_row($res))
          { 
-                 echo "<img class='btn popup_image' height='100' width='100' src='".$r[2]."'>";        
+                 echo "<img class='btn popup_image' height='50' width='50' src='".$r[2]."'>";        
         }
 
                 ?>

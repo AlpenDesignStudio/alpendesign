@@ -77,6 +77,12 @@
                 <span>Timesheet</span>
             </a>
         </li>
+          <li>
+            <a href="pages/marketing/holidays.php" id="holidays">
+                <i class="material-icons">folder</i>
+                <span>Holidays</span>
+            </a>
+        </li>
 
     </ul>
 </div>
@@ -100,6 +106,7 @@
             $('#roadshows').attr('href', 'pages/marketing/roadshows.php');
             $('#fileupload').attr('href', 'pages/marketing/fileupload.php');
             $('#view').attr('href', 'pages/marketing/view.php');
+            $('#holidays').attr('href', 'pages/marketing/holidays.php');
             $('#timesheet').attr('href', 'pages/marketing/timesheet.php');
         } else {
             // alert('HR');
@@ -116,6 +123,7 @@
             $('#roadshows').attr('href', 'roadshows.php');
             $('#fileupload').attr('href', 'fileupload.php');
             $('#view').attr('href', 'view.php');
+            $('#holidays').attr('href', 'holidays.php');
             $('#timesheet').attr('href', 'timesheet.php');
         }
     });

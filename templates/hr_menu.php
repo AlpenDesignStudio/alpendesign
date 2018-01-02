@@ -90,6 +90,12 @@
                             <span>Timesheet</span>
                         </a>
                     </li>
+                      <li>
+            <a href="pages/hr/holidays.php" id="holidays">
+                <i class="material-icons">folder</i>
+                <span>holidays</span>
+            </a>
+        </li>
 
                  </ul>   
             </div>
@@ -115,6 +121,7 @@
                         $('#leave').attr('href','pages/hr/leave.php');
                         $('#ias').attr('href','pages/hr/IAS.php');
                         $('#cover').attr('href','pages/hr/coverletter.php');
+                         $('#holidays').attr('href', 'pages/hr/holidays.php');
                         $('#timesheet').attr('href','pages/hr/timesheet.php');
                     }else{
                         // alert('HR');
@@ -126,6 +133,7 @@
                         $('#leave').attr('href','leave.php');
                         $('#ias').attr('href','IAS.php');
                         $('#cover').attr('href','coverletter.php');
+                        $('#holidays').attr('href', 'holidays.php');
                         $('#timesheet').attr('href','timesheet.php');
                     }
                 });

@@ -33,6 +33,12 @@
                             <span>Timesheet</span>
                         </a>
                     </li>
+                    <li>
+            <a href="pages/hr/holidays.php" id="holidays">
+                <i class="material-icons">folder</i>
+                <span>holidays</span>
+            </a>
+        </li>
 
                  </ul>   
             </div>
@@ -53,11 +59,13 @@
                         $('#fileupload').attr('href','pages/creative/fileupload.php');
                         $('#view').attr('href','pages/creative/view.php');
                         $('#timesheet').attr('href','pages/creative/timesheet.php');
+                        $('#holidays').attr('href', 'pages/creative/holidays.php');
                     }else{
                         // alert('HR');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#view').attr('href','view.php');
                         $('#timesheet').attr('href','timesheet.php');
+                         $('#holidays').attr('href', 'holidays.php');
                     }
                 });
             </script>

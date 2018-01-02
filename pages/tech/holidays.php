@@ -2,7 +2,8 @@
 session_start();
 
 $fname = $_SESSION['fname']; 
-$email = $_SESSION['email']; 
+$email = $_SESSION['email'];
+ 
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ $email = $_SESSION['email'];
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Timesheet</title>
+    <title>Holidays</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -82,10 +83,10 @@ $email = $_SESSION['email'];
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-             <?php include ("userInfo_admin.php"); ?>
+             <?php include ("userInfo_tech.php"); ?>
              <!-- #User Info -->
             <!-- Menu -->
-             <?php include ("../../templates/admin_menu.php"); ?>
+             <?php include ("../../templates/tech_menu.php"); ?>
             <!-- #Menu -->
             <!-- Footer -->
              <?php include ("../../templates/footer.php"); ?>
@@ -106,7 +107,7 @@ $email = $_SESSION['email'];
                     <div class="card">
                         <div class="header" style="background-color: #673AB7;text-align: center;">
                             <h2 style="color: #ffffff;">
-                                TIMESHEET
+                                ALL HOLIDAYS
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -127,36 +128,38 @@ $email = $_SESSION['email'];
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                        <th> SR.NO</th>
-                                        <th> Name</th>
-                                            <th> Dpartment</th> 
-                                            <th> Start Time</th>
-                                            <th>  End Time</th> 
+                                      <th class="view"> Leave Category</th>
+                                           <th class="view"> From</th>
+                                            <th class="view"> To</th>
+                                            <th class="view"> Cause</th> 
+                                            
                                          
                                         </tr>
                                     </thead>
-                          
+                             
                                     <tbody>
 
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time from  timesheet");
+            $res=mysqli_query($con,"Select leave_cat,leave_date,leave_datee,leave_cause from   holidays");
 
        
          while($r=mysqli_fetch_row($res))
          {
-            // print_r($r);die;
+             
           echo "<tr>";
                  echo "<td align='center'>$r[0]</td>";
+                 //echo $r[0];die;
                  echo "<td alig='center' width=''> $r[1]</td>";
                   echo "<td alig='center' width=''> $r[2]</td>";
-                 echo "<td alig='center' width=''> $r[3]</td>";
-                  echo "<td alig='center' width=''> $r[4]</td>";
-               
+                    echo "<td alig='center' width=''> $r[3]</td>";
                  echo "</tr>";
+
         }
+
     }
+ 
 ?> 
                             </tbody>
  

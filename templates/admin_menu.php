@@ -8,6 +8,21 @@
                             <span>Home</span>
                         </a>
                     </li>
+                     <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">folder</i>
+                            <span>Holidays</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="pages/admin/holidays.php" id="holidays">Add Holidays</a>
+                            </li>
+                            <li>
+                                <a href="pages/admin/viewholidays.php" id="viewholidays">View Holidays</a>
+                            </li>
+                        </ul>
+                    
+                    </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">folder</i>
@@ -80,6 +95,8 @@
                         $('#ias').attr('href','pages/admin/IAS.php');
                         $('#coverletter').attr('href','pages/admin/coverletter.php');
                         $('#timesheet').attr('href','pages/admin/timesheet.php');
+                         $('#holidays').attr('href','pages/admin/holidays.php');
+                          $('#viewholidays').attr('href','pages/admin/viewholidays.php');
                         
                     }else{
                         // alert('HR');
@@ -91,6 +108,8 @@
                         $('#ias').attr('href','IAS.php');
                         $('#coverletter').attr('href','coverletter.php');
                          $('#timesheet').attr('href','timesheet.php');
+                         $('#holidays').attr('href','holidays.php');
+                         $('#viewholidays').attr('href','viewholidays.php');
                         
                     }
                 });

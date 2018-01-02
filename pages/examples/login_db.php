@@ -15,8 +15,9 @@ $last_id=mysql_insert_id();
 
 $query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
 
-$query1=mysqli_query($con,"INSERT INTO timesheet (sr,dpt,uname,pword,visitor_id,start_time,end_time)
-  VALUES('".$sr."','".$dpt."','".$userName."','".$password."','".$last_id."','".$dt."','".$dt."')");
+    // $query1 = "insert into timesheet
+    // (sr,dpt,uname,pword,visitor_id,start_time,end_time) values('".$sr."')";
+
   
 $numrows = mysqli_num_rows($query);
 
