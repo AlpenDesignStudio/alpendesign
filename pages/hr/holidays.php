@@ -17,7 +17,7 @@ $email = $_SESSION['email'];
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Leaves</title>
+    <title>Holidays</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -83,10 +83,10 @@ $email = $_SESSION['email'];
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-             <?php include ("userInfo_marketing.php"); ?>
+             <?php include ("userInfo_hr.php"); ?>
              <!-- #User Info -->
             <!-- Menu -->
-             <?php include ("../../templates/marketing_menu.php"); ?>
+             <?php include ("../../templates/hr_menu.php"); ?>
             <!-- #Menu -->
             <!-- Footer -->
              <?php include ("../../templates/footer.php"); ?>
@@ -107,7 +107,7 @@ $email = $_SESSION['email'];
                     <div class="card">
                         <div class="header" style="background-color: #673AB7;text-align: center;">
                             <h2 style="color: #ffffff;">
-                                ALL LEAVES
+                                ALL HOLIDAYS
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -127,9 +127,10 @@ $email = $_SESSION['email'];
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
-                                        <tr>
-                                        <th class="view"> Leave Category</th>
-                                        <th class="view"> Date</th>
+                                        <tr> 
+                                         <th class="view"> Leave Category</th>
+                                           <th class="view"> From</th>
+                                            <th class="view"> To</th>
                                             <th class="view"> Cause</th> 
                                             
                                          
@@ -141,7 +142,7 @@ $email = $_SESSION['email'];
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select leave_cat,leave_date,leave_cause from   leaves");
+            $res=mysqli_query($con,"Select leave_cat,leave_date,leave_datee,leave_cause from   holidays");
 
        
          while($r=mysqli_fetch_row($res))
@@ -152,6 +153,9 @@ $email = $_SESSION['email'];
                  //echo $r[0];die;
                  echo "<td alig='center' width=''> $r[1]</td>";
                   echo "<td alig='center' width=''> $r[2]</td>";
+                   echo "<td alig='center' width=''> $r[3]</td>";
+                   
+
                  echo "</tr>";
 
         }

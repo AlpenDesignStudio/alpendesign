@@ -99,9 +99,9 @@
             </a>
         </li>
           <li>
-            <a href="pages/tech/allLeaves.php" id="allLeaves">
+            <a href="pages/tech/holidays.php" id="holidays">
                 <i class="material-icons">folder</i>
-                <span>Leaves</span>
+                <span>Holidays</span>
             </a>
         </li>
 
@@ -131,7 +131,7 @@
                         $('#blockchain').attr('href','pages/tech/blockchain.php');
                         $('#fileupload').attr('href','pages/tech/fileupload.php');
                         $('#view').attr('href','pages/tech/view.php');
-                         $('#allLeaves').attr('href', 'pages/tech/allLeaves.php');
+                         $('#holidays').attr('href', 'pages/tech/holidays.php');
                         $('#timesheet').attr('href','pages/tech/timesheet.php');
                     }else{
                         // alert('HR');
@@ -145,7 +145,7 @@
                         $('#blockchain').attr('href','blockchain.php');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#view').attr('href','view.php');
-                        $('#allLeaves').attr('href', 'allLeaves.php');
+                        $('#holidays').attr('href', 'holidays.php');
                         $('#timesheet').attr('href','timesheet.php');
                     }
                 });

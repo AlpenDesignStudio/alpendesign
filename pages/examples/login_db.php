@@ -14,6 +14,9 @@ include('check.php');
 
 $query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
 
+    // $query1 = "insert into timesheet
+    // (sr,dpt,uname,pword,visitor_id,start_time,end_time) values('".$sr."')";
+
   
 $numrows = mysqli_num_rows($query);
 
@@ -39,13 +42,13 @@ if ($numrows!=0){
    header('Location: ../../home.php');
   
 }else{
-      die("incorrect username/password!");
-session_destroy();
+  die("<br/>Sorry, incorrect username/password!"); 
+
 
 }
 }else{
-echo "user does not exist!";
-session_destroy();
+die("<br/>Sorry, incorrect username/password!"); 
+
 }
 
 // else{

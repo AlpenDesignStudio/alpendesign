@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Add Leaves</title>
+    <title>Add Holidays</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -40,8 +40,8 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_up" name="contact-form" method="POST" action="addleavedb.php">
-                    <div class="msg">Add a new Leave</div>
+                <form id="sign_up" name="contact-form" method="POST" action="holidaysdb.php">
+                    <div class="msg">Add a new Holiday</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -78,6 +78,17 @@
                                           
                                         </div>
                     </div>
+
+                    <div class="input-group">
+
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                                        <div class="form-line">
+                                        <input type="date" class="form-control" placeholder="Date Of Occasion" name="leave_datee" required>
+                                          
+                                        </div>
+                    </div>
                   
 
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit"> ADD</button>
@@ -85,7 +96,7 @@
             
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
-                            <a href="viewleave.php">All Leaves</a>
+                            <a href="viewholidays.php">All Holidays</a>
                         </div>
                         <div class="col-xs-6 align-right">
                             <a href="../../home.php">Back to Dashboard</a>

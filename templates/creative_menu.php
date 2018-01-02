@@ -34,9 +34,9 @@
                         </a>
                     </li>
                     <li>
-            <a href="pages/hr/allLeaves.php" id="allLeaves">
+            <a href="pages/hr/holidays.php" id="holidays">
                 <i class="material-icons">folder</i>
-                <span>Leaves</span>
+                <span>holidays</span>
             </a>
         </li>
 
@@ -59,13 +59,13 @@
                         $('#fileupload').attr('href','pages/creative/fileupload.php');
                         $('#view').attr('href','pages/creative/view.php');
                         $('#timesheet').attr('href','pages/creative/timesheet.php');
-                        $('#allLeaves').attr('href', 'pages/creative/allLeaves.php');
+                        $('#holidays').attr('href', 'pages/creative/holidays.php');
                     }else{
                         // alert('HR');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#view').attr('href','view.php');
                         $('#timesheet').attr('href','timesheet.php');
-                         $('#allLeaves').attr('href', 'allLeaves.php');
+                         $('#holidays').attr('href', 'holidays.php');
                     }
                 });
             </script>

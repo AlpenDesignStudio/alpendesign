@@ -10,7 +10,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id']))
 $id = $_GET['id'];
 
 // delete record from database
-if ($stmt = $mysqli->prepare("DELETE FROM leaves WHERE id = ? LIMIT 1"))
+if ($stmt = $mysqli->prepare("DELETE FROM holidays WHERE id = ? LIMIT 1"))
 {
 $stmt->bind_param("i",$id);
 $stmt->execute();
@@ -23,12 +23,12 @@ echo "ERROR: could not prepare SQL statement.";
 $mysqli->close();
 
 // redirect user after delete is successful
-header("Location: viewleave.php");
+header("Location: viewholidays.php");
 }
 else
 // if the 'id' variable isn't set, redirect the user
 {
-header("Location: viewleave.php");
+header("Location: viewholidays.php");
 }
 
 ?>

@@ -131,7 +131,7 @@ include_once 'dbconfig.php';
                             <div class="card" >
                                 <div class="header" style="background-color: #673AB7;">
                                     <h2 style="text-align: center;color: #ffffff;">
-                                VIEW LEAVES
+                                VIEW HOLIDAYS
                             </h2>
                                 </div>
                                 <div class="body">
@@ -141,8 +141,8 @@ include_once 'dbconfig.php';
                                         <tr>
                                         <th class="view"> Sr. No</th> 
                                         <th class="view"> Leave Category</th>
-                                            <th class="view"> Date</th>
-                                            
+                                            <th class="view"> From</th>
+                                            <th class="view"> To</th>
                                             <th class="view">Occasion</th> 
                                          <th class="view">Action</th> 
                                         </tr>
@@ -156,7 +156,7 @@ include_once 'dbconfig.php';
 include('connect-db.php');
 
 // get the records from the database
-if ($result = $mysqli->query("SELECT * FROM leaves ORDER BY id"))
+if ($result = $mysqli->query("SELECT * FROM holidays ORDER BY id"))
 {
 // display records if there are records to display
 if ($result->num_rows > 0)
@@ -169,11 +169,13 @@ if ($result->num_rows > 0)
 
 while ($row = $result->fetch_object())
 {
+    
 // set up a row for each record
 echo "<tr>";
 echo "<td>" . $row->id . "</td>";
 echo "<td>" . $row->leave_cat . "</td>";
 echo "<td>" . $row->leave_date . "</td>";
+echo "<td>" . $row->leave_datee . "</td>";
 echo "<td>" . $row->leave_cause . "</td>";
 echo "<td>
 

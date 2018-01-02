@@ -157,7 +157,7 @@
         </li>
 
           <li>
-            <a href="pages/legal/allLeaves.php" id="allLeaves">
+            <a href="pages/legal/holidays.php" id="holidays">
                 <i class="material-icons">folder</i>
                 <span>Leaves</span>
             </a>
@@ -198,7 +198,7 @@
             $('#adsldocuments').attr('href', 'pages/legal/adsldocuments.php');
             $('#wudtools').attr('href', 'pages/legal/wudtools.php');
             $('#timesheet').attr('href', 'pages/legal/timesheet.php');
-             $('#allLeaves').attr('href', 'pages/legal/allLeaves.php');
+             $('#holidays').attr('href', 'pages/legal/holidays.php');
              $('#editor').attr('href', 'pages/legal/editor.php');
 
             
@@ -219,7 +219,7 @@
             $('#adsldocuments').attr('href', 'adsldocuments.php');
             $('#wudtools').attr('href', 'wudtools.php');
             $('#timesheet').attr('href', 'timesheet.php');
-             $('#allLeaves').attr('href', 'allLeaves.php');
+             $('#holidays').attr('href', 'holidays.php');
             $('#editor').attr('href', 'editor.php');
         }
     });

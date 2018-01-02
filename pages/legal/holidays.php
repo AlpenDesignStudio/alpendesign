@@ -17,7 +17,7 @@ $email = $_SESSION['email'];
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Leaves</title>
+    <title>Holidays</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -107,7 +107,7 @@ $email = $_SESSION['email'];
                     <div class="card">
                         <div class="header" style="background-color: #673AB7;text-align: center;">
                             <h2 style="color: #ffffff;">
-                                ALL LEAVES
+                                ALL HOLIDAYS
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -129,7 +129,8 @@ $email = $_SESSION['email'];
                                     <thead>
                                         <tr>
                                         <th class="view"> Leave Category</th>
-                                        <th class="view"> Date</th>
+                                        <th class="view"> From</th>
+                                            <th class="view"> To</th>
                                             <th class="view"> Cause</th> 
                                             
                                          
@@ -141,7 +142,7 @@ $email = $_SESSION['email'];
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select leave_cat,leave_date,leave_cause from   leaves");
+            $res=mysqli_query($con,"Select leave_cat,leave_date,leave_datee,leave_cause from   holidays");
 
        
          while($r=mysqli_fetch_row($res))
