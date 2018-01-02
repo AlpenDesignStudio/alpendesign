@@ -30,10 +30,10 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
                <ul class="dropdown-menu pull-right">
 
 
-                   <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li>
-                   <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
+                   <li><a href="pages/examples/reset_password.php" id="reset_password"><i class="material-icons">person</i>Reset Password</a></li>
+                   <li><a href="pages/examples/forgot-password.php" id="forgot-password"><i class="material-icons">person</i>Forgot Password</a></li>
 
-                   <li><a href="pages/examples/profile.php"><i class="material-icons">person</i>Profile</a></li>
+                   <li><a href="pages/examples/profile.php" id="profile"><i class="material-icons">person</i>Profile</a></li>
                    <li role="seperator" class="divider"></li>
                    <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
                    <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
@@ -52,10 +52,16 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
            console.log(window.location.pathname);
            if (window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php') {
                // alert('Home');
-               $('#logout').attr('href', 'pages/admin/logout.php');
+                $('#reset_password').attr('href', 'pages/examples/reset_password.php');
+                 $('#forgot-password').attr('href', 'pages/examples/forgot-password.php');
+                  $('#profile').attr('href', 'pages/examples/profile.php');
+               $('#logout').attr('href', 'pages/examples/logout.php');
 
            } else {
                // alert('HR');
+               $('#reset_password').attr('href', 'reset_password.php');
+               $('#forgot-password').attr('href', 'forgot-password.php');
+               $('#profile').attr('href', 'profile.php');
                $('#logout').attr('href', 'logout.php');
            }
        });
