@@ -1,11 +1,3 @@
-<?php
-session_start();
-// $id = $_SESSION['visitor_id'];
-$fname = $_SESSION['fname']; 
-$email = $_SESSION['email']; 
-     //echo $id;die();
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -38,29 +30,7 @@ $email = $_SESSION['email'];
 
      <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-<style>
-/*body{width:50%;min-width:200px;font-family:arial;}*/
-/*#frmDemo {background: #98E6DB;padding: 40px;overflow:auto;}*/
-#btn-submit{padding: 10px 20px;background: #555;border: 0;color: #FFF;display:inline-block;margin-top:20px;cursor: pointer;font-size: medium;}
-#btn-submit:focus{outline:none;}
-.input-control{padding:10px;width:100%;}
-.input-group{margin-top:10px;}
-#error_message{
-    background: #E91E63 !important;
-}
-#success_message{
-    background: #E91E63 !important;
-}
-.ajax_response {
-    padding: 10px 20px;
-    border: 0;
-    display: inline-block;
-    margin-top: 20px;
-    cursor: pointer;
-    display:none;
-    color:#555;
-}
-</style>
+
 </head>
 
 <body style="background-color: #00BCD4;" >
@@ -79,67 +49,44 @@ $email = $_SESSION['email'];
                             </h2>
                         </div>
                         <div class="body">
-<?php
-    include("check.php");
- 
-    if(isset($_POST['but_upload'])){
-        
-        $name = $_FILES['file']['name'];
-        $target_dir = "profile/";
-        $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-        // Select file type
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-        // Valid file extensions
-        $extensions_arr = array("jpg","jpeg","png","gif");
-
-     
-    
-
-
-        // Check extension
-        if( in_array($imageFileType,$extensions_arr) ){
-            
-            // Convert to base64 
-            $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
-            $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-
-            // Insert record
-            //$query = "insert into profile(fname,image) values('".$fname."','".$image."')";
-
-
-            $query = "UPDATE profile SET image='".$image."' where fname='".$fname."' ";
+        <div class="row">
+           <?php 
+            //scan "uploads" folder and display them accordingly
+           $folder = "uploads";
+           $results = scandir('uploads');
+           foreach ($results as $result) {
+            if ($result === '.' or $result === '..') continue;
            
-            mysqli_query($con,$query) or die(mysqli_error($con));
+            if (is_file($folder . '/' . $result)) {
+                echo '
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="thumbnail" style="text-align:center;">
+                        <img src="'.$folder . '/' . $result.'" alt="..." >
+                            <div class="caption">
+                            <p><a href="remove.php?name='.$result.'" class="btn btn-danger btn-xs" role="button">Remove</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>';
+            }
+           }
 
-      
-            
-            // Upload file
-            move_uploaded_file($_FILES['file']['tmp_name'],'profile/'.$fname);
-
-        }
-     
-
-       
-    }
-
-           
-    ?>
+          echo '<img src="'.$folder . '/' . $result.'" alt="..." width="48" height="48" >';
+           ?>
+        </div>
            
 
         <div class="row" >
             <div class="col-lg-12">
-               <form id="frmDemo" class="well" action="" method="post" enctype="multipart/form-data">
+               <form class="well" action="upload.php" method="post" enctype="multipart/form-data">
                   <div class="form-group" >
                     <label for="file" >SELECT A PICTURE TO UPLOAD</label>
                     <input type="file" name="file" >
                     
                   </div>
-                  <input  name='btn-submit' type="submit" class="btn btn-lg btn-primary" value="Upload" style="background-color: #673AB7!important;">
-
-                  <div id="error_message" class="ajax_response" style="float:left"></div>
-    <div id="success_message" class="ajax_response" style="float:left"></div>
+                  <input type="submit" class="btn btn-lg btn-primary" value="Upload" style="background-color: #673AB7!important;">
                 </form>
             </div>
           </div>
@@ -155,32 +102,7 @@ $email = $_SESSION['email'];
         </div>
     </section> 
 
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
-<script>
-$("#frmDemo").submit(function(e) {
-    e.preventDefault();
-    var name = $("#name").val();
-    var comment = $("#comment").val();
-    
-    if(name == "" || comment == "" ) {
-        $("#error_message").show().html("All Fields are Required");
-    } else {
-        $("#error_message").html("").hide();
-        $.ajax({
-            type: "POST",
-            url: "post-form.php",
-            data: "name="+name+"&comment="+comment,
-            success: function(data){
-                $('#success_message').fadeIn().html(data);
-                setTimeout(function() {
-                    $('#success_message').fadeOut("slow");
-                }, 2000 );
 
-            }
-        });
-    }
-})
-</script>   
 
 
 

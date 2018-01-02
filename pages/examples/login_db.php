@@ -11,6 +11,7 @@ include('check.php');
  $password = hash('sha256', $pass); // password hashing using SHA256
 
 //print_r($password);die();
+$last_id=mysql_insert_id();
 
 $query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
 
@@ -31,24 +32,31 @@ if ($numrows!=0){
    $row_data['password']=$pass;
 
   $_SESSION['dpt']=$dpt;
+   $row_data['dpt']=$dpt;
 
-    $fname = $row_data['fname'];
-    $_SESSION['fname']=$fname;
+  $fname = $row_data['fname'];
+  $_SESSION['fname']=$fname;
 
-    $id = $row_data['visitor_id'];
-     $_SESSION['visitor_id']=$id;
+  $id = $row_data['visitor_id'];
+  $_SESSION['visitor_id']=$id;
+
+  $pic = $row_data['pic'];
+  $_SESSION['pic']=$pic;
 
 //print_r($_SESSION);die();
    header('Location: ../../home.php');
   
-}else{
-  die("<br/>Sorry, incorrect username/password!"); 
-
+}
+else{
+      die("incorrect username/password!");
+session_destroy();
 
 }
-}else{
-die("<br/>Sorry, incorrect username/password!"); 
+}
 
+else{
+echo "user does not exist!";
+session_destroy();
 }
 
 // else{

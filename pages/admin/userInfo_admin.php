@@ -2,7 +2,8 @@
 // $id = $_SESSION['visitor_id'];
 $fname = $_SESSION['fname']; 
 $email = $_SESSION['email'];
-    //echo $id;die();
+
+    //echo $pic;die();
 ?>
 
 

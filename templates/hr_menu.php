@@ -12,6 +12,23 @@
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">folder</i>
+                            <span>Leave Application</span>
+                        </a>
+                        <ul class="ml-menu">
+                              <li>
+                                <a href="pages/hr/leaveapplication.php" id="leaveapp">Leave Application</a>
+                            </li>
+                             <li>
+                                <a href="pages/hr/leavedisplay.php" id="leaveapp">View Leave Application</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">folder</i>
                             <span>Files</span>
                         </a>
                         <ul class="ml-menu">
@@ -22,6 +39,10 @@
                             <li>
                                 <a href="pages/hr/view.php" id="view">View Uploaded Files</a>
                             </li>
+                              <li>
+                                <a href="pages/hr/leaveapplication.php" id="leaveapp">Leave Application</a>
+                            </li>
+
 
                         </ul>
                     </li>
@@ -96,6 +117,7 @@
                         $('#leave_reg').attr('href','pages/hr/excel.php');
                         $('#uploaded').attr('href','pages/hr/excelSheet.php');
                         $('#view').attr('href','pages/hr/view.php');
+                        $('#leaveapp').attr('href','pages/hr/leaveapplication.php');
                         $('#leave').attr('href','pages/hr/leave.php');
                         $('#ias').attr('href','pages/hr/IAS.php');
                         $('#cover').attr('href','pages/hr/coverletter.php');
@@ -107,6 +129,7 @@
                         $('#leave_reg').attr('href','excel.php');
                         $('#uploaded').attr('href','excelSheet.php');
                         $('#view').attr('href','view.php');
+                         $('#leaveapp').attr('href','leaveapplication.php');
                         $('#leave').attr('href','leave.php');
                         $('#ias').attr('href','IAS.php');
                         $('#cover').attr('href','coverletter.php');

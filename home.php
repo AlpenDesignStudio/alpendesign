@@ -13,7 +13,32 @@ $password = $_SESSION['password'];
 <!DOCTYPE html>
 <html>
 
-<?php include "templates/header.php";?>   
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Buttons | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+</head>
 
 <body class="theme-red">
     <!-- Page Loader -->
@@ -59,8 +84,7 @@ $password = $_SESSION['password'];
             include('pages/creative/userInfo_creative.php');
         }
         ?>
-
-        
+     
             <!-- #User Info -->
             <!-- Menu -->
         <?php if($dpt == 1){
@@ -99,8 +123,31 @@ $password = $_SESSION['password'];
                 <h2>DASHBOARD</h2>
             </div>
 
-            <!-- Widgets -->
             <div class="row clearfix">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect" type="button">
+                        <div class="icon">
+                            <i class="material-icons">lock</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">LOGIN</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect" type="button">
+                        <div class="icon">
+                            <i class="material-icons">lock</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">LOGOUT</div>
+                        </div>
+                    </div>
+                </div></div>
+
+            <!-- Widgets -->
+           <!--  <div class="row clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-pink hover-expand-effect">
                         <div class="icon">
@@ -145,7 +192,7 @@ $password = $_SESSION['password'];
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- #END# Widgets -->
             <!-- CPU Usage -->
             <div class="row clearfix">

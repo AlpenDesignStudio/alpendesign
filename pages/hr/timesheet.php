@@ -2,8 +2,13 @@
 session_start();
 
 $fname = $_SESSION['fname']; 
-$email = $_SESSION['email']; 
+$email = $_SESSION['email'];
+$uname = $_SESSION['uname']; 
+$dpt = $_SESSION['dpt'];
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -115,41 +120,37 @@ $email = $_SESSION['email'];
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                        <th class="view"> SR.NO</th>
-                                        <th class="view"> Name</th>
-                                            <th class="view"> Dpartment</th> 
-                                            <th class="view"> Start Time</th>
-                                            <th class="view">  End Time</th> 
-                                         
+                                        <th class="view"> Date</th> 
+                                        <th class="view"> Start Time</th>
+                                        <th class="view"> End Time</th>    
+                                         <th class="view"> Total </th> 
                                         </tr>
                                     </thead>
-                                <!--     <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                          
-                                        </tr>
-                                    </tfoot> -->
                                     <tbody>
 
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
-  {        
-            $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time from  timesheet");
+  {     
 
+    $res=mysqli_query($con,"Select date,start_time,end_time from timesheet");
+ 
+    // $t1= strtotime($start_time);
+    // $t2= strtotime($end_time);
+    
+  
        
          while($r=mysqli_fetch_row($res))
          {
+    $start_time = $r[2];
+    $end_time = $r[3];  
+    $t3 = $start_time - $end_time;
             // print_r($r);die;
-          echo "<tr>";
-                 echo "<td align='center'>$r[0]</td>";
+                 echo "<tr>";
+                
+                 echo "<td alig='center' width=''> $r[0]</td>";
                  echo "<td alig='center' width=''> $r[1]</td>";
-                  echo "<td alig='center' width=''> $r[2]</td>";
-                 echo "<td alig='center' width=''> $r[3]</td>";
-                  echo "<td alig='center' width=''> $r[4]</td>";
-               
+                 echo "<td alig='center' width=''> $r[2]</td>";
+                 echo "<td alig='center' width=''> echo $t3</td>";
                  echo "</tr>";
         }
     }
