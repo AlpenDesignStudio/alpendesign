@@ -1,8 +1,9 @@
 <?php
 session_start();
-
+// $id = $_SESSION['visitor_id'];
 $fname = $_SESSION['fname']; 
 $email = $_SESSION['email']; 
+     //echo $id;die();
 ?>
 
 
@@ -13,7 +14,6 @@ $email = $_SESSION['email'];
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Profile</title>
-
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -33,68 +33,23 @@ $email = $_SESSION['email'];
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+     <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+     <!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
 </head>
 
-<body class="theme-red">
-    <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
-        </div>
-    </div>
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="search-icon">
-            <i class="material-icons">search</i>
-        </div>
-        <input type="text" placeholder="START TYPING...">
-        <div class="close-search">
-            <i class="material-icons">close</i>
-        </div>
-    </div>
-    <!-- #END# Search Bar -->
-    <!-- Top Bar -->
-        <?php include ("../../templates/top.php"); ?>
-            <!-- #Top Bar -->
-            <section>
-                <!-- Left Sidebar -->
-                <aside id="leftsidebar" class="sidebar">
-                    <!-- User Info -->
-                 <?php include ("../../pages/hr/userInfo_hr.php"); ?>
-                        <!-- #User Info -->
-                        <!-- Menu -->
+<body style="background-color: #00BCD4;" >
 
-                        <?php include ("../../templates/hr_menu.php"); ?>
-                            <!-- #Menu -->
-                            <!-- Footer -->
-                            <?php include ("../../templates/footer.php"); ?>
-                                <!-- #Footer -->
-                </aside>
-
-            </section>
-
-    <section class="content">
+  <section class="content">
         <div class="container-fluid">
 
             <!-- Body Copy -->
             <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                     <div class="card">
                         <div class="header" style="background-color: #673AB7;text-align: center;">
                             <h2 style="color: #ffffff;">
@@ -102,44 +57,64 @@ $email = $_SESSION['email'];
                             </h2>
                         </div>
                         <div class="body">
+<?php
+    include("check.php");
+ 
+    if(isset($_POST['but_upload'])){
+        
+        $name = $_FILES['file']['name'];
+        $target_dir = "profile/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-        <div class="row">
-           <?php 
-            //scan "uploads" folder and display them accordingly
-           $folder = "uploads";
-           $results = scandir('uploads');
-           foreach ($results as $result) {
-            if ($result === '.' or $result === '..') continue;
+        // Select file type
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        // Valid file extensions
+        $extensions_arr = array("jpg","jpeg","png","gif");
+
+     
+    
+
+
+        // Check extension
+        if( in_array($imageFileType,$extensions_arr) ){
+            
+            // Convert to base64 
+            $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
+            $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+
+            // Insert record
+            $query = "insert into profile(fname,image) values('".$fname."','".$image."')";
+
+
+
            
-            if (is_file($folder . '/' . $result)) {
-                echo '
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="thumbnail" style="text-align:center;">
-                        <img src="'.$folder . '/' . $result.'" alt="..." >
-                            <div class="caption">
-                            <p><a href="remove.php?name='.$result.'" class="btn btn-danger btn-xs" role="button">Remove</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2"></div>';
-            }
-           }
+            mysqli_query($con,$query) or die(mysqli_error($con));
 
-          echo '<img src="'.$folder . '/' . $result.'" alt="..." width="48" height="48" >';
-           ?>
-        </div>
+      
+            
+            // Upload file
+            move_uploaded_file($_FILES['file']['tmp_name'],'profile/'.$fname);
+
+        }
+     
+
+       
+    }
+
+           
+    ?>
            
 
         <div class="row" >
             <div class="col-lg-12">
-               <form class="well" action="upload.php" method="post" enctype="multipart/form-data">
+               <form class="well" action="" method="post" enctype="multipart/form-data">
                   <div class="form-group" >
                     <label for="file" >SELECT A PICTURE TO UPLOAD</label>
                     <input type="file" name="file" >
                     
                   </div>
-                  <input type="submit" class="btn btn-lg btn-primary" value="Upload" style="background-color: #673AB7!important;">
+                  <input  name='but_upload' type="submit" class="btn btn-lg btn-primary" value="Upload" style="background-color: #673AB7!important;">
                 </form>
             </div>
           </div>
@@ -149,10 +124,27 @@ $email = $_SESSION['email'];
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
             </div>
             
         </div>
-    </section>
+    </section> 
+
+
+
+
+
+
+
+
+     <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+      <!-- Select Plugin Js -->
+    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -160,20 +152,18 @@ $email = $_SESSION['email'];
     <!-- Bootstrap Core Js -->
     <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
+    <!-- Validation Plugin Js -->
+    <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
+    <!-- Custom Js -->
+   
+    <script src="../../js/pages/forms/basic-form-elements.js"></script>
+
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
-
-    <!-- Demo Js -->
-    <script src="../../js/demo.js"></script>
+    <script src="../../js/pages/examples/sign-up.js"></script>
 </body>
 
 </html>

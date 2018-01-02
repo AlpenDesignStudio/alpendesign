@@ -29,6 +29,9 @@
                                 <a href="pages/admin/excel.php" id="excel">Leave Register</a>
                             </li>
                             <li>
+                                <a href="pages/admin/leavedisplay.php" id="leaveapp">Leave Display</a>
+                            </li>
+                            <li>
                                 <a href="pages/admin/excelSheet.php" id="sheet">Uploaded Sheet</a>
                             </li>
                         </ul>
@@ -71,6 +74,7 @@
                             // alert('Home');
                         $('#fileupload').attr('href','pages/admin/fileupload.php');
                         $('#excel').attr('href','pages/admin/excel.php');
+                        $('#leaveapp').attr('href','pages/admin/leavedisplay.php');
                         $('#sheet').attr('href','pages/admin/excelSheet.php');
                         $('#leave').attr('href','pages/admin/leave.php');
                         $('#ias').attr('href','pages/admin/IAS.php');
@@ -81,6 +85,7 @@
                         // alert('HR');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#excel').attr('href','excel.php');
+                        $('#leaveapp').attr('href','leavedisplay.php');
                         $('#sheet').attr('href','excelSheet.php');
                         $('#leave').attr('href','leave.php');
                         $('#ias').attr('href','IAS.php');

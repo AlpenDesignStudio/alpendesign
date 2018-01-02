@@ -17,6 +17,7 @@
         $country = $_POST['country'];
         $Sex = $_POST['sex'];
         $DateOfBirth = $_POST['dob'];
+        
         $dt = date('Y-m-d H:i:s');
         
        // password encrypt using SHA256();

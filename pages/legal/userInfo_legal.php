@@ -3,10 +3,23 @@
 $fname = $_SESSION['fname']; 
 $email = $_SESSION['email']; 
      //echo $id;die();
+
 ?>
 <div class="user-info">
                 <div class="image">
-                    <img src="images/user.png" width="48" height="48" alt="User" />
+                <?php
+                include 'check.php';
+                
+$res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
+
+       
+         while($r=mysqli_fetch_row($res))
+         { 
+                 echo "<img class='btn popup_image' height='100' width='100' src='".$r[2]."'>";        
+        }
+
+                ?>
+                    <!-- <img src="images/user.png" width="48" height="48" alt="User" /> -->
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fname ?></div>
@@ -20,7 +33,7 @@ $email = $_SESSION['email'];
 <!--  <li><a href="pages/examples/changepassword.php"><i class="material-icons">person</i>Reset Password</a></li>  -->
 <!-- <li><a href="javascript:void(0);"><i class="material-icons">person</i>Reset Password</a></li> -->
 
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li><a href="pages/examples/profile.php"><i class="material-icons">person</i>Profile</a></li>
                             <li role="seperator" class="divider"></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
