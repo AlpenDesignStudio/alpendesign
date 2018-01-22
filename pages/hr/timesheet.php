@@ -118,12 +118,15 @@ $dpt = $_SESSION['dpt'];
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
+                                     <thead>
                                         <tr>
-                                        <th class="view"> Date</th> 
-                                        <th class="view"> Start Time</th>
-                                        <th class="view"> End Time</th>    
-                                         <th class="view"> Total </th> 
+                                            <th> SR.NO</th>
+                                            <th> Name</th>
+                                            <th> Dpartment</th> 
+                                             <th> Date</th> 
+                                            <th> Start Time</th>
+                                            <th>  End Time</th> 
+                                         
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -132,25 +135,23 @@ $dpt = $_SESSION['dpt'];
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {     
 
-    $res=mysqli_query($con,"Select date,start_time,end_time from timesheet");
+   $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time,date from timesheet");
  
     // $t1= strtotime($start_time);
     // $t2= strtotime($end_time);
     
   
        
-         while($r=mysqli_fetch_row($res))
+          while($r=mysqli_fetch_row($res))
          {
-    $start_time = $r[2];
-    $end_time = $r[3];  
-    $t3 = $start_time - $end_time;
             // print_r($r);die;
-                 echo "<tr>";
-                
-                 echo "<td alig='center' width=''> $r[0]</td>";
+          echo "<tr>";
+                 echo "<td align='center'>$r[0]</td>";
                  echo "<td alig='center' width=''> $r[1]</td>";
-                 echo "<td alig='center' width=''> $r[2]</td>";
-                 echo "<td alig='center' width=''> echo $t3</td>";
+                  echo "<td alig='center' width=''> $r[2]</td>";
+                 echo "<td alig='center' width=''> $r[3]</td>";
+                  echo "<td alig='center' width=''> $r[4]</td>";
+                echo "<td alig='center' width=''> $r[5]</td>";
                  echo "</tr>";
         }
     }

@@ -11,7 +11,7 @@ include('check.php');
  $password = hash('sha256', $pass); // password hashing using SHA256
 
 //print_r($password);die();
-$last_id=mysql_insert_id();
+//$last_id=mysql_insert_id();
 
 $query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
 

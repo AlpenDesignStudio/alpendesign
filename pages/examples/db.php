@@ -24,22 +24,22 @@
         $password = hash('sha256', $pass);
 
       $query=mysqli_query($con,"INSERT INTO ar_visitor 
-      (dpt,password,fname,lname,email,town,state,country,sex,dob,pic,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
+      (dpt,password,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
 
 
 
 
 
-$last_id =mysqli_insert_id($con);
+//$last_id =mysqli_insert_id($con);
 
-    $query1=mysqli_query($con,"INSERT INTO ar_login 
-      (dpt,email,password,visitor_id,status,start_time,end_time)
-   values
-   ('".$dpt."','".$email."','".$password."','".$last_id."',1,'".$dt."','".$dt."')");
+   //  $query1=mysqli_query($con,"INSERT INTO ar_login 
+   //    (dpt,email,password,visitor_id,status,start_time,end_time)
+   // values
+   // ('".$dpt."','".$email."','".$password."','".$last_id."',1,'".$dt."','".$dt."')");
 
 
 $data  = ($query)?  true : die(mysqli_error());
-$data1 = ($query1)? true : die(mysqli_error());
+// $data1 = ($query1)? true : die(mysqli_error());
 
  //to insert input records into a table - address
 
