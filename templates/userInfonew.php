@@ -19,12 +19,12 @@
                     </li>
 
                     <!-- Sign-up tab -->
-                    <li>
+                   <!--  <li>
                         <a href="pages/examples/sign-up.php">
                             <i class="material-icons">person_add</i>
                             <span>Sign up</span>
                         </a>
-                    </li>
+                    </li> -->
 
 <!-- 
                             <li><a href="pages/examples/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li> -->

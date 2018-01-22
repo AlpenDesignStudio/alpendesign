@@ -30,6 +30,13 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
                <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                <ul class="dropdown-menu pull-right">
 
+                <li>
+                        <a href="pages/examples/sign-up.php">
+                            <i class="material-icons">person_add</i>
+                            <span>Sign up</span>
+                        </a>
+                    </li>
+
 
                    <li><a href="pages/examples/reset_password.php" id="reset_password"><i class="material-icons">person</i>Reset Password</a></li>
                    <li><a href="pages/examples/forgot-password.php" id="forgot-password"><i class="material-icons">person</i>Forgot Password</a></li>
