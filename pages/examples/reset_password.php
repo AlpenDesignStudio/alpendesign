@@ -19,7 +19,7 @@ if ($row!=0){
 
 $pp=$_POST['npwd'];
 $npwd = hash('sha256', $pp); // password hashing using SHA256
- $con=mysqli_query($con,"update ar_visitor set password='".$npwd."' where email='".$_SESSION['email']."'");
+$con=mysqli_query($con,"update ar_visitor set password='".$npwd."' where email='".$_SESSION['email']."'");
 $_SESSION['msg1']="Password Changed Successfully !!";
 //header('location:user.php');
 }
@@ -58,6 +58,7 @@ $_SESSION['msg1']="Old Password not match !!";
 
 
     <script type="text/javascript">
+
 function valid()
 {
 if(document.chngpwd.opwd.value=="")
@@ -107,8 +108,8 @@ return true;
                     </div>
 
 
-    <p style="color:red;"><?php echo $_SESSION['msg1'];?>
-                   <?php echo $_SESSION['msg1']="";?></p>
+    <!-- <p style="color:red;"><?php echo $_SESSION['msg1'];?>
+    <?php echo $_SESSION['msg1']="";?></p> -->
 
                     <div class="input-group">
                         <span class="input-group-addon">

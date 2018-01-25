@@ -11,7 +11,7 @@ include('check.php');
  $password = hash('sha256', $pass); // password hashing using SHA256
 
 //print_r($password);die();
-$last_id=mysql_insert_id();
+//$last_id=mysql_insert_id();
 
 $query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
 
@@ -48,8 +48,13 @@ if ($numrows!=0){
   
 }
 else{
-      die("incorrect username/password!");
+
+$message = "Username or Password incorrect.Try again.";
+echo "<script type='text/javascript'>alert('$message');</script>";
+/*die("incorrect username/password!");*/
 session_destroy();
+/*header("location: sign-in.php");*/
+echo "<script>setTimeout(\"location.href = 'sign-in.php';\",200);</script>";
 
 }
 }
@@ -64,3 +69,5 @@ session_destroy();
 //     // die("please enter a username and password!");
 // }
 ?>
+
+

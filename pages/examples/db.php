@@ -4,8 +4,7 @@
 <?php
   
     include('check.php');
-
-       
+      
         // $status = $_POST['status'];
         $dpt = $_POST['dpt'];
         $pass = $_POST['password'];
@@ -24,7 +23,7 @@
         $password = hash('sha256', $pass);
 
       $query=mysqli_query($con,"INSERT INTO ar_visitor 
-      (dpt,password,fname,lname,email,town,state,country,sex,dob,pic,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
+      (dpt,password,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
 
 
 
@@ -98,8 +97,14 @@ mysqli_close($con);
 
 </body>
 
-<?php // header('Location: reg.php?vid='.$last_id.'&dpt='.$dpt.'&uname='.$userName); ?>
-<?php  header ('Location: sign-in.php?&password='.$password.'&email='.$email); ?>
+<?php  /*header ('Location: sign-in.php?&password='.$password.'&email='.$email);*/
+
+$message = "Your Registered Successfully ! Thank you";
+echo "<script type='text/javascript'>alert('$message');</script>";
+session_destroy();
+echo "<script>setTimeout(\"location.href = 'sign-in.php';\",200);</script>";
+ ?>
+
 </html>
 
    

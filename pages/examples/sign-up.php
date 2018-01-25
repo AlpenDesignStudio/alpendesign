@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -25,45 +24,42 @@
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
-     <!-- Bootstrap Material Datetime Picker Css -->
+    <!-- Bootstrap Material Datetime Picker Css -->
     <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
-     <!-- Bootstrap Select Css -->
+    <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
 </head>
 
-<body class="signup-page">
+<body class="signup-page" style="background-image: url(register.jpg)" ;>
     <div class="signup-box">
-      <div class="logo">
+        <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
-            <div class="body">
+            <div class="body" style="box-shadow: 0 4px 8px 0 rgb(108, 136, 163), 0 6px 20px 0 rgb(109, 139, 167);border: 1px solid #e92163;">
                 <form id="sign_up" name="contact-form" method="POST" action="db.php">
-
-                 
 
                     <div class="msg">Register a new Employee</div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">business_center</i>
                         </span>
                         <div class="form-line">
-                             <select id="select" name="dpt" class="form-control show-tick">
-                                        <option value="">Please select Department</option>
-
-                                 <option value="1" >Admin</option>
-                                <option value="2" >HR</option>
-                                <option value="3" >Technical</option>
-                                <option value="4" >Legal</option>
-                                <option value="5" >Marketing</option>
-                                <option value="6" >Creative</option>
-                                    </select>
+                            <select id="select" name="dpt" class="form-control show-tick">
+                                <option value="">Please select Department</option>
+                                <option value="1">Admin</option>
+                                <option value="2">HR</option>
+                                <option value="3">Technical</option>
+                                <option value="4">Legal</option>
+                                <option value="5">Marketing</option>
+                                <option value="6">Creative</option>
+                            </select>
                         </div>
                     </div>
-                    
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -72,50 +68,55 @@
                             <input type="text" class="form-control" name="fname" placeholder="First Name " required autofocus>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">person_add</i>
                         </span>
                         <div class="form-line">
                             <input type="text" class="form-control" name="lname" placeholder="Last Name " required autofocus>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">public</i>
                         </span>
-                        <div class="form-line">
-                            <input type="text" class="form-control" name="town" placeholder="Town " required autofocus>
+                        <div class="form-line" class="form-control show-tick">
+                            <select id="country" name="country"></select>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">location_city</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="state" placeholder="State " required autofocus>
+                            <select name="state" id="state"></select>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">domain</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="country" placeholder="Country" required autofocus>
+                            <input type="text" class="form-control" name="town" placeholder="Town" required autofocus>
                         </div>
                     </div>
-                     <div class="input-group">
+
+                    <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">wc</i>
                         </span>
                         <div class="form-line">
-                             <select id="select" name="sex" class="form-control show-tick">
-                                        <option value="M">Male</option>
-                                        <option value="F">Female</option>
-                                        
-                                    </select>
+                            <select id="select" name="sex" class="form-control show-tick">
+                                <option value="M">Male</option>
+                                <option value="F">Female</option>
+                            </select>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">email</i>
@@ -124,6 +125,7 @@
                             <input type="email" class="form-control" name="email" placeholder="Email Address" required>
                         </div>
                     </div>
+                    
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
@@ -132,7 +134,8 @@
                             <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
                         </div>
                     </div>
-                  <!--   <div class="input-group">
+
+                    <!--   <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
                         </span>
@@ -140,45 +143,32 @@
                             <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm cpword" required>
                         </div>
                     </div> -->
-                     <div class="input-group">
+
+                    <div class="input-group">
 
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">perm_contact_calendar</i>
                         </span>
-                                        <div class="form-line">
-                                        <input type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
-                                            <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
-                                        </div>
-                    </div>
- 
-                   
-
-
-                    <div class="form-group">
-                        <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
-                        <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
+                        <div class="form-line">
+                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
+                            <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
+                        </div>
                     </div>
 
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
 
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="sign-in.html">You already have a membership?</a>
+                        <a href="sign-in.php">You already have a membership?</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-
-     <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
-      <!-- Select Plugin Js -->
+    <!-- Select Plugin Js -->
     <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
@@ -196,12 +186,18 @@
     <!-- Validation Plugin Js -->
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
-   
+
     <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
+    <script src="../../js/count.js"></script>
     <script src="../../js/pages/examples/sign-up.js"></script>
+
+    <script language="javascript">
+        populateCountries("country", "state");
+        populateCountries("country2");
+    </script>
 </body>
 
 </html>
