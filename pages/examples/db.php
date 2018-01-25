@@ -29,16 +29,16 @@
 
 
 
-$last_id =mysqli_insert_id($con);
+//$last_id =mysqli_insert_id($con);
 
-    $query1=mysqli_query($con,"INSERT INTO ar_login 
-      (dpt,email,password,visitor_id,status,start_time,end_time)
-   values
-   ('".$dpt."','".$email."','".$password."','".$last_id."',1,'".$dt."','".$dt."')");
+   //  $query1=mysqli_query($con,"INSERT INTO ar_login 
+   //    (dpt,email,password,visitor_id,status,start_time,end_time)
+   // values
+   // ('".$dpt."','".$email."','".$password."','".$last_id."',1,'".$dt."','".$dt."')");
 
 
 $data  = ($query)?  true : die(mysqli_error());
-$data1 = ($query1)? true : die(mysqli_error());
+// $data1 = ($query1)? true : die(mysqli_error());
 
  //to insert input records into a table - address
 
