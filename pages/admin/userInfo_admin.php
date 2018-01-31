@@ -17,7 +17,7 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
        
          while($r=mysqli_fetch_row($res))
          { 
-                 echo "<img class='btn popup_image' height='100' width='100' src='".$r[2]."'>";        
+                 echo "<img  height='100' width='100' src='".$r[2]."'>";        
         }
 
                 ?>
@@ -31,7 +31,7 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
                <ul class="dropdown-menu pull-right">
 
                 <li>
-                        <a href="pages/examples/sign-up.php">
+                        <a href="/examples/sign-up.php" id="sign-up">
                             <i class="material-icons">person_add</i>
                             <span>Sign up</span>
                         </a>
@@ -60,13 +60,15 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
            console.log(window.location.pathname);
            if (window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php') {
                // alert('Home');
+                $('#sign-up').attr('href', 'pages/examples/sign-up.php');
                 $('#reset_password').attr('href', 'pages/examples/reset_password.php');
-                 $('#forgot-password').attr('href', 'pages/examples/forgot-password.php');
-                  $('#profile').attr('href', 'pages/examples/profile.php');
-               $('#logout').attr('href', 'pages/examples/logout.php');
+                $('#forgot-password').attr('href', 'pages/examples/forgot-password.php');
+                $('#profile').attr('href', 'pages/examples/profile.php');
+                $('#logout').attr('href', 'pages/examples/logout.php');
 
            } else {
                // alert('HR');
+               $('#sign-up').attr('href', 'pages/examples/sign-up.php');
                $('#reset_password').attr('href', 'reset_password.php');
                $('#forgot-password').attr('href', 'forgot-password.php');
                $('#profile').attr('href', 'profile.php');

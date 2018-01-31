@@ -89,6 +89,7 @@ $password = $_SESSION['password'];
             <!-- Menu -->
         <?php if($dpt == 1){
             include('templates/admin_menu.php');
+             //include('pages/admin/admin11.php');
         }
         if($dpt == 2){
             include('templates/hr_menu.php');

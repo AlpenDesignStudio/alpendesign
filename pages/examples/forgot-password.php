@@ -25,8 +25,9 @@
     <link href="../../css/style.css" rel="stylesheet">
 </head>
 
-<body class="fp-page">
-    <div class="fp-box">
+<body class="signup-page" style="background-image: url(forget_password.jpg)" ;>
+    <div class="signup-box">
+
         <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
             <small>WELCOME TO ALPEN DESIGN</small>

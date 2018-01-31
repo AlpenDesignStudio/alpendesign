@@ -128,7 +128,8 @@ $email = $_SESSION['email'];
                                         <tr>
                                         <th class="view"> SR.NO</th>
                                         <th class="view"> Name</th>
-                                        <th class="view"> Dpartment</th> 
+                                        <th class="view"> Dpartment</th>
+                                        <th class="view"> Date</th> 
                                         <th class="view"> Start Time</th>
                                         <th class="view">  End Time</th> 
                                          
@@ -148,7 +149,7 @@ $email = $_SESSION['email'];
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time from  timesheet");
+            $res=mysqli_query($con,"Select sr,uname,dpt,date,start_time,end_time from  timesheet");
 
        
          while($r=mysqli_fetch_row($res))
@@ -160,6 +161,7 @@ $email = $_SESSION['email'];
                   echo "<td alig='center' width=''> $r[2]</td>";
                  echo "<td alig='center' width=''> $r[3]</td>";
                   echo "<td alig='center' width=''> $r[4]</td>";
+                   echo "<td alig='center' width=''> $r[5]</td>";
                
                  echo "</tr>";
         }

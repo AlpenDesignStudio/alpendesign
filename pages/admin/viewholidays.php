@@ -5,7 +5,9 @@ $fname = $_SESSION['fname'];
 $email = $_SESSION['email']; 
 ?>
 <?php
-include_once 'dbconfig.php';
+//include_once 'dbconfig.php';
+include("check.php");
+
 ?>
     <!DOCTYPE html>
     <html>
@@ -181,7 +183,7 @@ echo "<td>
 
 
 
-<button type='button' class='btn bg-red waves-effect'>
+<button style='width: 100% !important;' type='button' class='btn bg-red waves-effect'>
       <i class='material-icons'>report_problem</i><a href='delete.php?id=" . $row->id . "'>
       <b style='color: white !important;';>Delete Record</b></a></button>
 </td>";

@@ -142,7 +142,7 @@ $email = $_SESSION['email'];
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time,date from timesheet");
+            $res=mysqli_query($con,"Select sr,uname,dpt,date,start_time,end_time,date from timesheet");
 
        
          while($r=mysqli_fetch_row($res))

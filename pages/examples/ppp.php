@@ -1,12 +1,3 @@
-<?php
-// $id = $_SESSION['visitor_id'];
-//print_r($_SESSION);die();
-session_start();
-$fname = $_SESSION['fname']; 
-$email = $_SESSION['email']; 
-     //echo $id;die();
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +30,12 @@ $email = $_SESSION['email'];
 #btn-submit:focus{outline:none;}
 .input-control{padding:10px;width:100%;}
 .input-group{margin-top:10px;}
-
+#error_message{
+    background: #E91E63 !important;
+}
+#success_message{
+    background: #E91E63 !important;
+}
 .ajax_response {
     padding: 10px 20px;
     border: 0;
@@ -82,14 +78,19 @@ $email = $_SESSION['email'];
             $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
             $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
 
-           
+            $q1 = "SELECT image FROM profile;";
 
-           // Insert record
-            $queryy = "INSERT INTO profile(fname,image) values('".$fname."','".$image."')";
+            if ($q == NULL){
+                // Insert record
+            $d='your image';
+            
+            $q2 = "insert into profile(fname,image) values('".$d."','<img  height='100' width='100' src='../../images/default.jpeg'>')";
+            }
 
-           //$query = "UPDATE profile SET image='".$image."' where fname='".$fname."' ";
-       
-            mysqli_query($con,$queryy) or die(mysqli_error($con));
+            else{
+            $query = "UPDATE profile SET image='".$image."' where fname='".$fname."' ";
+           }
+            mysqli_query($con,$query) or die(mysqli_error($con));
 
       
             
@@ -114,17 +115,16 @@ $email = $_SESSION['email'];
                                 UPLOAD YOUR PROFILE PICTURE
                             </h2>
                         </div>
-                    <form id="frmDemo" class="well" action="" method="post" enctype="multipart/form-data">
+ <form id="frmDemo" class="well" action="" method="post" enctype="multipart/form-data">
                   <div class="form-group" >
                     <label for="file" >SELECT A PICTURE TO UPLOAD</label>
-                    <input type="file" name="file" id="file" >
+                    <input type="file" name="file" >
                     
                   </div>
-                  <input  name='btn-submit' type="submit" class="btn btn-lg btn-primary" value="Upload" style="background-color: #673AB7 !important;">
-                    <br><br>
-                  <div id="error_message" class="" style=""></div>
-                  <div id="success_message" class="" style=""></div>
+                  <input  name='btn-submit' type="submit" class="btn btn-lg btn-primary" value="Upload" style="background-color: #673AB7!important;">
 
+                  <div id="error_message" class="ajax_response" style="float:left"></div>
+    <div id="success_message" class="ajax_response" style="float:left"></div>
                 </form>
             </div>
         </div>
@@ -133,21 +133,21 @@ $email = $_SESSION['email'];
 </body>
 
 </html>
-
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
 <script>
 $("#frmDemo").submit(function(e) {
-    var file = $("#file").val();
-    //var comment = $("#comment").val();
+    e.preventDefault();
+    var name = $("#name").val();
+    var comment = $("#comment").val();
     
-    if(file == "" ) {
-        // $("#error_message").show().html("All Fields are Required");
+    if(name == "" || comment == "" ) {
+        $("#error_message").show().html("All Fields are Required");
     } else {
-        // $("#error_message").html("").hide();
+        $("#error_message").html("").hide();
         $.ajax({
             type: "POST",
             url: "post-form.php",
-            data: "name="+name,
+            data: "name="+name+"&comment="+comment,
             success: function(data){
                 $('#success_message').fadeIn().html(data);
                 setTimeout(function() {
@@ -157,13 +157,11 @@ $("#frmDemo").submit(function(e) {
             }
         });
     }
-    e.preventDefault();
-});
+})
 </script>   
 
-
      <!-- Bootstrap Material Datetime Picker Plugin Js -->
-   <!--  <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script> -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
       <!-- Select Plugin Js -->
     <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
@@ -184,7 +182,7 @@ $("#frmDemo").submit(function(e) {
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
    
-    <!-- <script src="../../js/pages/forms/basic-form-elements.js"></script> -->
+    <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>

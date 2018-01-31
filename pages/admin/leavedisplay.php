@@ -151,6 +151,7 @@ $email = $_SESSION['email'];
 
                                     
 <?php
+
 // connect to the database
 include('connect-db.php');
 
@@ -181,9 +182,9 @@ echo "<td>" . $row->priority . "</td>";
 echo "<td>" . $row->title . "</td>";
 
 echo "<td>
-<button type='button' class='btn bg-red waves-effect'>
+<button style='width: 100% !important;' type='button' class='btn bg-green waves-effect'>
       <i class='material-icons'>report_problem</i><a href='insert.php?id=" .$id. "'>
-      <b style='color: white !important;';>Insert Record</b></a></button>
+      <b style='color: white !important;';>Approve</b></a></button>
 </td>";
 
 

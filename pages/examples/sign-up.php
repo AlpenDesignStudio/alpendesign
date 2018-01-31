@@ -29,7 +29,22 @@
 
     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-
+    <style type="text/css">
+    #country{
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #fff;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    }
+    #state{
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #fff;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    }
+    </style>
 </head>
 
 <body class="signup-page" style="background-image: url(register.jpg)" ;>
@@ -39,8 +54,8 @@
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
-            <div class="body" style="box-shadow: 0 4px 8px 0 rgb(108, 136, 163), 0 6px 20px 0 rgb(109, 139, 167);border: 1px solid #e92163;">
-                <form id="sign_up" name="contact-form" method="POST" action="db.php">
+            <div class="body">
+                <form id="sign_up" action="#">
 
                     <div class="msg">Register a new Employee</div>
                     <div class="input-group">
@@ -48,7 +63,7 @@
                             <i class="material-icons">business_center</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="dpt" class="form-control show-tick">
+                            <select id="dpt" name="dpt" class="form-control show-tick">
                                 <option value="">Please select Department</option>
                                 <option value="1">Admin</option>
                                 <option value="2">HR</option>
@@ -65,7 +80,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="fname" placeholder="First Name " required autofocus>
+                            <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name " required autofocus>
                         </div>
                     </div>
 
@@ -74,7 +89,7 @@
                             <i class="material-icons">person_add</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="lname" placeholder="Last Name " required autofocus>
+                            <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name " required autofocus>
                         </div>
                     </div>
 
@@ -82,7 +97,7 @@
                         <span class="input-group-addon">
                             <i class="material-icons">public</i>
                         </span>
-                        <div class="form-line" class="form-control show-tick">
+                        <div class="sel" class="form-control show-tick">
                             <select id="country" name="country"></select>
                         </div>
                     </div>
@@ -91,7 +106,7 @@
                         <span class="input-group-addon">
                             <i class="material-icons">location_city</i>
                         </span>
-                        <div class="form-line">
+                        <div class=" sel">
                             <select name="state" id="state"></select>
                         </div>
                     </div>
@@ -101,7 +116,7 @@
                             <i class="material-icons">domain</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="town" placeholder="Town" required autofocus>
+                            <input id="town" type="text" class="form-control" name="town" placeholder="Town" required autofocus>
                         </div>
                     </div>
 
@@ -110,7 +125,7 @@
                             <i class="material-icons">wc</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="sex" class="form-control show-tick">
+                            <select id="gender" name="sex" class="form-control show-tick">
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
                             </select>
@@ -122,7 +137,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                            <input id="email" type="email" class="form-control" name="email" placeholder="Email Address" required>
                         </div>
                     </div>
                     
@@ -131,18 +146,11 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
+                            <input id="pass" type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
                         </div>
                     </div>
 
-                    <!--   <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
-                        </span>
-                        <div class="form-line">
-                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm cpword" required>
-                        </div>
-                    </div> -->
+            
 
                     <div class="input-group">
 
@@ -150,23 +158,93 @@
                             <i class="material-icons">perm_contact_calendar</i>
                         </span>
                         <div class="form-line">
-                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
-                            <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
+                            <input id="dob" type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
+                     
                         </div>
                     </div>
 
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" name="submit" type="submit">SIGN UP</button>
 
                     <div class="m-t-25 m-b--5 align-center">
                         <a href="sign-in.php">You already have a membership?</a>
                     </div>
+
+    <br><br>
+                  <div id="error_message" >
+                  <div class="alert alert-danger hidden">
+                                <strong>Oh snap!</strong> Failed To Register..Try Again..!!
+                            </div>
+                  </div>
+                  <div id="success_message">
+                  <div class="alert alert-success hidden">
+                    <strong>Well done!</strong> You Have successfully Registered Your Account..!!
+                </div>
+                  </div>
+
+
                 </form>
             </div>
         </div>
     </div>
 
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+<script>
+$("#sign_up").on('submit',function(e) {
+
+    // alert('test');
+    // return false;
+    var dpt = $("#dpt").val();
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var country = $("#country").val();
+    var state = $("#state").val();
+    var town = $("#town").val();
+    var gender = $("#gender").val();
+    var email = $("#email").val();
+    var password = $("#pass").val();
+    var dob = $("#dob").val();
+
+    //var comment = $("#comment").val();
+    
+    if(dpt == "" &&  fname == "" && lname == "" && country == "" &&  state == "" && town == "" &&  gender == "" && email == "" && password == "" && dob == "") {
+        // $("#error_message").show().html("All Fields are Required");
+    } else {
+        // $("#error_message").html("").hide();
+        $.ajax({
+            type: "POST",
+            url: "db.php",
+            //data: "opwd="+opwd+"&npwd="+npwd+"&cpwd="+cpwd,
+
+            data: "dpt="+dpt+"&fname="+fname+"&lname="+lname+"&country="+country+"&state="+state+"&town="+town+"&sex="+gender+"&email="+email+"&password="+password+"&dob="+dob,
+            success: function(data){
+                // $('#success_message').fadeIn().html(data);
+                // setTimeout(function() {
+                //     $('#success_message').fadeOut("slow");
+                // }, 2000 );
+                // alert('test');
+            var response = JSON.parse(data);
+
+            if(response.status == true){
+                // alert('Success');
+                $('.alert-success').removeClass('hidden');
+                $('.alert-danger').addClass('hidden');
+            }else{
+                // alert('Error');
+                $('.alert-success').addClass('hidden');
+                $('.alert-danger').removeClass('hidden');
+            }
+
+            }
+
+        });
+    }
+    e.preventDefault();
+});
+</script>   
+
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
 
     <!-- Select Plugin Js -->
     <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
@@ -187,7 +265,6 @@
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
 
-    <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
@@ -196,7 +273,7 @@
 
     <script language="javascript">
         populateCountries("country", "state");
-        populateCountries("country2");
+        //populateCountries("country2");
     </script>
 </body>
 
