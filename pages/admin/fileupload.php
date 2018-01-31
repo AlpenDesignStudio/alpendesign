@@ -5,7 +5,9 @@ $fname = $_SESSION['fname'];
 $email = $_SESSION['email']; 
 ?>
 <?php
-include_once 'dbconfig.php';
+include("check.php");
+ 
+//include_once 'dbconfig.php';
 ?>
     <!DOCTYPE html>
     <html>
@@ -108,7 +110,7 @@ include_once 'dbconfig.php';
                 <!-- Left Sidebar -->
                 <aside id="leftsidebar" class="sidebar">
                     <!-- User Info -->
-                    <?php include ("userInfo_admin.php"); ?>
+                    <?php //include ("userInfo_admin.php"); ?>
                         <!-- #User Info -->
                         <!-- Menu -->
 

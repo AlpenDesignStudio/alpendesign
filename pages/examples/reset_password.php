@@ -1,35 +1,4 @@
-<?php
-session_start();
 
-$_SESSION['password'];
-
-include("check.php");
-
-if(isset($_POST['Submit']))
-{
-$sql=mysqli_query($con,"SELECT password FROM  ar_visitor where password='".$_SESSION['password']."' && email='".$_SESSION['email']."'");
-
-  
-$row = mysqli_fetch_row($sql);
-
-
-if ($row!=0){
-
-  $row_data = mysqli_fetch_array($sql,MYSQLI_ASSOC);
-
-$pp=$_POST['npwd'];
-$npwd = hash('sha256', $pp); // password hashing using SHA256
-$con=mysqli_query($con,"update ar_visitor set password='".$npwd."' where email='".$_SESSION['email']."'");
-$_SESSION['msg1']="Password Changed Successfully !!";
-//header('location:user.php');
-}
-else
-{
-$_SESSION['msg1']="Old Password not match !!";
-}
-}
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -59,47 +28,47 @@ $_SESSION['msg1']="Old Password not match !!";
 
     <script type="text/javascript">
 
-function valid()
-{
-if(document.chngpwd.opwd.value=="")
-{
-alert("Old Password Filed is Empty !!");
-document.chngpwd.opwd.focus();
-return false;
-}
-else if(document.chngpwd.npwd.value=="")
-{
-alert("New Password Filed is Empty !!");
-document.chngpwd.npwd.focus();
-return false;
-}
-else if(document.chngpwd.cpwd.value=="")
-{
-alert("Confirm Password Filed is Empty !!");
-document.chngpwd.cpwd.focus();
-return false;
-}
-else if(document.chngpwd.npwd.value!= document.chngpwd.cpwd.value)
-{
-alert("Password and Confirm Password Field do not match  !!");
-document.chngpwd.cpwd.focus();
-return false;
-}
-return true;
-}
+// function valid()
+// {
+// if(document.chngpwd.opwd.value=="")
+// {
+// alert("Old Password Filed is Empty !!");
+// document.chngpwd.opwd.focus();
+// return false;
+// }
+// else if(document.chngpwd.npwd.value=="")
+// {
+// alert("New Password Filed is Empty !!");
+// document.chngpwd.npwd.focus();
+// return false;
+// }
+// else if(document.chngpwd.cpwd.value=="")
+// {
+// alert("Confirm Password Filed is Empty !!");
+// document.chngpwd.cpwd.focus();
+// return false;
+// }
+// else if(document.chngpwd.npwd.value!= document.chngpwd.cpwd.value)
+// {
+// alert("Password and Confirm Password Field do not match  !!");
+// document.chngpwd.cpwd.focus();
+// return false;
+// }
+// return true;
+// }
 </script>
 </head>
 
-<body class="fp-page">
-    <div class="fp-box">
-        <div class="logo">
+<body class="signup-page" style="background-image: url(reset_password.jpg)" ;>
+ <div class="signup-box">
+          <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
-            <small>WELCOME TO ALPEN DESIGN</small>
+            <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
             <div class="body">
            
-                <form id="forgot_password" method="POST" onSubmit="return validate_password_reset();">
+                <form id="reset-password"  action="#">
 
                 
 
@@ -108,15 +77,14 @@ return true;
                     </div>
 
 
-    <!-- <p style="color:red;"><?php echo $_SESSION['msg1'];?>
-    <?php echo $_SESSION['msg1']="";?></p> -->
+
 
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="opwd" id="opwd" placeholder="Old Password" required autofocus>
+                            <input type="password" class="form-control" name="opwd" id="opwd" placeholder="Old Password" autofocus>
                         </div>
                     </div>
 
@@ -125,7 +93,7 @@ return true;
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="npwd" id="npwd" placeholder="New Password" required autofocus>
+                            <input type="password" class="form-control" name="npwd" id="npwd" placeholder="New Password" autofocus>
                         </div>
                     </div>
 
@@ -134,25 +102,92 @@ return true;
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="confirm Password" required autofocus>
+                            <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="confirm Password" autofocus>
                         </div>
                     </div>
 
 
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" id="reset-password" value="Reset Password" name="Submit" >RESET MY PASSWORD</button>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" class="reset-password" value="Reset Password" name="Submit" >RESET MY PASSWORD</button>
 
                     <div class="row m-t-20 m-b--5 align-center">
-                        <a href="sign-in.php">Sign In!</a>
+                        <a href="sign-in.php">Sign In Now !</a>
                     </div>
+                    <br><br>
+                  <div id="error_message" >
+                  <div class="alert alert-danger hidden">
+                                <strong>Oh snap!</strong> Failed To Reset Your Password..Try Again..!!
+                            </div>
+                  </div>
+                  <div id="success_message">
+                  <div class="alert alert-success hidden">
+                    <strong>Well done!</strong> You Have successfully Reset Your Password..!!
+                </div>
+                  </div>
+
                 </form>
             </div>
         </div>
     </div>
 
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+<script>
+$("#reset-password").on('submit',function(e) {
+    // alert('test');
+    // return false;
+    var opwd = $("#opwd").val();
+    var npwd = $("#npwd").val();
+    var cpwd = $("#cpwd").val();
+    //var comment = $("#comment").val();
+    
+    if(opwd == "" &&  npwd == "" && cpwd == "") {
+        // $("#error_message").show().html("All Fields are Required");
+    } else {
+        // $("#error_message").html("").hide();
+        $.ajax({
+            type: "POST",
+            url: "reset.php",
+            data: "opwd="+opwd+"&npwd="+npwd+"&cpwd="+cpwd,
+            success: function(data){
+                // $('#success_message').fadeIn().html(data);
+                // setTimeout(function() {
+                //     $('#success_message').fadeOut("slow");
+                // }, 2000 );
+                //alert('test');
+            var response = JSON.parse(data);
+            // console.log(response.status);
+            if(response.status == true){
+                // alert('Success');
+                $('.alert-success').removeClass('hidden');
+                $('.alert-danger').addClass('hidden');
+            }else{
+                // alert('Error');
+                $('.alert-success').addClass('hidden');
+                $('.alert-danger').removeClass('hidden');
+            }
 
+            }
 
+        });
+    }
+    e.preventDefault();
+});
+</script>   
+<script type="text/javascript">
+var password = document.getElementById("npwd")
+var confirm_password = document.getElementById("cpwd");
 
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
 
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+</script>
 				
 				 <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

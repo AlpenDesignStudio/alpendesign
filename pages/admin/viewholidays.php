@@ -5,7 +5,9 @@ $fname = $_SESSION['fname'];
 $email = $_SESSION['email']; 
 ?>
 <?php
-include_once 'dbconfig.php';
+//include_once 'dbconfig.php';
+include("check.php");
+
 ?>
     <!DOCTYPE html>
     <html>

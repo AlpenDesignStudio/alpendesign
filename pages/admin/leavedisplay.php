@@ -151,6 +151,7 @@ $email = $_SESSION['email'];
 
                                     
 <?php
+
 // connect to the database
 include('connect-db.php');
 

@@ -135,7 +135,7 @@ $dpt = $_SESSION['dpt'];
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {     
 
-   $res=mysqli_query($con,"Select sr,uname,dpt,start_time,end_time,date from timesheet");
+   $res=mysqli_query($con,"Select sr,uname,dpt,date,start_time,end_time,date from timesheet");
  
     // $t1= strtotime($start_time);
     // $t2= strtotime($end_time);
