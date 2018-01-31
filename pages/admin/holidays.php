@@ -32,57 +32,56 @@
 
 </head>
 
-<body class="signup-page">
+<body class="signup-page" style="background-image: url(leave.jpg)" ;>
     <div class="signup-box">
       <div class="logo">
-            <a href="javascript:void(0);">Alpen<b>Design</b></a>
+        <a href="javascript:void(0);">Holiday <b>Register</b></a>
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
-            <div class="body">
+            <div class="body" style="box-shadow: 0 4px 8px 0 rgb(108, 136, 163), 0 6px 20px 0 rgb(109, 139, 167);border: 1px solid #e92163;">
                 <form id="sign_up" name="contact-form" method="POST" action="holidaysdb.php">
                     <div class="msg">Add a new Holiday</div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">favorite</i>
                         </span>
                         <div class="form-line">
-                             <select id="select" name="leave_cat" class="form-control show-tick">
-                                        <option value="">Please select Category</option>
-
-                                 <option value="Hindus" >Hindus</option>
-                                <option value="Muslim" >Muslim</option>
-                                <option value="Catholic" >Catholic</option>
-                              
-                                    </select>
+                        <select id="select" name="leave_cat" class="form-control show-tick">
+                        <option value="">Please select Category</option>
+                        <option value="Hindus" >Hindus</option>
+                        <option value="Muslim" >Muslim</option>
+                        <option value="Catholic" >Catholic</option>
+                        </select>
                         </div>
                     </div>
                   
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">toys</i>
                         </span>
                         <div class="form-line">
                             <input type="text" class="form-control" name="leave_cause" placeholder="Occasion " required autofocus>
                         </div>
                     </div>
                 
-
+                    <p><b>Duration from*</b></p>
                      <div class="input-group">
-
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">date_range</i>
                         </span>
-                                        <div class="form-line">
-                                        <input type="date" class="form-control" placeholder="Date Of Occasion" name="leave_date" required>
-                                          
-                                        </div>
+
+                    <div class="form-line">
+                       <input type="date" class="form-control" placeholder="Date Of Occasion" name="leave_date" required>
+                    </div>
                     </div>
 
+                    <p><b>Duration to*</b></p>
                     <div class="input-group">
 
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+
+                            <i class="material-icons">date_range</i>
                         </span>
                                         <div class="form-line">
                                         <input type="date" class="form-control" placeholder="Date Of Occasion" name="leave_datee" required>

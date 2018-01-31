@@ -38,6 +38,8 @@
 
 
 $data  = ($query)?  true : die(mysqli_error());
+
+ 
 // $data1 = ($query1)? true : die(mysqli_error());
 
  //to insert input records into a table - address

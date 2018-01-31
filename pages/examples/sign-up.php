@@ -48,7 +48,7 @@
                             <i class="material-icons">business_center</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="dpt" class="form-control show-tick">
+                            <select id="dpt" name="dpt" class="form-control show-tick">
                                 <option value="">Please select Department</option>
                                 <option value="1">Admin</option>
                                 <option value="2">HR</option>
@@ -59,6 +59,7 @@
                             </select>
                         </div>
                     </div>
+
 
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -79,11 +80,11 @@
                     </div>
 
                     <div class="input-group">
-                        <span class="input-group-addon">
+                        <span class="input-group-addon" >
                             <i class="material-icons">public</i>
                         </span>
                         <div class="form-line" class="form-control show-tick">
-                            <select id="country" name="country"></select>
+                            <select name="country" id="country"></select>
                         </div>
                     </div>
 
@@ -101,7 +102,7 @@
                             <i class="material-icons">domain</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="town" placeholder="Town" required autofocus>
+                        <input type="text" class="form-control" name="town" placeholder="Town" required >
                         </div>
                     </div>
 
@@ -110,7 +111,7 @@
                             <i class="material-icons">wc</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="sex" class="form-control show-tick">
+                            <select id="gender" name="sex" class="form-control show-tick">
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
                             </select>
@@ -125,7 +126,7 @@
                             <input type="email" class="form-control" name="email" placeholder="Email Address" required>
                         </div>
                     </div>
-                    
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
@@ -135,15 +136,6 @@
                         </div>
                     </div>
 
-                    <!--   <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">lock</i>
-                        </span>
-                        <div class="form-line">
-                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Confirm cpword" required>
-                        </div>
-                    </div> -->
-
                     <div class="input-group">
 
                         <span class="input-group-addon">
@@ -151,7 +143,6 @@
                         </span>
                         <div class="form-line">
                             <input type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
-                            <!-- <input type="text" class="datepicker form-control" placeholder="Please choose a date..."> -->
                         </div>
                     </div>
 
@@ -165,14 +156,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -187,7 +171,7 @@
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
 
-    <script src="../../js/pages/forms/basic-form-elements.js"></script>
+    <!-- <script src="../../js/pages/forms/basic-form-elements.js"></script> -->
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
@@ -196,7 +180,6 @@
 
     <script language="javascript">
         populateCountries("country", "state");
-        populateCountries("country2");
     </script>
 </body>
 
