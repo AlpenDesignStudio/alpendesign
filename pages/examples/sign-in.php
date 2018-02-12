@@ -20,7 +20,8 @@
     <link href="../../css/style.css" rel="stylesheet">
 </head>
 
-<body class="login-page" style="background-image: url(signin.jpg)" ;>
+<body class="login-page" style="background-image: url(signin.jpg);background-repeat: no-repeat;
+    background-size: cover;" ;>
     <div class="login-box">
         <div class="logo">
             <a href="#">Alpen<b>Design</b></a>

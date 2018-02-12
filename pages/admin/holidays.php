@@ -32,7 +32,8 @@
 
 </head>
 
-<body class="signup-page" style="background-image: url(leave.jpg)" ;>
+<body class="signup-page" style="background-image: url(holiday.jpg);background-repeat: no-repeat;
+    background-size: cover;" ;>
     <div class="signup-box">
       <div class="logo">
         <a href="javascript:void(0);">Holiday <b>Register</b></a>
@@ -107,20 +108,6 @@
     </div>
 
 
-
-
-
-
-
-     <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-
-      <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
 
@@ -134,7 +121,6 @@
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
    
-    <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>

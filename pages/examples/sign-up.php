@@ -47,7 +47,8 @@
     </style>
 </head>
 
-<body class="signup-page" style="background-image: url(register.jpg)" ;>
+<body class="signup-page" style="background-image: url(register.jpg);background-repeat: no-repeat;
+    background-size: cover;" ;>
     <div class="signup-box">
         <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
@@ -241,6 +242,8 @@ $("#sign_up").on('submit',function(e) {
         });
     }
     e.preventDefault();
+    document.getElementById("sign_up").reset();
+
 });
 </script>   
 
