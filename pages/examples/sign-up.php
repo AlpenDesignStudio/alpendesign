@@ -158,7 +158,7 @@
                             <i class="material-icons">perm_contact_calendar</i>
                         </span>
                         <div class="form-line">
-                            <input id="dob" type="date" class="form-control" placeholder="Date Of Birth" name="dob" required>
+                            <input id="dob" type="date" class="form-control" placeholder="Date Of Birth" name="dob" required autofocus>
                      
                         </div>
                     </div>

@@ -181,10 +181,14 @@ echo "<td>" . $row->dd . "</td>";
 echo "<td>" . $row->priority . "</td>";
 echo "<td>" . $row->title . "</td>";
 
-echo "<td>
-<button style='width: 100% !important;' type='button' class='btn bg-green waves-effect'>
-      <i class='material-icons'>report_problem</i><a href='insert.php?id=" .$id. "'>
-      <b style='color: white !important;';>Approve</b></a></button>
+echo "<td><div>
+<a href='insert.php?id=" .$id. "'>
+      <b style='color: black !important;';></b>
+<input type='submit' name='approve' value='Approve' /></a>
+</div>
+
+
+
 </td>";
 
 
@@ -210,6 +214,20 @@ echo "Error: " . $mysqli->error;
 $mysqli->close();
 
 ?>
+
+
+
+
+
+<!-- <button name='approve' style='width: 40% !important;float:right;' type='submit' class='btn bg-green waves-effect'>
+      <i class='material-icons'>report_problem</i><a href='insert.php?id=" .$id. "'>
+      <b style='color: white !important;';>Approve</b></a></button>
+
+      <button name='disapprove' style='width: 40% !important;float:left;' type='submit' class='btn bg-red waves-effect'>
+      <i class='material-icons'>report_problem</i><a href='insert.php?id=" .$id. "'>
+      <b style='color: white !important;';>Disapprove</b></a></button> -->
+
+
 </tbody>
 
 

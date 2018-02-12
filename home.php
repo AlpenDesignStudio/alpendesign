@@ -134,6 +134,7 @@ $password = $_SESSION['password'];
                             <div class="text">LOGIN</div>
                         </div>
                     </div>
+                         
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -244,16 +245,44 @@ $password = $_SESSION['password'];
                             </div>
                             <ul class="dashboard-stat-list">
                                 <li>
-                                    TODAY
-                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
+                                    TOTAL LEAVE
+                                    <span class="pull-right"><b>21</b> <small>DAYS</small></span>
                                 </li>
                                 <li>
-                                    YESTERDAY
-                                    <span class="pull-right"><b>3 872</b> <small>USERS</small></span>
+                                    LEAVE TAKEN
+                                    <span class="pull-right"><b>
+                                        <?php
+                include 'check.php';
+                $res=mysqli_query($con,"SELECT count(*) from leavedb;");
+
+while($r=mysqli_fetch_row($res))
+         { 
+                 echo "".$r[0]."";        
+        }
+
+                ?>
+                                    </b> <small>DAYS</small></span>
+                                    
+
                                 </li>
                                 <li>
-                                    LAST WEEK
-                                    <span class="pull-right"><b>26 582</b> <small>USERS</small></span>
+                                    PENDING LEAVES
+                                    <span class="pull-right"><b>
+                                        <?php
+                include 'check.php';
+                $res=mysqli_query($con,"SELECT count(*) from leavedb;");
+
+while($r=mysqli_fetch_row($res))
+         { 
+                $t='21';
+               $a= "".$r[0]."";
+                $s=$t-$a; 
+                print ($s);   
+
+        }
+                   
+                ?>
+                                    </b> <small>DAYS</small></span>
                                 </li>
                             </ul>
                         </div>

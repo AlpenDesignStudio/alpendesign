@@ -32,22 +32,23 @@
 
 </head>
 
-<body class="signup-page">
+<body class="signup-page" style="background-image: url(holiday.jpg);background-repeat: no-repeat;
+   background-size: cover;">
     <div class="signup-box">
       <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
-            <div class="body">
-                <form id="sign_up" name="contact-form" method="POST" action="holidaysdb.php">
+            <div class="body"  ;>
+                <form id="holiday" action="#">
                     <div class="msg">Add a new Holiday</div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">favorite</i>
                         </span>
                         <div class="form-line">
-                             <select id="select" name="leave_cat" class="form-control show-tick">
+                             <select id="leave_cat" name="leave_cat" class="form-control show-tick" required>
                                         <option value="">Please select Category</option>
 
                                  <option value="Hindus" >Hindus</option>
@@ -60,38 +61,38 @@
                   
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">toys</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="leave_cause" placeholder="Occasion " required autofocus>
+                            <input id="leave_cause" type="text" class="form-control" name="leave_cause" placeholder="Occasion " required autofocus>
                         </div>
                     </div>
                 
-
+                           <p><b>Duration from*</b></p>
                      <div class="input-group">
 
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">date_range</i>
                         </span>
                                         <div class="form-line">
-                                        <input type="date" class="form-control" placeholder="Date Of Occasion" name="leave_date" required>
+                                        <input id="leave_date" type="date" class="form-control" placeholder="Date Of Occasion" name="leave_date" required>
                                           
                                         </div>
                     </div>
-
+   <p><b>Duration to*</b></p>
                     <div class="input-group">
 
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">date_range</i>
                         </span>
                                         <div class="form-line">
-                                        <input type="date" class="form-control" placeholder="Date Of Occasion" name="leave_datee" required>
+                                        <input id="leave_datee" type="date" class="form-control" placeholder="Date Of Occasion" name="leave_datee" required>
                                           
                                         </div>
                     </div>
                   
 
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit"> ADD</button>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="submit"> ADD HOLIDAY</button>
 
             
                     <div class="row m-t-15 m-b--20">
@@ -102,11 +103,66 @@
                             <a href="../../home.php">Back to Dashboard</a>
                         </div>
                     </div>
+                    <br>
+                  <div id="error_message" >
+                  <div class="alert alert-danger hidden">
+                                <strong>Oh snap!</strong> Failed To Add Holiday..Try Again..!!
+                            </div>
+                  </div>
+                  <div id="success_message">
+                  <div class="alert alert-success hidden">
+                    <strong>Well done!</strong> You Have successfully Added Holiday..!!
+                </div>
+                  </div>
                 </form>
             </div>
         </div>
     </div>
 
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+<script>
+$("#holiday").on('submit',function(e) {
+    // alert('test');
+    // return false;
+    var leave_cat = $("#leave_cat").val();
+    var leave_cause = $("#leave_cause").val();
+    var leave_date = $("#leave_date").val();
+    var leave_datee = $("#leave_datee").val();
+    //var comment = $("#comment").val();
+    
+    if(leave_cat == "" &&  leave_cause == "" && leave_date == "" && leave_datee == "") {
+        // $("#error_message").show().html("All Fields are Required");
+    } else {
+        // $("#error_message").html("").hide();
+        $.ajax({
+            type: "POST",
+            url: "holidaysdb.php",
+            data: "leave_cat="+leave_cat+"&leave_cause="+leave_cause+"&leave_date="+leave_date+"&leave_datee="+leave_datee,
+            success: function(data){
+                // $('#success_message').fadeIn().html(data);
+                // setTimeout(function() {
+                //     $('#success_message').fadeOut("slow");
+                // }, 2000 );
+                //alert('test');
+            var response = JSON.parse(data);
+            // console.log(response.status);
+            if(response.status == true){
+                // alert('Success');
+                $('.alert-success').removeClass('hidden');
+                $('.alert-danger').addClass('hidden');
+            }else{
+                // alert('Error');
+                $('.alert-success').addClass('hidden');
+                $('.alert-danger').removeClass('hidden');
+            }
+
+            }
+
+        });
+    }
+    e.preventDefault();
+});
+</script>   
 
 
 

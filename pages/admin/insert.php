@@ -18,12 +18,21 @@ echo "Connected successfully";
 $id=$_GET['id'];
 
 //$approval=YES; 
-$sql = "INSERT INTO leavedb (id,approval) VALUES ('$id','YES') ON DUPLICATE KEY UPDATE approval='YES'";
-if (mysqli_query($conn, $sql)) {
-      echo "New record created successfully";
-} else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+
+
+
+    //something posted
+
+    if (isset($_POST['approve'])) {
+        $sql = "INSERT INTO leavedb (id,approval) VALUES ('$id','YES') ON DUPLICATE KEY UPDATE approval='YES'";
+    } else {
+        $sql1 = "INSERT INTO leavedb (id,approval) VALUES ('$id','no') ON DUPLICATE KEY UPDATE approval='no'";
+    }
+
+
+
 mysqli_close($conn);
+
+
 
 ?>
