@@ -1,6 +1,5 @@
-
-
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -34,28 +33,26 @@
 
 </head>
 
-<body class="signup-page">
+<body class="signup-page" style="background-image: url(leave.jpg);background-repeat: no-repeat;
+    background-size: cover;" ;>
     <div class="signup-box">
         <div class="logo">
-            <a href="javascript:void(0);">Alpen<b>Design</b></a>
+            <a href="javascript:void(0);">Leave  <b>Register</b></a>
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
 
-        
 
-        <div class="card">
+
+        <div class="card" style="box-shadow: 0 4px 8px 0 rgb(108, 136, 163), 0 6px 20px 0 rgb(109, 139, 167);
+    border: 1px solid #e92163;">
             <div class="body">
-                <form  name="contact-form" method="POST" action="LAdb.php">
-                    <div class="msg" style="color: #ffffff;background-color: #51bcd4;
-                    padding: 2%;">Apply For Leave</div>
-
-
+                <form id="leaveapp" action="#">
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">add</i>
+                            <i class="material-icons">dehaze</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="dpt" class="form-control show-tick">
+                            <select id="dpt" name="dpt" class="form-control show-tick" required>
                                 <option value="">Please select Department</option>
                                 <option value="hr">HR</option>
                                 <option value="technical">Technical</option>
@@ -68,10 +65,10 @@
 
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">add</i>
+                            <i class="material-icons">check_box</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="day" class="form-control show-tick">
+                            <select id="day" name="day" class="form-control show-tick" required>
                                 <option value="">Please select session</option>
                                 <option value="fullday">Full Day</option>
                                 <option value="halfday">Half day</option>
@@ -79,23 +76,32 @@
                         </div>
                     </div>
 
-                    <i class="material-icons" style="font-size: 20px;">add</i>
-                    <label style="font-weight: 100;margin-left: 10px;">Please select Date</label>
+                    <p><b>Duration from*</b></p>
                     <div class="input-group">
                         <span class="input-group-addon">
-                <i class="material-icons">person</i>
+                <i class="material-icons">date_range</i>
                 </span>
                         <div class="form-line">
-                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dd" required>
+                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dd" id="dd" required>
+                        </div>
+                    </div>
+
+                    <p><b>Duration to*</b></p>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                <i class="material-icons">date_range</i>
+                </span>
+                        <div class="form-line">
+                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dd1" id="dd1" required>
                         </div>
                     </div>
 
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">update</i>
                         </span>
                         <div class="form-line">
-                            <select id="select" name="priority" class="form-control show-tick">
+                            <select id="priority" name="priority" class="form-control show-tick" required>
                                 <option value="">Priority of leave</option>
                                 <option value="normal">Normal</option>
                                 <option value="important">Important</option>
@@ -106,28 +112,89 @@
 
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">priority_high</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="title" placeholder="Reason for Leave" >
+                            <input type="text" id="title" class="form-control" name="title" placeholder="Reason for Leave" required>
                         </div>
                     </div>
 
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" value="submit">SUBMIT</button>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" name="submit" type="submit" value="submit">SUBMIT</button>
 
+                    <br><br>
+                    <div id="error_message">
+                        <div class="alert alert-danger hidden">
+                            <strong>Oh snap!</strong> Failed To Sent your application..Please try again
+                        </div>
+                    </div>
+                    <div id="success_message">
+                        <div class="alert alert-success hidden">
+                            Your Leave Application has Successfully sent to the admin for approval.
+                        </div>
+                    </div>
+
+                     <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="viewholidays.php">All Holidays</a>
+                        </div>
+                        <div class="col-xs-6 align-right">
+                            <a href="../../home.php">Back to Dashboard</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $("#leaveapp").on('submit',function(e) {
+            // alert('test');
+            // return false;
+            var dpt = $("#dpt").val();
+            var day = $("#day").val();
+            var dd = $("#dd").val();
+            var dd1 = $("#dd1").val();
+            var priority = $("#priority").val();
+            var title = $("#title").val();
 
-    <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+            
+            if(dpt == "" &&  day == "" && dd == "" && dd1 == "" && priority == "" && title == "") {
+                // $("#error_message").show().html("All Fields are Required");
+            } else {
+                // $("#error_message").html("").hide();
+                $.ajax({
+                    type: "POST",
+                    url: "LAdb.php",
+                    data: "dpt="+dpt+"&day="+day+"&dd="+dd+"&dd1="+dd1+"&priority="+priority+"&title="+title,
+                    success: function(data){
+                        // $('#success_message').fadeIn().html(data);
+                        // setTimeout(function() {
+                        //     $('#success_message').fadeOut("slow");
+                        // }, 2000 );
+                        //alert('test');
+                    var response = JSON.parse(data);
+                    // console.log(response.status);
+                    if(response.status == true){
+                        // alert('Success');
+                        $('.alert-success').removeClass('hidden');
+                        $('.alert-danger').addClass('hidden');
+                    }else{
+                        // alert('Error');
+                        $('.alert-success').addClass('hidden');
+                        $('.alert-danger').removeClass('hidden');
+                    }
+        
+                    }
+        
+                });
+            }
+            e.preventDefault();
+            document.getElementById("leaveapp").reset();
 
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+        });
+    </script>
+
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -142,7 +209,7 @@
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
 
-    <script src="../../js/pages/forms/basic-form-elements.js"></script>
+
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>

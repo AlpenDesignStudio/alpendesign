@@ -75,7 +75,7 @@ include("check.php");
 
     <body class="theme-red">
         <!-- Page Loader -->
-        <div class="page-loader-wrapper">
+  <!--       <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="preloader">
                     <div class="spinner-layer pl-red">
@@ -89,7 +89,7 @@ include("check.php");
                 </div>
                 <p>Please wait...</p>
             </div>
-        </div>
+        </div> -->
         <!-- #END# Page Loader -->
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
@@ -158,7 +158,9 @@ include("check.php");
 include('connect-db.php');
 
 // get the records from the database
-if ($result = $mysqli->query("SELECT * FROM holidays ORDER BY id"))
+if ($result = $mysqli->query("SELECT * FROM holidays ORDER BY id " ))
+    //SELECT DATE_FORMAT(leave_date, '%m/%d/%Y ') FROM holidays;
+    //ROW SET leave_date  = DATE_FORMAT(NOW(), '%d-%m-%Y');
 {
 // display records if there are records to display
 if ($result->num_rows > 0)
@@ -171,19 +173,22 @@ if ($result->num_rows > 0)
 
 while ($row = $result->fetch_object())
 {
+
+$dt=date('d-m-Y ',strtotime($row->leave_date));
+$dtt=date('d-m-Y ',strtotime($row->leave_datee ));
     
 // set up a row for each record
 echo "<tr>";
 echo "<td>" . $row->id . "</td>";
 echo "<td>" . $row->leave_cat . "</td>";
-echo "<td>" . $row->leave_date . "</td>";
-echo "<td>" . $row->leave_datee . "</td>";
+echo "<td>" . $dt . "</td>";
+echo "<td>" . $dtt . "</td>";
 echo "<td>" . $row->leave_cause . "</td>";
 echo "<td>
 
 
 
-<button style='width: 100% !important;' type='button' class='btn bg-red waves-effect'>
+<button type='button' class='btn bg-red waves-effect' style='width: 100%;'>
       <i class='material-icons'>report_problem</i><a href='delete.php?id=" . $row->id . "'>
       <b style='color: white !important;';>Delete Record</b></a></button>
 </td>";

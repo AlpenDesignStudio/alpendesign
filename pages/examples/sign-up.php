@@ -47,7 +47,8 @@
     </style>
 </head>
 
-<body class="signup-page" style="background-image: url(register.jpg)" ;>
+<body class="signup-page" style="background-image: url(register.jpg);background-repeat: no-repeat;
+    background-size: cover;" ;>
     <div class="signup-box">
         <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
@@ -75,6 +76,7 @@
                         </div>
                     </div>
 
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -94,7 +96,7 @@
                     </div>
 
                     <div class="input-group">
-                        <span class="input-group-addon">
+                        <span class="input-group-addon" >
                             <i class="material-icons">public</i>
                         </span>
                         <div class="sel" class="form-control show-tick">
@@ -140,7 +142,7 @@
                             <input id="email" type="email" class="form-control" name="email" placeholder="Email Address" required>
                         </div>
                     </div>
-                    
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">lock</i>
@@ -240,6 +242,8 @@ $("#sign_up").on('submit',function(e) {
         });
     }
     e.preventDefault();
+    document.getElementById("sign_up").reset();
+
 });
 </script>   
 
@@ -249,8 +253,6 @@ $("#sign_up").on('submit',function(e) {
     <!-- Select Plugin Js -->
     <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

@@ -181,14 +181,10 @@ echo "<td>" . $row->dd . "</td>";
 echo "<td>" . $row->priority . "</td>";
 echo "<td>" . $row->title . "</td>";
 
-echo "<td><div>
-<a href='insert.php?id=" .$id. "'>
-      <b style='color: black !important;';></b>
-<input type='submit' name='approve' value='Approve' /></a>
-</div>
-
-
-
+echo "<td>
+<button type='button' class='btn bg-red waves-effect' style='width:100%;'> 
+      <i class='material-icons'>report_problem</i><a href='insert.php?id=" .$id. "'>
+      <b style='color: white !important;';>Pending</b></a></button>
 </td>";
 
 
@@ -255,8 +251,7 @@ $mysqli->close();
             <!-- Slimscroll Plugin Js -->
             <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-                <!-- Bootstrap Notify Plugin Js -->
-    <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+              
 
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
@@ -282,8 +277,7 @@ $mysqli->close();
             <!-- Bootstrap Tags Input Plugin Js -->
             <script src="../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 
-            <!-- noUISlider Plugin Js -->
-            <script src="../../plugins/nouislider/nouislider.js"></script>
+            
 
             <!-- Waves Effect Plugin Js -->
             <script src="../../plugins/node-waves/waves.js"></script>

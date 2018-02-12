@@ -36,7 +36,7 @@
    background-size: cover;">
     <div class="signup-box">
       <div class="logo">
-            <a href="javascript:void(0);">Alpen<b>Design</b></a>
+        <a href="javascript:void(0);">Holiday <b>Register</b></a>
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
@@ -70,7 +70,6 @@
                 
                            <p><b>Duration from*</b></p>
                      <div class="input-group">
-
                         <span class="input-group-addon">
                             <i class="material-icons">date_range</i>
                         </span>
@@ -164,20 +163,6 @@ $("#holiday").on('submit',function(e) {
 });
 </script>   
 
-
-
-
-
-
-     <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-
-      <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
 
@@ -191,7 +176,6 @@ $("#holiday").on('submit',function(e) {
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
    
-    <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
