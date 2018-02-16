@@ -1,3 +1,10 @@
+<?php
+session_start(); 
+ 
+$email = $_SESSION['email']; 
+$dpt = $_SESSION['dpt']; 
+// echo $email;die();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -47,21 +54,18 @@
     border: 1px solid #e92163;">
             <div class="body">
                 <form id="leaveapp" action="#">
+                  
+                        <p><b> Department*</b></p>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">dehaze</i>
                         </span>
                         <div class="form-line">
-                            <select id="dpt" name="dpt" class="form-control show-tick" required>
-                                <option value="">Please select Department</option>
-                                <option value="hr">HR</option>
-                                <option value="technical">Technical</option>
-                                <option value="Legal">Legal</option>
-                                <option value="marketing">Marketing</option>
-                                <option value="creative">Creative</option>
-                            </select>
+                            <input type="text" id="dpt" class="form-control" name="dpt"  value="<?php echo $dpt;?>" readonly>
                         </div>
                     </div>
+
+
 
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -119,6 +123,15 @@
                         </div>
                     </div>
 
+                     <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">priority_high</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" id="email" class="form-control" name="email" value="<?php echo $email;?>" readonly>
+                        </div>
+                    </div>
+
                     <button class="btn btn-block btn-lg bg-pink waves-effect" name="submit" type="submit" value="submit">SUBMIT</button>
 
                     <br><br>
@@ -135,7 +148,7 @@
 
                      <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
-                            <a href="viewholidays.php">All Holidays</a>
+                            <a href="leavedisplay.php">All Leaves</a>
                         </div>
                         <div class="col-xs-6 align-right">
                             <a href="../../home.php">Back to Dashboard</a>
@@ -157,16 +170,18 @@
             var dd1 = $("#dd1").val();
             var priority = $("#priority").val();
             var title = $("#title").val();
+            var email = $("#email").val();
+
 
             
-            if(dpt == "" &&  day == "" && dd == "" && dd1 == "" && priority == "" && title == "") {
+            if(dpt == "" &&  day == "" && dd == "" && dd1 == "" && priority == "" && title == "" && email == "") {
                 // $("#error_message").show().html("All Fields are Required");
             } else {
                 // $("#error_message").html("").hide();
                 $.ajax({
                     type: "POST",
                     url: "LAdb.php",
-                    data: "dpt="+dpt+"&day="+day+"&dd="+dd+"&dd1="+dd1+"&priority="+priority+"&title="+title,
+                    data: "dpt="+dpt+"&day="+day+"&dd="+dd+"&dd1="+dd1+"&priority="+priority+"&title="+title+"&email="+email,
                     success: function(data){
                         // $('#success_message').fadeIn().html(data);
                         // setTimeout(function() {
