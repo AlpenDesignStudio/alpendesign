@@ -155,7 +155,7 @@ session_start();
                             <div class="text">HR</div>
                             <div class="number count-to" data-from="0" data-to="<?php
                 include 'check.php';
-                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='HR'");
+                $res=mysqli_query($con,"SELECT count(*) from  register where dpt='HR'");
                 while($r=mysqli_fetch_row($res))
                  { echo "".$r[0]."";}?>" 
                 data-speed="15" data-fresh-interval="20"></div>
@@ -172,7 +172,7 @@ session_start();
                             <div class="text">Technical </div>
                             <div class="number count-to" data-from="0" data-to="<?php
                 include 'check.php';
-                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='Technical'");
+                $res=mysqli_query($con,"SELECT count(*) from  register where dpt='Technical'");
                 while($r=mysqli_fetch_row($res))
                  { echo "".$r[0]."";}?>" " data-speed="1000" data-fresh-interval="20"></div>
                         </div>
@@ -187,7 +187,7 @@ session_start();
                             <div class="text">Legal</div>
                             <div class="number count-to" data-from="0" data-to="<?php
                 include 'check.php';
-                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='Legal'");
+                $res=mysqli_query($con,"SELECT count(*) from  register where dpt='Legal'");
                 while($r=mysqli_fetch_row($res))
                  { echo "".$r[0]."";}?>" " data-speed="1000" data-fresh-interval="20"></div>
                         </div>
@@ -202,7 +202,7 @@ session_start();
                             <div class="text">Marketing</div>
                             <div class="number count-to" data-from="0" data-to="<?php
                 include 'check.php';
-                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='Marketing'");
+                $res=mysqli_query($con,"SELECT count(*) from  register where dpt='Marketing'");
                 while($r=mysqli_fetch_row($res))
                  { echo "".$r[0]."";}?>" " data-speed="1000" data-fresh-interval="20"></div>
                         </div>

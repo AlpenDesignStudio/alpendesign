@@ -2,7 +2,7 @@
 // $id = $_SESSION['visitor_id'];
 //print_r($_SESSION);die();
 session_start();
-$fname = $_SESSION['fname']; 
+$fullname = $_SESSION['fullname']; 
 $email = $_SESSION['email']; 
      //echo $id;die();
 
@@ -85,7 +85,7 @@ $email = $_SESSION['email'];
            
 
            // Insert record
-            $queryy = "INSERT INTO profile(fname,image) values('".$fname."','".$image."')";
+            $queryy = "INSERT INTO profile(fullname,image) values('".$fullname."','".$image."')";
 
            //$query = "UPDATE profile SET image='".$image."' where fname='".$fname."' ";
        
@@ -94,7 +94,7 @@ $email = $_SESSION['email'];
       
             
             // Upload file
-            move_uploaded_file($_FILES['file']['tmp_name'],'profile/'.$fname);
+            move_uploaded_file($_FILES['file']['tmp_name'],'profile/'.$fullname);
 
         }
      

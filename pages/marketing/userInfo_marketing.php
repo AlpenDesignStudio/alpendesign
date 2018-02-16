@@ -1,6 +1,6 @@
 <?php
 // $id = $_SESSION['visitor_id'];
-$fname = $_SESSION['fname']; 
+$fullname = $_SESSION['fullname']; 
 $email = $_SESSION['email']; 
      //echo $id;die();
 ?>
@@ -9,7 +9,7 @@ $email = $_SESSION['email'];
                 <?php
                 include 'check.php';
                 
-$res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
+$res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
 
        
          while($r=mysqli_fetch_row($res))
@@ -21,7 +21,7 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
                     <!-- <img src="images/user.png" width="48" height="48" alt="User" /> -->
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fname ?></div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fullname ?></div>
                     <div class="email"><?php echo $email ?></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>

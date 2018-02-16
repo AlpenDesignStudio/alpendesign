@@ -13,7 +13,7 @@ include('check.php');
 //print_r($password);die();
 //$last_id=mysql_insert_id();
 
-$query = mysqli_query($con,"SELECT * FROM ar_visitor WHERE email='".$email."' && password='".$password."'");
+$query = mysqli_query($con,"SELECT * FROM register WHERE email='".$email."' && password='".$password."'");
 
     // $query1 = "insert into timesheet
     // (sr,dpt,uname,pword,visitor_id,start_time,end_time) values('".$sr."')";
@@ -35,8 +35,8 @@ if ($numrows!=0){
   $_SESSION['dpt']=$dpt;
    $row_data['dpt']=$dpt;
 
-  $fname = $row_data['fname'];
-  $_SESSION['fname']=$fname;
+  $fullname = $row_data['fullname'];
+  $_SESSION['fullname']=$fullname;
 
   $id = $row_data['visitor_id'];
   $_SESSION['visitor_id']=$id;

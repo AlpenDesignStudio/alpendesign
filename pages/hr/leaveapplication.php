@@ -148,7 +148,7 @@ $dpt = $_SESSION['dpt'];
 
                      <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
-                            <a href="viewholidays.php">All Holidays</a>
+                            <a href="leavedisplay.php">All Leaves</a>
                         </div>
                         <div class="col-xs-6 align-right">
                             <a href="../../home.php">Back to Dashboard</a>

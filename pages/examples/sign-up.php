@@ -29,26 +29,9 @@
 
     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-    <style type="text/css">
-    #country{
-    display: inline-block;
-    width: 100%;
-    border: 1px solid #fff;
-    position: relative;
-    border-bottom: 1px solid #ddd;
-    }
-    #state{
-    display: inline-block;
-    width: 100%;
-    border: 1px solid #fff;
-    position: relative;
-    border-bottom: 1px solid #ddd;
-    }
-    </style>
 </head>
 
-<body class="signup-page" style="background-image: url(register.jpg);background-repeat: no-repeat;
-    background-size: cover;" ;>
+<body class="signup-page" style="background-image: url(register.jpg);background-repeat: no-repeat;background-size: cover;" ;>
     <div class="signup-box">
         <div class="logo">
             <a href="javascript:void(0);">Alpen<b>Design</b></a>
@@ -82,34 +65,16 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input id="fname" type="text" class="form-control" name="fname" placeholder="First Name " required autofocus>
+                        <input id="fullname" type="text" class="form-control" name="fullname" placeholder="Full Name" required autofocus>
                         </div>
                     </div>
 
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person_add</i>
+                            <i class="material-icons">phone</i>
                         </span>
                         <div class="form-line">
-                            <input id="lname" type="text" class="form-control" name="lname" placeholder="Last Name " required autofocus>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon" >
-                            <i class="material-icons">public</i>
-                        </span>
-                        <div class="sel" class="form-control show-tick">
-                            <select id="country" name="country"></select>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="material-icons">location_city</i>
-                        </span>
-                        <div class=" sel">
-                            <select name="state" id="state"></select>
+                            <input id="no" type="text" class="form-control" name="no" placeholder="Contact Number" required autofocus>
                         </div>
                     </div>
 
@@ -118,7 +83,7 @@
                             <i class="material-icons">domain</i>
                         </span>
                         <div class="form-line">
-                            <input id="town" type="text" class="form-control" name="town" placeholder="Town" required autofocus>
+                            <input id="address" type="text" class="form-control" name="address" placeholder="Residential Address" required autofocus>
                         </div>
                     </div>
 
@@ -127,7 +92,7 @@
                             <i class="material-icons">wc</i>
                         </span>
                         <div class="form-line">
-                            <select id="gender" name="sex" class="form-control show-tick">
+                            <select id="gender" name="gender" class="form-control show-tick">
                                 <option value="M">Male</option>
                                 <option value="F">Female</option>
                             </select>
@@ -152,10 +117,7 @@
                         </div>
                     </div>
 
-            
-
                     <div class="input-group">
-
                         <span class="input-group-addon">
                             <i class="material-icons">perm_contact_calendar</i>
                         </span>
@@ -197,11 +159,9 @@ $("#sign_up").on('submit',function(e) {
     // alert('test');
     // return false;
     var dpt = $("#dpt").val();
-    var fname = $("#fname").val();
-    var lname = $("#lname").val();
-    var country = $("#country").val();
-    var state = $("#state").val();
-    var town = $("#town").val();
+    var fullname = $("#fullname").val();
+    var no = $("#no").val();
+    var address = $("#address").val();
     var gender = $("#gender").val();
     var email = $("#email").val();
     var password = $("#pass").val();
@@ -209,7 +169,7 @@ $("#sign_up").on('submit',function(e) {
 
     //var comment = $("#comment").val();
     
-    if(dpt == "" &&  fname == "" && lname == "" && country == "" &&  state == "" && town == "" &&  gender == "" && email == "" && password == "" && dob == "") {
+    if(dpt == "" &&  fullname == "" && no == ""  && address == "" &&  gender == "" && email == "" && password == "" && dob == "") {
         // $("#error_message").show().html("All Fields are Required");
     } else {
         // $("#error_message").html("").hide();
@@ -218,7 +178,7 @@ $("#sign_up").on('submit',function(e) {
             url: "db.php",
             //data: "opwd="+opwd+"&npwd="+npwd+"&cpwd="+cpwd,
 
-            data: "dpt="+dpt+"&fname="+fname+"&lname="+lname+"&country="+country+"&state="+state+"&town="+town+"&sex="+gender+"&email="+email+"&password="+password+"&dob="+dob,
+            data: "dpt="+dpt+"&fullname="+fullname+"&no="+no+"&address="+address+"&gender="+gender+"&email="+email+"&password="+password+"&dob="+dob,
             success: function(data){
                 // $('#success_message').fadeIn().html(data);
                 // setTimeout(function() {
@@ -273,10 +233,9 @@ $("#sign_up").on('submit',function(e) {
     <script src="../../js/count.js"></script>
     <script src="../../js/pages/examples/sign-up.js"></script>
 
-    <script language="javascript">
+    <!-- <script language="javascript">
         populateCountries("country", "state");
-        //populateCountries("country2");
-    </script>
+    </script> -->
 </body>
 
 </html>
