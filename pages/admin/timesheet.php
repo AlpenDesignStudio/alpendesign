@@ -128,11 +128,10 @@ $email = $_SESSION['email'];
                                     <thead>
                                         <tr>
                                             <th> Sr.No</th>
-                                            <th> Name</th>
-                                            <th> Department</th> 
-                                             <th> Date</th> 
+                                            <th> Name</th>                                  <th> Date</th> 
                                             <th> Start Time</th>
                                             <th> End Time</th> 
+                                             <th> Total</th> 
                                          
                                         </tr>
                                     </thead>
@@ -142,11 +141,12 @@ $email = $_SESSION['email'];
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select sr,uname,dpt,date,start_time,end_time from timesheet");
+            $res=mysqli_query($con,"Select sr,uname,date,start_time,end_time,total from timesheet");
 
        
          while($r=mysqli_fetch_row($res))
          {
+            
             // print_r($r);die;
           echo "<tr>";
                  echo "<td align='center'>$r[0]</td>";
@@ -154,7 +154,12 @@ $email = $_SESSION['email'];
                   echo "<td alig='center' width=''> $r[2]</td>";
                  echo "<td alig='center' width=''> $r[3]</td>";
                   echo "<td alig='center' width=''> $r[4]</td>";
-                echo "<td alig='center' width=''> $r[5]</td>";
+
+                    $start_time = "'.$r[3].'";
+                    $end_time = "'.$r[4].'";
+                    $total=  bcsub($end_time, $start_time); 
+
+                 echo "<td alig='center' width=''>$total</td>";
                
                  echo "</tr>";
         }

@@ -1,12 +1,9 @@
 
 <?php 
 session_start();
-$dpt = $_SESSION['dpt'];
-$email = $_SESSION['email'];
-$password = $_SESSION['password'];
-//print_r($password);die();
-// $dpt = $_POST['dpt'];
-// $uname = $_POST['uname'];
+ $dpt = $_SESSION['dpt'];
+ $email = $_SESSION['email'];
+
 ?>
 
 
@@ -16,7 +13,7 @@ $password = $_SESSION['password'];
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Home </title>
+    <title>ADSL | Alpen Design Studio</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -65,45 +62,45 @@ $password = $_SESSION['password'];
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-        <?php if($dpt == 1){
+         <?php if($dpt == 'Admin'){
          include('pages/admin/userInfo_admin.php');
         }
-        if($dpt == 2){
+        if($dpt == 'HR'){
             include('pages/hr/userInfo_hr.php');
         }
-        if($dpt == 3){
+        if($dpt == 'Technical'){
             include('pages/tech/userInfo_tech.php');
         }
-        if($dpt == 4){
+        if($dpt == 'Legal'){
             include('pages/legal/userInfo_legal.php');
         }
-        if($dpt == 5){
+        if($dpt == 'Marketing'){
             include('pages/marketing/userInfo_marketing.php');
         }
-        if($dpt == 6){
+        if($dpt == 'Creative'){
             include('pages/creative/userInfo_creative.php');
         }
         ?>
      
             <!-- #User Info -->
             <!-- Menu -->
-        <?php if($dpt == 1){
+        <?php if($dpt == 'Admin'){
             include('templates/admin_menu.php');
              //include('pages/admin/admin11.php');
         }
-        if($dpt == 2){
+        if($dpt == 'HR'){
             include('templates/hr_menu.php');
         }
-        if($dpt == 3){
+        if($dpt == 'Technical'){
             include('templates/tech_menu.php');
         }
-        if($dpt == 4){
+        if($dpt == 'Legal'){
             include('templates/legal_menu.php');
         }
-        if($dpt == 5){
+        if($dpt == 'Marketing'){
             include('templates/marketing_menu.php');
         }
-        if($dpt == 6){
+        if($dpt == 'Creative'){
             include('templates/creative_menu.php');
         }
         ?>
@@ -134,7 +131,6 @@ $password = $_SESSION['password'];
                             <div class="text">LOGIN</div>
                         </div>
                     </div>
-                         
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -149,37 +145,36 @@ $password = $_SESSION['password'];
                 </div></div>
 
             <!-- Widgets -->
-           <!--  <div class="row clearfix">
+            <div class="row clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-pink hover-expand-effect">
                         <div class="icon">
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
-                            <div class="text">NEW TASKS</div>
-                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                            <div class="text">HR</div>
+                            <div class="number count-to" data-from="0" data-to="<?php
+                include 'check.php';
+                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='HR'");
+                while($r=mysqli_fetch_row($res))
+                 { echo "".$r[0]."";}?>" 
+                data-speed="15" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box bg-cyan hover-expand-effect">
-                        <div class="icon">
-                            <i class="material-icons">help</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">NEW TICKETS</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
-                        </div>
-                    </div>
-                </div>
+            
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box bg-light-green hover-expand-effect">
                         <div class="icon">
                             <i class="material-icons">forum</i>
                         </div>
                         <div class="content">
-                            <div class="text">NEW COMMENTS</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="text">Technical </div>
+                            <div class="number count-to" data-from="0" data-to="<?php
+                include 'check.php';
+                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='Technical'");
+                while($r=mysqli_fetch_row($res))
+                 { echo "".$r[0]."";}?>" " data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -189,12 +184,31 @@ $password = $_SESSION['password'];
                             <i class="material-icons">person_add</i>
                         </div>
                         <div class="content">
-                            <div class="text">NEW VISITORS</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="text">Legal</div>
+                            <div class="number count-to" data-from="0" data-to="<?php
+                include 'check.php';
+                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='Legal'");
+                while($r=mysqli_fetch_row($res))
+                 { echo "".$r[0]."";}?>" " data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">help</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">Marketing</div>
+                            <div class="number count-to" data-from="0" data-to="<?php
+                include 'check.php';
+                $res=mysqli_query($con,"SELECT count(*) from  ar_visitor where dpt='Marketing'");
+                while($r=mysqli_fetch_row($res))
+                 { echo "".$r[0]."";}?>" " data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- #END# Widgets -->
             <!-- CPU Usage -->
             <div class="row clearfix">
@@ -243,7 +257,7 @@ $password = $_SESSION['password'];
                                  data-fill-Color="rgba(0, 188, 212, 0)">
                                 12,10,9,6,5,6,10,5,7,5,12,13,7,12,11
                             </div>
-                            <ul class="dashboard-stat-list">
+                         <ul class="dashboard-stat-list">
                                 <li>
                                     TOTAL LEAVE
                                     <span class="pull-right"><b>21</b> <small>DAYS</small></span>
@@ -253,10 +267,11 @@ $password = $_SESSION['password'];
                                     <span class="pull-right"><b>
                                         <?php
                 include 'check.php';
-                $res=mysqli_query($con,"SELECT count(*) from leavedb;");
+        $res=mysqli_query($con,"SELECT count(*) from leavedb where email='$email'");
 
 while($r=mysqli_fetch_row($res))
          { 
+
                  echo "".$r[0]."";        
         }
 
@@ -270,7 +285,7 @@ while($r=mysqli_fetch_row($res))
                                     <span class="pull-right"><b>
                                         <?php
                 include 'check.php';
-                $res=mysqli_query($con,"SELECT count(*) from leavedb;");
+        $res=mysqli_query($con,"SELECT count(*) from leavedb where email='$email'");
 
 while($r=mysqli_fetch_row($res))
          { 
@@ -285,6 +300,7 @@ while($r=mysqli_fetch_row($res))
                                     </b> <small>DAYS</small></span>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>

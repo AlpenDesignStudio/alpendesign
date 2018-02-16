@@ -66,12 +66,12 @@
                         <div class="form-line">
                             <select id="dpt" name="dpt" class="form-control show-tick">
                                 <option value="">Please select Department</option>
-                                <option value="1">Admin</option>
-                                <option value="2">HR</option>
-                                <option value="3">Technical</option>
-                                <option value="4">Legal</option>
-                                <option value="5">Marketing</option>
-                                <option value="6">Creative</option>
+                                <option value="Admin">Admin</option>
+                                <option value="HR">HR</option>
+                                <option value="Technical">Technical</option>
+                                <option value="Legal">Legal</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Creative">Creative</option>
                             </select>
                         </div>
                     </div>

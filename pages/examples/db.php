@@ -23,13 +23,13 @@ if(!empty($_POST)){
         $password = hash('sha256', $pass);
 
       $query=mysqli_query($con,"INSERT INTO ar_visitor 
-      (dpt,password,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES(".$dpt.",'".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
-//print_r($query);die();
+(dpt,password,fname,lname,email,town,state,country,sex,dob,added_on,updated_on)VALUES('".$dpt."','".$password."','".$FirstName."','".$LastName."','".$email."','".$Town."','".$State."','".$country."','".$Sex."','".$DateOfBirth."','".$dt."','".$dt."')");
+// print_r($query);die();
 // $num_rows = mysqli_num_rows($query);
 if($query){
 
         // $_SESSION['msg1']="Password Changed Successfully !!";
-        $response = array('status'=> TRUE,'data'=>'Password Changed Successfully !!');
+        $response = array('status'=> TRUE,'data'=>'Registration is Done Successfully !!');
         echo json_encode($response);
             //header('location:user.php');
     }else{
