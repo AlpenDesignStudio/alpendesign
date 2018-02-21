@@ -27,6 +27,7 @@ if ($numrows!=0){
 
   //$email = $row_data['email'];
   $_SESSION['email']=$email;
+   $row_data['email']=$email;
 
   $_SESSION['password']=$row_data['password'];
    $row_data['password']=$pass;

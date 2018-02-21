@@ -28,7 +28,7 @@ if(!empty($_POST)){
 if($query){
 
         // $_SESSION['msg1']="Password Changed Successfully !!";
-        $response = array('status'=> TRUE,'data'=>'Password Changed Successfully !!');
+        $response = array('status'=> TRUE,'data'=>'Registration is Done Successfully !!');
         echo json_encode($response);
             //header('location:user.php');
     }else{
