@@ -5,7 +5,14 @@
                     <li class="active">
                         <a href="#">
                             <i class="material-icons">home</i>
-                            <span>Admin</span>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/hr/profile.php" id="profile">
+                            <i class="material-icons">settings</i>
+                            <span>Profile</span>
                         </a>
                     </li>
 
@@ -113,6 +120,7 @@
                     console.log(window.location.pathname);
                     if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
                             // alert('Home');
+                        $('#profile').attr('href','pages/hr/profile.php');
                         $('#fileupload').attr('href','pages/hr/fileupload.php');
                         $('#leave_reg').attr('href','pages/hr/excel.php');
                         $('#uploaded').attr('href','pages/hr/excelSheet.php');
@@ -125,6 +133,7 @@
                         $('#timesheet').attr('href','pages/hr/timesheet.php');
                     }else{
                         // alert('HR');
+                        $('#profile').attr('href','profile.php');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#leave_reg').attr('href','excel.php');
                         $('#uploaded').attr('href','excelSheet.php');
