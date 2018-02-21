@@ -12,6 +12,23 @@
                      <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">folder</i>
+                            <span>Notice</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="pages/admin/add_notice.php" id="add_notice">Add Notice</a>
+                            </li>
+                            <li>
+                                <a href="pages/admin/view_notice.php" id="view_notice">View Notice</a>
+                            </li>
+                        </ul>
+                    
+
+                    </li>
+
+                      <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">folder</i>
                             <span>Holidays</span>
                         </a>
                         <ul class="ml-menu">
@@ -22,6 +39,7 @@
                                 <a href="pages/admin/viewholidays.php" id="viewholidays">View Holidays</a>
                             </li>
                         </ul>
+                    
                     
                     </li>
                     <li>
@@ -100,6 +118,8 @@
                         $('#timesheet').attr('href','pages/admin/timesheet.php');
                          $('#holidays').attr('href','pages/admin/holidays.php');
                           $('#viewholidays').attr('href','pages/admin/viewholidays.php');
+                           $('#add_notice').attr('href','pages/admin/add_notice.php');
+                            $('#view_notice').attr('href','pages/admin/view_notice.php');
                         
                     }else{
                         // alert('HR');
@@ -115,7 +135,9 @@
                         $('#coverletter').attr('href','coverletter.php');
                          $('#timesheet').attr('href','timesheet.php');
                          $('#holidays').attr('href','holidays.php');
-                         $('#viewholidays').attr('href','viewholidays.php');
+                         $('#add_notice').attr('href','add_notice.php');
+                          $('#viewholidays').attr('href','viewholidays.php');
+                          $('#view_notice').attr('href','view_notice.php');
                         
                     }
                 });

@@ -1,11 +1,14 @@
 <?php
 session_start();
-include "check.php";
+
 $fullname = $_SESSION['fullname']; 
 $email = $_SESSION['email']; 
+?>
+<?php
+//include_once 'dbconfig.php';
+include("check.php");
 
 ?>
-
     <!DOCTYPE html>
     <html>
 
@@ -39,8 +42,8 @@ $email = $_SESSION['email'];
         <link href="../../plugins/dropzone/dropzone.css" rel="stylesheet">
 
         <!-- Multi Select Css -->
-       <!--  <link href="../../plugins/multi-select/css/multi-select.css" rel="stylesheet">
- -->
+        <link href="../../plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
         <!-- Bootstrap Spinner Css -->
         <link href="../../plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
 
@@ -51,7 +54,7 @@ $email = $_SESSION['email'];
         <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
         <!-- noUISlider Css -->
-        <!-- <link href="../../plugins/nouislider/nouislider.min.css" rel="stylesheet" /> -->
+        <link href="../../plugins/nouislider/nouislider.min.css" rel="stylesheet" />
 
         <!-- Custom Css -->
         <link href="../../css/style.css" rel="stylesheet">
@@ -60,8 +63,8 @@ $email = $_SESSION['email'];
         <link href="../../css/themes/all-themes.css" rel="stylesheet" />
 
             <!-- Bootstrap Notify Plugin Js -->
-   <!--  <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
- -->
+    <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
@@ -72,7 +75,7 @@ $email = $_SESSION['email'];
 
     <body class="theme-red">
         <!-- Page Loader -->
-        <div class="page-loader-wrapper">
+  <!--       <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="preloader">
                     <div class="spinner-layer pl-red">
@@ -86,15 +89,24 @@ $email = $_SESSION['email'];
                 </div>
                 <p>Please wait...</p>
             </div>
-        </div>
+        </div> -->
         <!-- #END# Page Loader -->
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
         <!-- #END# Overlay For Sidebars -->
-   
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="search-icon">
+                <i class="material-icons">search</i>
+            </div>
+            <input type="text" placeholder="START TYPING...">
+            <div class="close-search">
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <!-- #END# Search Bar -->
         <!-- Top Bar -->
         <?php include ("../../templates/top.php"); ?>
-
             <!-- #Top Bar -->
             <section>
                 <!-- Left Sidebar -->
@@ -115,128 +127,61 @@ $email = $_SESSION['email'];
             <section class="content">
                 <div class="container-fluid">
 
-
                     <!-- File Upload | Drag & Drop OR With Click & Choose -->
                     <div class="row clearfix" >
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card" >
                                 <div class="header" style="background-color: #673AB7;">
                                     <h2 style="text-align: center;color: #ffffff;">
-                                VIEW LEAVES
+                                VIEW NOTICE
                             </h2>
                                 </div>
-                                                    
-                                <div class="body">
-                                <div class="table-responsive">
-                                    <?php 
-
-if(isset($_GET['action'])) {
-    $id = $_GET['id'];
-    if($_GET['action'] =='submit1'){
-      $approval = 'YES';
-    }else{
-        $approval = 'NO';
-    }
-    $sql = "UPDATE leavedb SET approval='$approval' WHERE id ='$id'";
-    
-    if (mysqli_query($con,$sql)) {
-        if($approval == 'YES'){
-          echo " <div class='alert alert-success'>
-          <strong>APPROVED ID  </strong></div>";  
-        }else{
-          echo "<div class='alert alert-danger'>
-          <strong>DIS APPROVE </strong></div>";
-        }
-    }else{
-      echo "Error: " . $sql . "<br>" . mysqli_error($con);
-    }
-}
-?>
-                              <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                 <thead >
-                                        <tr>
-                                        <th class="view"> Sr.No</th> 
-                                        <th class="view">Department</th>
-                                        <th class="view">Day</th>
-                                        <th class="view"> Date</th>
-                                        <th class="view">Priority</th> 
-                                        <th class="view">Reason</th> 
-                                         <th class="view">Approve</th> 
-                                          <th class="view">Dis Approve</th> 
+                               <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr> 
+                                         <th class="view"> SR NO</th>
+                                           <th class="view"> Notice Date</th>
+                                            <th class="view"> Headline</th>
+                                            <th class="view"> Notices</th> 
+                                            
+                                         
                                         </tr>
                                     </thead>
-                                      <tbody>
-                                     
-                  
-                                   
+                             
+                                    <tbody>
 
-                                    
-<?php
+ <?php
+  if($_SERVER['REQUEST_METHOD'] == "GET")
+  {        
+            $res=mysqli_query($con,"Select * from notice");
 
-// connect to the database
-include('connect-db.php');
+       
+         while($r=mysqli_fetch_row($res))
+         {
+             
+          echo "<tr>";
+                 echo "<td align='center'>$r[0]</td>";
+                 //echo $r[0];die;
+                 echo "<td alig='center' width=''> $r[1]</td>";
+                  echo "<td alig='center' width=''> $r[2]</td>";
+                   echo "<td alig='center' width=''> $r[3]</td>";
+                   
 
-// get the records from the database
-if ($result = $mysqli->query("SELECT id,dpt,day,dd,priority,title,approval FROM leavedb ORDER BY id"))
-{
-// display records if there are records to display
-if ($result->num_rows > 0)
-{
+                 echo "</tr>";
 
+        }
 
-while ($row = $result->fetch_object())
-{
-
-$id=$row->id;      
-// set up a row for each record
-echo "<tr>";
-echo "<td>" . $row->id . "</td>";
-echo "<td>" . $row->dpt . "</td>";
-echo "<td>" . $row->day . "</td>";
-echo "<td>" . $row->dd . "</td>";
-echo "<td>" . $row->priority . "</td>";
-echo "<td>" . $row->title . "</td>";
-
-echo "<td>
-<form action='?action=submit1&id=$id' method='post'>
-<button style='width: 100% !important;' type='submit' class='btn bg-green waves-effect'>
-     <i class='material-icons'>check</i>
-      </button></form>
-      </td>";
-echo "<td>
-<form action='?action=submit2&id=$id' method='post'>
-      <button style='width: 100% !important;' type='submit' class='btn bg-red waves-effect'>
-      <i class='material-icons'>close</i>
-      </button></form>
-</td>";
-
-
-// echo "<td><a href='delete.php?id=" . $row->id . "'>Delete</a></td>";
-echo "</tr>";
-}
-
-echo "</table>";
-}
-// if there are no records in the database, display an alert message
-else
-{
-echo "No results to display!";
-}
-}
-// show an error if there is an issue with the database query
-else
-{
-echo "Error: " . $mysqli->error;
-}
-
-// close database connection
-$mysqli->close();
-?>
-</tbody>
-</table>
-
-                                </div>
+    }
+ 
+?> 
+                            </tbody>
+ 
+       
+                                </table>
                             </div>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -252,13 +197,13 @@ $mysqli->close();
             <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
 
             <!-- Select Plugin Js -->
-           <!--  <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script> -->
+            <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
             <!-- Slimscroll Plugin Js -->
             <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
                 <!-- Bootstrap Notify Plugin Js -->
-<!--     <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script> -->
+    <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
 
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
@@ -267,7 +212,7 @@ $mysqli->close();
     <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
 
             <!-- Bootstrap Colorpicker Js -->
-       <!--      <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script> -->
+            <script src="../../plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 
             <!-- Dropzone Plugin Js -->
             <script src="../../plugins/dropzone/dropzone.js"></script>
@@ -285,17 +230,17 @@ $mysqli->close();
             <script src="../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 
             <!-- noUISlider Plugin Js -->
-         <!--    <script src="../../plugins/nouislider/nouislider.js"></script> -->
+            <script src="../../plugins/nouislider/nouislider.js"></script>
 
             <!-- Waves Effect Plugin Js -->
-            <!-- <script src="../../plugins/node-waves/waves.js"></script> -->
+            <script src="../../plugins/node-waves/waves.js"></script>
 
             <!-- Custom Js -->
             <script src="../../js/admin.js"></script>
-           <!--  <script src="../../js/pages/forms/advanced-form-elements.js"></script> -->
+            <script src="../../js/pages/forms/advanced-form-elements.js"></script>
 
             <!-- Demo Js -->
-            <!-- <script src="../../js/demo.js"></script> -->
+            <script src="../../js/demo.js"></script>
     </body>
 
     </html>

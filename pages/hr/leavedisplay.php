@@ -159,7 +159,7 @@ $email = $_SESSION['email'];
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
   {        
-            $res=mysqli_query($con,"Select dpt,day,dd,priority,title,approval from  leavedb");
+            $res=mysqli_query($con,"Select dpt,day,dd,priority,title,approval from leavedb");
 
        
          while($r=mysqli_fetch_row($res))
@@ -172,8 +172,17 @@ $email = $_SESSION['email'];
                  echo "<td alig='center' width=''> $r[2]</td>";
                  echo "<td alig='center' width=''> $r[3]</td>";
                  echo "<td alig='center' width=''> $r[4]</td>";
+                 if (empty($r[5])) {
+                    echo "<td>
+
+<div style='width: 100% !important;' class='btn bg-blue waves-effect'>
+      <i class='material-icons'>report_problem</i>
+      <b style='color: white !important;';>Pending</b></div>
+
+        </td>";
+                 }else{
                  echo "<td alig='center' width=''> $r[5]</td>";
-              
+              }
                  echo "</tr>";
 
         }
