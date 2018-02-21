@@ -1,4 +1,5 @@
 <?php
+//print_r($_SESSION);die();
 // $id = $_SESSION['visitor_id'];
 $fullname = $_SESSION['fullname']; 
 $email = $_SESSION['email']; 

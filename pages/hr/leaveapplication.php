@@ -38,7 +38,19 @@ $dpt = $_SESSION['dpt'];
     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
+<style type="text/css">
+
+/*#hr{
+   display: inline-block;
+   width: 100%;
+   border: 1px solid #fff;
+   position: relative;
+   border-bottom: 1px solid #ddd;
+   }*/
+
+</style>
 </head>
+
 
 <body class="signup-page" style="background-image: url(leave.jpg);background-repeat: no-repeat;
     background-size: cover;" ;>
@@ -55,7 +67,7 @@ $dpt = $_SESSION['dpt'];
             <div class="body">
                 <form id="leaveapp" action="#">
                   
-                        <p><b> Department*</b></p>
+                    <p><b> Department*</b></p>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">dehaze</i>
@@ -65,8 +77,6 @@ $dpt = $_SESSION['dpt'];
                         </div>
                     </div>
 
-
-
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">check_box</i>
@@ -74,19 +84,59 @@ $dpt = $_SESSION['dpt'];
                         <div class="form-line">
                             <select id="day" name="day" class="form-control show-tick" required>
                                 <option value="">Please select session</option>
-                                <option value="fullday">Full Day</option>
                                 <option value="halfday">Half day</option>
+                                <option value="singleday">Single day</option>
+                                <option value="multipleday">Multiple day</option>
                             </select>
                         </div>
                     </div>
 
+                    <div style='display:none;' id='half'>
+                    <p><b>Please select Date from*</b></p>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                <i class="material-icons">date_range</i>
+                </span>
+                        <div class="form-line">
+                        <input type="date" class="form-control" name="hdd" id="hdd" >
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">av_timer</i>
+                        </span>
+                        <div class="form-line">
+                            <select id="hour" name="hour" class="form-control show-tick" >
+                                <option value="">Select Hour</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                            </select>
+                        </div>
+                    </div></div>
+
+                    <div style='display:none;' id='single'>
+                    <p><b>Select leave day*</b></p>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                <i class="material-icons">date_range</i>
+                </span>
+                    <div class="form-line">
+                        <input type="date" class="form-control" name="sdd" id="sdd" >
+                        </div>
+                    </div></div>
+
+                    <div style='display:none;' id='multiple'>
                     <p><b>Duration from*</b></p>
                     <div class="input-group">
                         <span class="input-group-addon">
                 <i class="material-icons">date_range</i>
                 </span>
                         <div class="form-line">
-                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dd" id="dd" required>
+                            <input type="date" class="form-control" name="dd" id="dd" >
                         </div>
                     </div>
 
@@ -96,9 +146,9 @@ $dpt = $_SESSION['dpt'];
                 <i class="material-icons">date_range</i>
                 </span>
                         <div class="form-line">
-                            <input type="date" class="form-control" placeholder="Date Of Birth" name="dd1" id="dd1" required>
+                            <input type="date" class="form-control" name="dd1" id="dd1" >
                         </div>
-                    </div>
+                    </div></div>
 
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -161,27 +211,54 @@ $dpt = $_SESSION['dpt'];
 
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
+
+$(document).ready(function(){
+    $('#day').on('change', function() {
+      if ( this.value == 'halfday')
+      //.....................^.......
+      {
+        $("#half").show();
+        $("#single").hide();
+        $("#multiple").hide();
+      }
+      else  if ( this.value == 'singleday')
+      {
+        $("#half").hide();
+        $("#single").show();
+        $("#multiple").hide();
+      }
+      else  if ( this.value == 'multipleday')
+      {
+        $("#half").hide();
+        $("#single").hide();
+        $("#multiple").show();
+      }
+    });
+});
+
         $("#leaveapp").on('submit',function(e) {
             // alert('test');
             // return false;
             var dpt = $("#dpt").val();
             var day = $("#day").val();
+            var hdd = $("#hdd").val();
+            var hour = $("#hour").val();
+            var sdd = $("#sdd").val();
             var dd = $("#dd").val();
             var dd1 = $("#dd1").val();
             var priority = $("#priority").val();
             var title = $("#title").val();
             var email = $("#email").val();
 
-
             
-            if(dpt == "" &&  day == "" && dd == "" && dd1 == "" && priority == "" && title == "" && email == "") {
-                // $("#error_message").show().html("All Fields are Required");
-            } else {
+           /* if(dpt == "" &&  day == "" && dd == "" && dd1 == "" && priority == "" && title == "" && email == "") {
+               
+            } else {*/
                 // $("#error_message").html("").hide();
                 $.ajax({
                     type: "POST",
                     url: "LAdb.php",
-                    data: "dpt="+dpt+"&day="+day+"&dd="+dd+"&dd1="+dd1+"&priority="+priority+"&title="+title+"&email="+email,
+                    data: "dpt="+dpt+"&day="+day+"&hdd="+hdd+"&hour="+hour+"&sdd="+sdd+"&dd="+dd+"&dd1="+dd1+"&priority="+priority+"&title="+title+"&email="+email,
                     success: function(data){
                         // $('#success_message').fadeIn().html(data);
                         // setTimeout(function() {
@@ -203,7 +280,7 @@ $dpt = $_SESSION['dpt'];
                     }
         
                 });
-            }
+            
             e.preventDefault();
             document.getElementById("leaveapp").reset();
 

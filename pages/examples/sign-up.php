@@ -65,7 +65,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                        <input id="fullname" type="text" class="form-control" name="fullname" placeholder="Full Name" required autofocus>
+                        <textarea id="fullname" type="text" rows="1" class="form-control no-resize auto-growth"  name="fullname" placeholder="Full Name" required autofocus></textarea>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                             <i class="material-icons">domain</i>
                         </span>
                         <div class="form-line">
-                            <input id="address" type="text" class="form-control" name="address" placeholder="Residential Address" required autofocus>
+                        <textarea id="address" type="text" rows="1" class="form-control no-resize auto-growth" class="form-control" name="address" placeholder="Residential Address" required autofocus></textarea>
                         </div>
                     </div>
 
@@ -93,8 +93,8 @@
                         </span>
                         <div class="form-line">
                             <select id="gender" name="gender" class="form-control show-tick">
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                     </div>

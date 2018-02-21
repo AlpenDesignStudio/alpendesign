@@ -43,6 +43,19 @@ if ($numrows!=0){
   $pic = $row_data['pic'];
   $_SESSION['pic']=$pic;
 
+  $no = $row_data['no'];
+  $_SESSION['no']=$no;
+
+  $gender = $row_data['gender'];
+  $_SESSION['gender']=$gender;
+
+  $DateOfBirth = $row_data['dob'];
+  $_SESSION['dob']=$DateOfBirth;
+
+   $address = $row_data['address'];
+  $_SESSION['address']=$address;
+
+
 //print_r($_SESSION);die();
    header('Location: ../../home.php');
   
