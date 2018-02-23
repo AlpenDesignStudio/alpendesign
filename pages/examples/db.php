@@ -1,7 +1,7 @@
 
 <?php
   
-    include('check.php');
+include('check.php');
 
 if(!empty($_POST)){
       
@@ -13,14 +13,14 @@ if(!empty($_POST)){
         $email = $_POST['email'];
         $address = $_POST['address'];
         $gender = $_POST['gender'];
-        $DateOfBirth = $_POST['dob'];
+        $DateOfJoining = $_POST['doj'];
         $dt = date('Y-m-d H:i:s');
         
        // password encrypt using SHA256();
         $password = hash('sha256', $pass);
 
       $query=mysqli_query($con,"INSERT INTO register
-    (dpt,password,fullname,no,email,address,gender,dob,added_on,updated_on)VALUES('".$dpt."','".$password."','".$fullname."','".$no."','".$email."','".$address."','".$gender."','".$DateOfBirth."','".$dt."','".$dt."')");
+    (dpt,password,fullname,no,email,address,gender,doj,added_on,updated_on)VALUES('".$dpt."','".$password."','".$fullname."','".$no."','".$email."','".$address."','".$gender."','".$DateOfJoining."','".$dt."','".$dt."')");
     //print_r($query);die();
     // $num_rows = mysqli_num_rows($query);
     // print_r($_POST);die;

@@ -36,8 +36,6 @@ $email = $_SESSION['email'];
         <link href="../../plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
         <!-- Bootstrap Select Css -->
         <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-        <!-- noUISlider Css -->
-        <link href="../../plugins/nouislider/nouislider.min.css" rel="stylesheet" />
         <!-- Custom Css -->
         <link href="../../css/style.css" rel="stylesheet">
         <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
@@ -258,7 +256,6 @@ $email = $_SESSION['email'];
 
         </td>";
                  }else{
-                    
                  echo "<td alig='center' width=''> $r[4]</td>";
               }
                  echo "</tr>";

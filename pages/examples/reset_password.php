@@ -100,7 +100,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="confirm Password" autofocus>
+                            <input type="password" class="form-control" name="cpwd" id="cpwd" placeholder="Confirm Password" autofocus>
                         </div>
                     </div>
 

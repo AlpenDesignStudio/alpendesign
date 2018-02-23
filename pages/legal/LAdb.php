@@ -1,23 +1,27 @@
 <?php
+session_start(); 
+
 include "check.php";
+
 if(!empty($_POST)){
-session_start();
 
+$dpt = $_POST['dpt'];
 $day = $_POST['day'];
+$hdd = $_POST['hdd'];
+$hour = $_POST['hour'];
 $sdd = $_POST['sdd'];
-$leave_cat = $_POST['leave_cat'];
-$leave_cause = $_POST['leave_cause'];
-$leave_date = $_POST['leave_date'];
-$leave_datee = $_POST['leave_datee'];
+$dd = $_POST['dd'];
+$dd1 = $_POST['dd1'];
+$priority = $_POST['priority'];
+$title = $_POST['title'];
+$email = $_POST['email'];
 
+$sql = mysqli_query($con,"INSERT INTO leavedb (dpt,day,hdd,hour,sdd,dd,dd1,priority,title,email) values ('$dpt','$day','$hdd','$hour','$sdd','$dd','$dd1','$priority','$title','$email')");
 
-
-$sql = mysqli_query($con,"INSERT INTO holidays (day,sdd,leave_cat,leave_cause,leave_date,leave_datee) values ('$day','$sdd','$leave_cat','$leave_cause','$leave_date','$leave_datee')");
-//echo $sql;die();
 if($sql){
 
         // $_SESSION['msg1']="Password Changed Successfully !!";
-        $response = array('status'=> TRUE,'data'=>'Holiday Added Successfully !!');
+        $response = array('status'=> TRUE,'data'=>'Leave Added Successfully !!');
         echo json_encode($response);
             //header('location:user.php');
     }else{
@@ -29,5 +33,7 @@ else{
     $response = array('status'=> FALSE,'error'=>'Oops1 Something Went Wrong !!');
     echo json_encode($response);
 }
+
+
 
 ?>

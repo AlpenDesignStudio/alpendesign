@@ -6,11 +6,11 @@ include("check.php");
 
 if(!empty($_POST)){
 
-    $sql=mysqli_query($con,"SELECT password FROM  ar_visitor where password='".hash('sha256',$_POST['opwd'])."' && email='".$_SESSION['email']."'");
+    $sql=mysqli_query($con,"SELECT password FROM  register where password='".hash('sha256',$_POST['opwd'])."' && email='".$_SESSION['email']."'");
 
     if($sql->num_rows > 0){
 
-        $con=mysqli_query($con,"update ar_visitor set password='".hash('sha256',$_POST['npwd'])."' where email='".$_SESSION['email']."'");
+        $con=mysqli_query($con,"update register set password='".hash('sha256',$_POST['npwd'])."' where email='".$_SESSION['email']."'");
 
         // $_SESSION['msg1']="Password Changed Successfully !!";
         $response = array('status'=> TRUE,'data'=>'Password Changed Successfully !!');

@@ -121,6 +121,10 @@ $email = $_SESSION['email'];
 if(isset($_GET['action'])) {
     $id = $_GET['id'];
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 69fa91e02f5f6709e177235e74a00e2edf66f3db
     if($_GET['action'] =='submit1'){
       $approval = 'APPROVED';
     }else{
@@ -131,21 +135,17 @@ if(isset($_GET['action'])) {
     if (mysqli_query($con,$sql)) {
         if($approval == 'APPROVED'){
           echo " <div class='alert alert-success'>
-          <strong>APPROVED ID  </strong></div>"; 
-          echo "<div class='a'><div> ";
-          
+          <strong>LEAVE APPROVED </strong></div>"; 
 
         }else{
           echo "<div class='alert alert-danger'>
-          <strong>DIS APPROVE  </strong></div>";
+          <strong>LEAVE DISAPPROVED </strong></div>";
         }
     }else{
       echo "Error: " . $sql . "<br>" . mysqli_error($con);
     }
 }
 ?>
- <div class=" hidden a">
-<strong>APPROVED</strong> </div>
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
@@ -157,7 +157,6 @@ if(isset($_GET['action'])) {
                                                 <th class="view">Reason</th>
                                                  <th class="view">Approve</th> 
                                           <th class="view">Dis Approve</th>
-                                  
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -189,18 +188,17 @@ echo "<td>" . $row->priority . "</td>";
 echo "<td>" . $row->title . "</td>";
 echo "<td>
 
-
 <form action='?action=submit1&id=$id' method='post'>
-<button style='width: 100% !important;' type='submit' class='btn bg-green waves-effect'>
-     <i class='material-icons'>check</i>
+<button style='width: 100% !important;' type='submit'  class='btn bg-green waves-effect' >
+     <i class='material-icons'>check</i> 
       </button></form>
       </td>";
+
 echo "<td>
 <form action='?action=submit2&id=$id' method='post'>
-      <button style='width: 100% !important;' type='submit' class='btn bg-red waves-effect'>
+      <button style='width: 100% !important;' type='submit' class='btn bg-red waves-effect'  >
       <i class='material-icons'>close</i>
       </button></form>
-  
 </td>";
 // echo "<td><a href='delete.php?id=" . $row->id . "'>Delete</a></td>";
 echo "</tr>";
@@ -321,7 +319,7 @@ $mysqli->close();
                                                 <th class="view">Date To</th>
                                                 <th class="view">Priority</th>
                                                 <th class="view">Reason</th>
-                                                  <th class="view">Approve</th> 
+                                                <th class="view">Approve</th> 
                                           <th class="view">Dis Approve</th>
                                             </tr>
                                         </thead>
@@ -391,6 +389,12 @@ $mysqli->close();
 </div>
             </div>
         </section>
+
+
+
+
+
+
         <!-- Jquery Core Js -->
         <script src="../../plugins/jquery/jquery.min.js"></script>
         <!-- Bootstrap Core Js -->

@@ -10,6 +10,29 @@
         </li>
 
         <li>
+                        <a href="pages/tech/holidays.php" id="holidays">
+                            <i class="material-icons">folder</i>
+                            <span>Holidays</span>
+                        </a>
+                    </li>
+
+    <li>
+        <a href="javascript:void(0);" class="menu-toggle">
+            <i class="material-icons">folder</i>
+            <span>Leave Application</span>
+        </a>
+        <ul class="ml-menu">
+            <li>
+                <a href="pages/tech/leaveapplication.php" id="leaveapplication">Leave Application</a>
+            </li>
+
+            <li>
+                <a href="pages/tech/leavedisplay.php" id="leavedisplay">View Leave Application</a>
+            </li>
+        </ul>
+    </li>        
+
+        <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">supervisor_account</i>
                 <span>Training</span>
@@ -98,12 +121,7 @@
                 <span>Timesheet</span>
             </a>
         </li>
-          <li>
-            <a href="pages/tech/holidays.php" id="holidays">
-                <i class="material-icons">folder</i>
-                <span>Holidays</span>
-            </a>
-        </li>
+
 
     </ul>
 </div>
@@ -121,6 +139,8 @@
                     console.log(window.location.pathname);
                     if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
                             // alert('Home');
+                        $('#leaveapplication').attr('href','pages/tech/leaveapplication.php');
+                        $('#leavedisplay').attr('href','pages/tech/leavedisplay.php');    
                         $('#assignment').attr('href','pages/tech/assignment.php');
                         $('#howto').attr('href','pages/tech/howto.php');
                         $('#notes').attr('href','pages/tech/notes.php');
@@ -135,6 +155,8 @@
                         $('#timesheet').attr('href','pages/tech/timesheet.php');
                     }else{
                         // alert('HR');
+                        $('#leaveapplication').attr('href','leaveapplication.php');
+                        $('#leavedisplay').attr('href','leavedisplay.php');
                         $('#assignment').attr('href','assignment.php');
                         $('#howto').attr('href','howto.php');
                         $('#notes').attr('href','notes.php');
