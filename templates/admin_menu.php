@@ -45,7 +45,7 @@
                                 <a href="pages/admin/excel.php" id="excel">Leave Register</a>
                             </li>
                             <li>
-                                <a href="pages/admin/leavedisplay.php" id="leaveapp">Leave Display</a>
+                                <a href="pages/admin/leavedisplay.php" id="leavedisplay">Leave Display</a>
                             </li>
                             <li>
                                 <a href="pages/admin/excelSheet.php" id="sheet">Uploaded Sheet</a>
@@ -88,34 +88,33 @@
                     console.log(window.location.pathname);
                     if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
                             // alert('Home');
-                             $('#sign-up').attr('href', 'pages/examples/sign-up.php');
-
+                        $('#sign-up').attr('href','pages/admin/sign-up.php');
+                        $('#holidays').attr('href','pages/admin/holidays.php');
+                        $('#viewholidays').attr('href','pages/admin/viewholidays.php');
                         $('#fileupload').attr('href','pages/admin/fileupload.php');
                         $('#excel').attr('href','pages/admin/excel.php');
-                        $('#leaveapp').attr('href','pages/admin/leavedisplay.php');
+                        $('#leavedisplay').attr('href','pages/admin/leavedisplay.php');
                         $('#sheet').attr('href','pages/admin/excelSheet.php');
                         $('#leave').attr('href','pages/admin/leave.php');
                         $('#ias').attr('href','pages/admin/IAS.php');
                         $('#coverletter').attr('href','pages/admin/coverletter.php');
                         $('#timesheet').attr('href','pages/admin/timesheet.php');
-                         $('#holidays').attr('href','pages/admin/holidays.php');
-                          $('#viewholidays').attr('href','pages/admin/viewholidays.php');
+                        
                         
                     }else{
                         // alert('HR');
-                         $('#sign-up').attr('href', 'sign-up.php');
-
-
+                        $('#sign-up').attr('href', 'sign-up.php');
+                        $('#holidays').attr('href','holidays.php');
+                        $('#viewholidays').attr('href','viewholidays.php');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#excel').attr('href','excel.php');
-                        $('#leaveapp').attr('href','leavedisplay.php');
+                        $('#leavedisplay').attr('href','leavedisplay.php');
                         $('#sheet').attr('href','excelSheet.php');
                         $('#leave').attr('href','leave.php');
                         $('#ias').attr('href','IAS.php');
                         $('#coverletter').attr('href','coverletter.php');
-                         $('#timesheet').attr('href','timesheet.php');
-                         $('#holidays').attr('href','holidays.php');
-                         $('#viewholidays').attr('href','viewholidays.php');
+                        $('#timesheet').attr('href','timesheet.php');
+                        
                         
                     }
                 });

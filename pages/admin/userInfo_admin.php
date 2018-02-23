@@ -40,13 +40,6 @@ $res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
 
                    <li><a href="pages/examples/reset_password.php" id="reset_password"><i class="material-icons">person</i>Reset Password</a></li>
                    <li><a href="pages/examples/forgot-password.php" id="forgot-password"><i class="material-icons">person</i>Forgot Password</a></li>
-
-                   <li><a href="pages/examples/profile.php" id="profile"><i class="material-icons">person</i>Profile</a></li>
-                   <li role="seperator" class="divider"></li>
-                   <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                   <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                   <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                   <li role="seperator" class="divider"></li>
                    <li><a href="pages/admin/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li>
                </ul>
            </div>
@@ -63,7 +56,6 @@ $res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
                 $('#sign-up').attr('href', 'pages/examples/sign-up.php');
                 $('#reset_password').attr('href', 'pages/examples/reset_password.php');
                 $('#forgot-password').attr('href', 'pages/examples/forgot-password.php');
-                $('#profile').attr('href', 'pages/examples/profile.php');
                 $('#logout').attr('href', 'pages/examples/logout.php');
 
            } else {
@@ -71,7 +63,6 @@ $res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
                $('#sign-up').attr('href', 'pages/examples/sign-up.php');
                $('#reset_password').attr('href', 'reset_password.php');
                $('#forgot-password').attr('href', 'forgot-password.php');
-               $('#profile').attr('href', 'profile.php');
                $('#logout').attr('href', 'logout.php');
            }
        });

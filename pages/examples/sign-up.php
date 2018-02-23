@@ -117,12 +117,13 @@
                         </div>
                     </div>
 
+                    <p><b>Date of Joining</b></p>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">perm_contact_calendar</i>
                         </span>
                         <div class="form-line">
-                            <input id="dob" type="date" class="form-control" placeholder="Date Of Birth" name="dob" required autofocus>
+                            <input id="doj" type="date" class="form-control" placeholder="Date Of Joining" name="doj" required autofocus>
                      
                         </div>
                     </div>
@@ -165,11 +166,11 @@ $("#sign_up").on('submit',function(e) {
     var gender = $("#gender").val();
     var email = $("#email").val();
     var password = $("#pass").val();
-    var dob = $("#dob").val();
+    var doj = $("#doj").val();
 
     //var comment = $("#comment").val();
     
-    if(dpt == "" &&  fullname == "" && no == ""  && address == "" &&  gender == "" && email == "" && password == "" && dob == "") {
+    if(dpt == "" &&  fullname == "" && no == ""  && address == "" &&  gender == "" && email == "" && password == "" && doj == "") {
         // $("#error_message").show().html("All Fields are Required");
     } else {
         // $("#error_message").html("").hide();
@@ -178,7 +179,7 @@ $("#sign_up").on('submit',function(e) {
             url: "db.php",
             //data: "opwd="+opwd+"&npwd="+npwd+"&cpwd="+cpwd,
 
-            data: "dpt="+dpt+"&fullname="+fullname+"&no="+no+"&address="+address+"&gender="+gender+"&email="+email+"&password="+password+"&dob="+dob,
+            data: "dpt="+dpt+"&fullname="+fullname+"&no="+no+"&address="+address+"&gender="+gender+"&email="+email+"&password="+password+"&doj="+doj,
             success: function(data){
                 // $('#success_message').fadeIn().html(data);
                 // setTimeout(function() {

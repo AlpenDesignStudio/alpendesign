@@ -10,6 +10,29 @@
         </li>
 
         <li>
+                        <a href="pages/marketing/holidays.php" id="holidays">
+                            <i class="material-icons">folder</i>
+                            <span>Holidays</span>
+                        </a>
+                    </li>
+
+    <li>
+        <a href="javascript:void(0);" class="menu-toggle">
+            <i class="material-icons">folder</i>
+            <span>Leave Application</span>
+        </a>
+        <ul class="ml-menu">
+            <li>
+                <a href="pages/marketing/leaveapplication.php" id="leaveapplication">Leave Application</a>
+            </li>
+
+            <li>
+                <a href="pages/marketing/leavedisplay.php" id="leavedisplay">View Leave Application</a>
+            </li>
+        </ul>
+    </li>        
+
+        <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">supervisor_account</i>
                 <span>Training</span>
@@ -77,12 +100,7 @@
                 <span>Timesheet</span>
             </a>
         </li>
-          <li>
-            <a href="pages/marketing/holidays.php" id="holidays">
-                <i class="material-icons">folder</i>
-                <span>Holidays</span>
-            </a>
-        </li>
+
 
     </ul>
 </div>
@@ -93,6 +111,8 @@
         console.log(window.location.pathname);
         if (window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php') {
             // alert('Home');
+            $('#leaveapplication').attr('href', 'pages/marketing/leaveapplication.php');
+            $('#leavedisplay').attr('href', 'pages/marketing/leavedisplay.php');
             $('#socialmedia').attr('href', 'pages/marketing/socialmedia.php');
             $('#digital').attr('href', 'pages/marketing/Digital.php');
             $('#presentation').attr('href', 'pages/marketing/presentation.php');
@@ -110,6 +130,8 @@
             $('#timesheet').attr('href', 'pages/marketing/timesheet.php');
         } else {
             // alert('HR');
+            $('#leaveapplication').attr('href', 'leaveapplication.php');
+            $('#leavedisplay').attr('href', 'leavedisplay.php');
             $('#socialmedia').attr('href', 'socialmedia.php');
             $('#digital').attr('href', 'digital.php');
             $('#presentation').attr('href', 'presentation.php');

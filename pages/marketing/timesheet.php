@@ -1,9 +1,14 @@
-<?php
+marketing<?php
 session_start();
+
 $fullname = $_SESSION['fullname']; 
-$email = $_SESSION['email']; 
+$email = $_SESSION['email'];
+$dpt = $_SESSION['dpt'];
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -102,57 +107,41 @@ $email = $_SESSION['email'];
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header" style="background-color: #673AB7;text-align: center;">
-                            <h2 style="color: white;">
+                    <div class="card" >
+                        <div class="header" style="background-color: #673AB7;" >
+                            <h2 style="text-align: center;color: #ffffff;">
                                 TIMESHEET
                             </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                         <?php include "check.php"; ?>
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
+                                     <thead>
                                         <tr>
-                                        <th> SR.NO</th>
-                                        <th> Name</th>
+                                            <th> SR.NO</th>
+                                            <th> Name</th>
                                             <th> Dpartment</th> 
-                                            <th> Date</th> 
+                                             <th> Date</th> 
                                             <th> Start Time</th>
                                             <th>  End Time</th> 
                                          
                                         </tr>
                                     </thead>
-                                <!--     <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                          
-                                        </tr>
-                                    </tfoot> -->
                                     <tbody>
 
  <?php
   if($_SERVER['REQUEST_METHOD'] == "GET")
-  {        
-            $res=mysqli_query($con,"Select sr,uname,dpt,date,start_time,end_time from  timesheet");
+  {     
 
+   $res=mysqli_query($con,"Select sr,uname,dpt,date,start_time,end_time,date from timesheet");
+ 
+    // $t1= strtotime($start_time);
+    // $t2= strtotime($end_time);
+    
+  
        
-         while($r=mysqli_fetch_row($res))
+          while($r=mysqli_fetch_row($res))
          {
             // print_r($r);die;
           echo "<tr>";
@@ -161,8 +150,7 @@ $email = $_SESSION['email'];
                   echo "<td alig='center' width=''> $r[2]</td>";
                  echo "<td alig='center' width=''> $r[3]</td>";
                   echo "<td alig='center' width=''> $r[4]</td>";
-                  echo "<td alig='center' width=''> $r[5]</td>";
-               
+                echo "<td alig='center' width=''> $r[5]</td>";
                  echo "</tr>";
         }
     }

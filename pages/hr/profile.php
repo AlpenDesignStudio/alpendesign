@@ -2,73 +2,17 @@
 session_start();
 //print_r($_SESSION);die();
 
+include("check.php");
+
 $email = $_SESSION['email']; 
 $fullname = $_SESSION['fullname']; 
 $no = $_SESSION['no']; 
 $dpt = $_SESSION['dpt']; 
 $gender = $_SESSION['gender'];
 $address = $_SESSION['address']; 
-$dob = $_SESSION['dob'];  
-
-//echo $dpt;die();
-
-include("check.php");
-
-
-if ($_POST['action']=='aa'){
-
-$dob1 = $_POST['dob1'];  
-$blood = $_POST['blood'];  
-$designation = $_POST['designation'];  
-$title = $_POST['title'];  
-$salary = $_POST['salary']; 
-$company = $_POST['company'];  
-$year = $_POST['year'];  
-$prev = $_POST['prev'];  
-$qua = $_POST['qua'];  
- 
-// $query = mysqli_query($con,"INSERT INTO profile_info (dob1,blood,designation,title,salary,company,year,prev,qua) values ('$dob1','$blood','$designation','$title','$salary','$company','$year','$prev','$qua')");
-
-   $query=mysqli_query($con,"INSERT INTO profile_info
-    dob1 VALUES ('$dob1')");
-
-if(mysqli_query($con,$query)){
-    echo "SUCCESS";
-}
-else {
-     echo "FAILED";
-    }
-}
-
-
+$DateOfJoining = $_SESSION['doj'];
 
 ?>
-
-<!-- if(!empty($_POST)){
-
-$sql=mysqli_query($con,"SELECT fullname,email,no,dpt,address,gender,dob FROM register where email='".$_SESSION['email']."'");
-
-if($sql->num_rows > 0){
-
-    while ($row = $sql->fetch_object()) {
-
-        $fullname=$row->fullname;
-        $email=$row->email;
-        $no=$row->no;
-        $dpt=$row->dpt;
-        $address=$row->address;
-        $gender=$row->gender;
-        $dob=$row->dob;   
-       
-    }
-}
-
-if($sql->num_rows > 0){
-
-$con=mysqli_query($con,"UPDATE register set fullname='".$_POST['fullname']."' , email='".$_POST['email']."' , dpt='".$_POST['dpt']."' , no='".$_POST['no']."' ,address='".$_POST['address']."', gender='".$_POST['gender']."' , dob='".$_POST['dob']."'  where email='".$_SESSION['email']."'");
-
-    }
-} -->
 
     <!DOCTYPE html>
     <html>
@@ -127,31 +71,6 @@ $con=mysqli_query($con,"UPDATE register set fullname='".$_POST['fullname']."' , 
         <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
 
   
-    <style type="text/css">
-
-    form {
-  &.is-readonly {
-    .btn-save {
-      display: none !important;
-    }
-    input,textarea{
-      &[disabled] {
-        cursor: text;
-        background-color: #fff;
-        border-color: transparent;
-        outline-color: transparent;
-        box-shadow: none;
-      }
-    }
-  }
-  &.is-editing { 
-    .btn-edit{
-      display: none !important;
-    }
-  }
-}
-
-    </style>
   </head>
     <body class="theme-red">
         <!-- Page Loader -->
@@ -217,7 +136,7 @@ $con=mysqli_query($con,"UPDATE register set fullname='".$_POST['fullname']."' , 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
 
-                            <div class="body">
+                        <div class="body">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active">
@@ -242,239 +161,140 @@ $con=mysqli_query($con,"UPDATE register set fullname='".$_POST['fullname']."' , 
                                     </li>
                                 </ul>
 
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane fade in active" id="home_with_icon_title">
-                                        <div class="body">
-                                            
-                                                <div class="row clearfix">
+    <!-- Tab panes -->
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane fade in active" id="home_with_icon_title">
+  
+<div class="body table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <th>DETAILS</th>
+            <th></th>
+        </thead>
+        <tbody>
+        <tr> 
+            <th>DEPARTMENT</th>
+            <td><?php echo $dpt;?></td>
+        </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">DEPARTMENT</label>
-                                                        </div>
-                                                    </div>
+        <tr>
+            <th>FULL NAME</th>
+            <td><?php echo $fullname;?></td>
+        <tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <div class="form-line">
-                                                                <input type="text" class="form-control" name="dpt" value="<?php echo $dpt;?>" readonly/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+        <tr>
+            <th>CONTACT NO</th>
+            <td><?php echo $no;?></td>
+        </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">CONTACT NO</label>
+        <tr>
+            <th>RESIDENTAL ADDRESS</th>
+            <td><?php echo $address;?></td>
+        </tr>
 
-                                                        </div>
-                                                    </div>
+        <tr>
+            <th>GENDER</th>
+            <td><?php echo $gender;?></td>
+        </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <div class="form-line">
-                                                                <input type="text" class="form-control" name="no" value="<?php echo $no;?>" readonly>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+        <tr>
+            <th>EMAIL</th>
+            <td><?php echo $email;?></td>
+        </tr>
 
-                                                <div class="row clearfix">
+        <tr>
+            <th>DATE OF JOINING</th>
+            <td><?php echo $DateOfJoining;?></td>
+        </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">FULL NAME</label>
-                                                        </div>
-                                                    </div>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                                                    <div class="col-sm-9">
-                                                        <div class="form-line">
-
-                                                            <input type="text" class="form-control" name="fullname" value="<?php echo $fullname;?>" readonly>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-
-                                                <div class="row clearfix">
-
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">RESIDENTAL ADDRESS</label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-9">
-                                                        <div class="form-line">
-
-                                                            <input type="text" class="form-control" name="address" value="<?php echo $address;?>" readonly>
-                                                        </div>
-                                                    </div>
+<!--.............................END OF TAB 1.............................-->
 
 
+<div role="tabpanel" class="tab-pane fade" id="profile_with_icon_title">
 
+<div class="body">
+<form id="profile_info" action='#' >
+    <table id="mainTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th style="disabled:true";>ADDITIONAL DETAILS</th>                     
+            </tr>
+        </thead>
+        <tbody>
 
+    <tr>
+        <th>DATE OF BIRTH</th>
+        <td >
+            <input type="date" name="dob1" id="dob1"  > </td> 
+        </td>
+    </tr>
+    
+    <tr>
+        <th>BLOOD GROUP</th>
+        <td><input type="text" name="blood" id="blood" > </td> 
+    </tr>
+    
+    <tr>
+        <th>CURRENT DESIGNATION</th>
+        <td><input type="text" name="designation" id="designation"  ></td>   
+    </tr>
 
-                                                </div>
+    <tr>
+        <th>CURRENT SALARY</th>
+        <td><input type="text" name="salary" id="salary" ></td>  
+    </tr>
 
-                                                <div class="row clearfix">
+    <tr>
+        <th>PREVIOUS COMPANY NAME</th>
+        <td><input type="text" name="company" id="company" ></td>
+                                        
+    </tr>
+    <tr>
+        <th>PREVIOUS SALARY</th>
+        <td><input type="text" name="prev" id="prev" ></td>
+    </tr>
+    <tr>
+        <th>TOTAL YEAR EXPERIENCE</th>
+        <td><input type="text" name="year" id="year" ></td></tr>
+                                        
+    </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">GENDER </label>
-                                                        </div>
-                                                    </div>
+    <tr>
+        <th>HIGHEST EDUCATION QUALIFICATION</th>
+        <td><input type="text" name="qua" id="qua" ></td></tr>
+                                        
+    </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-line">
-                                                            <input type="text" class="form-control" name="gender" value="<?php echo $gender;?>" readonly>
-                                                        </div>
-                                                    </div>
+    <tr>
+    <th></th>
+    <td><button name="submit" type="submit" class="btn btn-block btn-lg btn-success waves-effect">SUBMIT</button></td> 
+                                    </tr>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">EMAIL</label>
-                                                        </div>
-                                                    </div>
+                                </tbody>
+                                
+                            </table>
 
-                                                    <div class="col-sm-3">
-                                                        <div class="form-line">
-                                                            <input type="text" class="form-control" name="email" value="<?php echo $email;?> " readonly>
-                                                        </div>
-                                                    </div>
+                 <br><br>
+                  <div id="error_message" >
+                  <div class="alert alert-danger hidden">
+                  <strong>Oh Snap</strong> Failed to enter the information..!!
+                  </div>
+                  </div>
 
+                  <div id="success_message">
+                  <div class="alert alert-success hidden">
+                  <strong>Well done!</strong> You Have successfully entered the information..!!
+                  </div>
+                  </div>
 
-                                                </div>
-
-                                                <div class="row clearfix">
-
-                                                    <div class="col-sm-3">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="margin-top: 10px;">DATE OF JOINING</label>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-3">
-                                                        <div class="form-line">
-                                                            <input type="text" class="form-control" name="dob" value="<?php echo $dob;?> " readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                           
-                                        </div>
-                                    </div>
-
-                                    <!--.............................END OF TAB 1.............................-->
-
-
-                            <div role="tabpanel" class="tab-pane fade" id="profile_with_icon_title">
-
-                                <div class="body">
-                                <form class="is-readonly" id="information" method="POST" action="aa">
-                                    <div class="row clearfix">
-
-                                                    <div class="col-sm-6">
-                                                        <div class="form-group">
-                                                            <label class="form-label" >DATE OF BIRTH</label>
-                                                           <div class="form-line"> 
-                                                <input type="date" class="form-control is-disabled"  name="dob1"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                   <div class="col-sm-6">
-                                                        <div class="form-group">
-                                                            <label class="form-label" >BLOOD GROUP</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="blood"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                            
-
-                                           
-
-                                                     <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="">JOB TITLE</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="title"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label">CURRENT DESIGNATION</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="designation"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                   <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="">CURRENT SALARY</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="salary"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                           
-
-                                                
-
-                                               
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="">PREVIOUS COMPANY NAME</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="company"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="">TOTAL YEAR EXPERIENCE</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="year"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="">PREVIOUS SALARY</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="prev"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                 
-
-                                                 
-
-
-                                                    <div class="col-sm-4">
-                                                        <div class="form-group">
-                                                            <label class="form-label" style="">HIGHEST EDUCATION QUALIFICATION</label>
-                                                           <div class="form-line"> 
-                                                <input type="text" class="form-control is-disabled"  name="qua"  disabled></div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                 
-<button type="button" class="btn btn-default btn-edit js-edit">Edit</button>
-<button type="button" class="btn btn-default btn-save js-save" >Save</button>
-
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
+                </form>
+            </div>
+        </div>
 
 
                                     <div role="tabpanel" class="tab-pane fade" id="messages_with_icon_title">
@@ -508,19 +328,72 @@ $con=mysqli_query($con,"UPDATE register set fullname='".$_POST['fullname']."' , 
             </div>
         </section>
 
-        <script type="text/javascript">
-            $(document).ready(function(){
-        $('.js-edit, .js-save').on('click', function(){
-        var $form = $(this).closest('form');
-        $form.toggleClass('is-readonly is-editing');
-        var isReadonly  = $form.hasClass('is-readonly');
-        $form.find('input,textarea').prop('disabled', isReadonly);
-      });
-    });
-        </script>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+<script>
+$("#profile_info").on('submit',function(e) {
+
+    // alert('test');
+    // return false;
+    var dob1 = $("#dob1").val();
+    var blood = $("#blood").val();
+    var designation = $("#designation").val();
+    var salary = $("#salary").val();
+    var company = $("#company").val();
+    var prev = $("#prev").val();
+    var year = $("#year").val();
+    var qua = $("#qua").val();
+    
+
+    //var comment = $("#comment").val();
+    
+    if(dob1 == "" &&  blood == "" && designation == ""  && salary == "" &&  company == "" && prev == "" && year == "" && qua == "") {
+        // $("#error_message").show().html("All Fields are Required");
+    } else {
+        // $("#error_message").html("").hide();
+        $.ajax({
+            type: "POST",
+            url: "profile_db.php",
+            //data: "opwd="+opwd+"&npwd="+npwd+"&cpwd="+cpwd,
+
+            data: "dob1="+dob1+"&blood="+blood+"&designation="+designation+"&salary="+salary+"&company="+company+"&prev="+prev+"&year="+year+"&qua="+qua,
+            success: function(data){
+                // $('#success_message').fadeIn().html(data);
+                // setTimeout(function() {
+                //     $('#success_message').fadeOut("slow");
+                // }, 2000 );
+                // alert('test');
+            var response = JSON.parse(data);
+
+            if(response.status == true){
+                // alert('Success');
+                $('.alert-success').removeClass('hidden');
+                $('.alert-danger').addClass('hidden');
+            }else{
+                // alert('Error');
+                $('.alert-success').addClass('hidden');
+                $('.alert-danger').removeClass('hidden');
+            }
+
+            }
+
+        });
+    }
+    e.preventDefault();
+
+   
+});
+</script>
+            <!-- Custom Js -->
+        <script src="../../js/admin.js"></script>
+        <script src="../../js/pages/tables/editable-table.js"></script>
+
 
         <!-- Jquery Core Js -->
         <script src="../../plugins/jquery/jquery.min.js"></script>
+
+        <!-- Editable Table Plugin Js -->
+         <script src="../../plugins/editable-table/mindmup-editabletable.js"></script>
 
         <!-- Bootstrap Core Js -->
         <script src="../../plugins/bootstrap/js/bootstrap.js"></script>

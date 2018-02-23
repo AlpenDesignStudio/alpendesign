@@ -3,7 +3,6 @@ session_start();
 
 $fullname = $_SESSION['fullname']; 
 $email = $_SESSION['email'];
-$uname = $_SESSION['uname']; 
 $dpt = $_SESSION['dpt'];
 
 ?>

@@ -10,6 +10,29 @@
         </li>
 
         <li>
+                        <a href="pages/legal/holidays.php" id="holidays">
+                            <i class="material-icons">folder</i>
+                            <span>Holidays</span>
+                        </a>
+                    </li>
+
+    <li>
+        <a href="javascript:void(0);" class="menu-toggle">
+            <i class="material-icons">folder</i>
+            <span>Leave Application</span>
+        </a>
+        <ul class="ml-menu">
+            <li>
+                <a href="pages/legal/leaveapplication.php" id="leaveapplication">Leave Application</a>
+            </li>
+
+            <li>
+                <a href="pages/legal/leavedisplay.php" id="leavedisplay">View Leave Application</a>
+            </li>
+        </ul>
+    </li>
+
+        <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">folder</i>
                 <span>Files</span>
@@ -156,12 +179,6 @@
             </a>
         </li>
 
-          <li>
-            <a href="pages/legal/holidays.php" id="holidays">
-                <i class="material-icons">folder</i>
-                <span>Leaves</span>
-            </a>
-        </li>
 
         <li>
             <a href="pages/legal/editor.php" id="editor">
@@ -184,6 +201,8 @@
         console.log(window.location.pathname);
         if (window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php') {
             // alert('Home');
+            $('#leaveapplication').attr('href','pages/legal/leaveapplication.php');
+            $('#leavedisplay').attr('href','pages/legal/leavedisplay.php');
             $('#fileupload').attr('href', 'pages/legal/fileupload.php');
             $('#view').attr('href', 'pages/legal/view.php');
             $('#bsl').attr('href', 'pages/legal/blankshareagreement.php');
@@ -198,13 +217,15 @@
             $('#adsldocuments').attr('href', 'pages/legal/adsldocuments.php');
             $('#wudtools').attr('href', 'pages/legal/wudtools.php');
             $('#timesheet').attr('href', 'pages/legal/timesheet.php');
-             $('#holidays').attr('href', 'pages/legal/holidays.php');
-             $('#editor').attr('href', 'pages/legal/editor.php');
+            $('#holidays').attr('href', 'pages/legal/holidays.php');
+            $('#editor').attr('href', 'pages/legal/editor.php');
 
             
             $('#timesheet').attr('href', 'pages/legal/');
         } else {
             // alert('HR');
+            $('#leaveapplication').attr('href', 'leaveapplication.php');
+            $('#leavedisplay').attr('href', 'leavedisplay.php');
             $('#fileupload').attr('href', 'fileupload.php');
             $('#view').attr('href', 'view.php');
             $('#bsl').attr('href', 'blankshareagreement.php');
@@ -219,7 +240,7 @@
             $('#adsldocuments').attr('href', 'adsldocuments.php');
             $('#wudtools').attr('href', 'wudtools.php');
             $('#timesheet').attr('href', 'timesheet.php');
-             $('#holidays').attr('href', 'holidays.php');
+            $('#holidays').attr('href', 'holidays.php');
             $('#editor').attr('href', 'editor.php');
         }
     });

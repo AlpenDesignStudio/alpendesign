@@ -29,15 +29,7 @@ $res=mysqli_query($con,"Select * from profile where fname='".$fname."'");
 
  <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li> 
  <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
-<!--  <li><a href="pages/examples/changepassword.php"><i class="material-icons">person</i>Reset Password</a></li>  -->
-<!-- <li><a href="javascript:void(0);"><i class="material-icons">person</i>Reset Password</a></li> -->
 
-                            <li><a href="pages/examples/profile.php"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                            <li role="seperator" class="divider"></li>
                             <li><a href="pages/legal/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>

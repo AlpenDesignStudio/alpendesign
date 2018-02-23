@@ -24,10 +24,10 @@
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
-     <!-- Bootstrap Material Datetime Picker Css -->
+    <!-- Bootstrap Material Datetime Picker Css -->
     <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
-     <!-- Bootstrap Select Css -->
+    <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
 </head>
@@ -35,12 +35,12 @@
 <body class="signup-page" style="background-image: url(holiday.jpg);background-repeat: no-repeat;
    background-size: cover;">
     <div class="signup-box">
-      <div class="logo">
-        <a href="javascript:void(0);">Holiday <b>Register</b></a>
+        <div class="logo">
+            <a href="javascript:void(0);">Holiday <b>Register</b></a>
             <!-- <small>Befor  Contact to Admin</small> -->
         </div>
         <div class="card">
-            <div class="body"  ;>
+            <div class="body" ;>
                 <form id="holiday" action="#">
                     <div class="msg">Add a new Holiday</div>
                     <div class="input-group">
@@ -48,17 +48,15 @@
                             <i class="material-icons">favorite</i>
                         </span>
                         <div class="form-line">
-                             <select id="leave_cat" name="leave_cat" class="form-control show-tick" required>
-                                        <option value="">Please select Category</option>
-
-                                 <option value="Hindus" >Hindus</option>
+                            <select id="leave_cat" name="leave_cat" class="form-control show-tick" required>
+                                <option value="">Please select Category</option>
+                                <option value="Hindus" >Hindus</option>
                                 <option value="Muslim" >Muslim</option>
-                                <option value="Catholic" >Catholic</option>
-                              
-                                    </select>
+                                <option value="Catholic">Catholic</option>
+                              </select>
                         </div>
                     </div>
-                  
+
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">toys</i>
@@ -67,33 +65,60 @@
                             <input id="leave_cause" type="text" class="form-control" name="leave_cause" placeholder="Occasion " required autofocus>
                         </div>
                     </div>
-                
-                           <p><b>Duration from*</b></p>
-                     <div class="input-group">
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">check_box</i>
+                        </span>
+                        <div class="form-line">
+                            <select id="day" name="day" class="form-control show-tick" required>
+                                <option value="">Please select session</option>
+                                <option value="singleday">Single day</option>
+                                <option value="multipleday">Multiple day</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style='display:none;' id='single'>
+                    <p><b>Please select Date from*</b></p>
+                    <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">date_range</i>
                         </span>
-                                        <div class="form-line">
-                                        <input id="leave_date" type="date" class="form-control" placeholder="Date Of Occasion" name="leave_date" required>
-                                          
-                                        </div>
+
+                        <div class="form-line">
+                        <input type="date" class="form-control" name="sdd" id="sdd" >
+                        </div>
+                    </div></div>
+
+
+                    <div style='display:none;' id='multiple'>
+                    <p><b>Duration from*</b></p>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">date_range</i>
+                        </span>
+                        <div class="form-line">
+                            <input id="leave_date" type="date" class="form-control" placeholder="Date Of Occasion" name="leave_date" >
+
+                        </div>
                     </div>
-   <p><b>Duration to*</b></p>
+                    <p><b>Duration to*</b></p>
                     <div class="input-group">
 
                         <span class="input-group-addon">
                             <i class="material-icons">date_range</i>
                         </span>
-                                        <div class="form-line">
-                                        <input id="leave_datee" type="date" class="form-control" placeholder="Date Of Occasion" name="leave_datee" required>
-                                          
-                                        </div>
-                    </div>
-                  
+                        <div class="form-line">
+                            <input id="leave_datee" type="date" class="form-control" placeholder="Date Of Occasion" name="leave_datee" >
+
+                        </div>
+                    </div></div>
+
 
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="submit"> ADD HOLIDAY</button>
 
-            
+
                     <div class="row m-t-15 m-b--20">
                         <div class="col-xs-6">
                             <a href="viewholidays.php">All Holidays</a>
@@ -103,65 +128,87 @@
                         </div>
                     </div>
                     <br>
-                  <div id="error_message" >
-                  <div class="alert alert-danger hidden">
-                                <strong>Oh snap!</strong> Failed To Add Holiday..Try Again..!!
-                            </div>
-                  </div>
-                  <div id="success_message">
-                  <div class="alert alert-success hidden">
-                    <strong>Well done!</strong> You Have successfully Added Holiday..!!
-                </div>
-                  </div>
+                    <div id="error_message">
+                        <div class="alert alert-danger hidden">
+                            <strong>Oh snap!</strong> Failed To Add Holiday..Try Again..!!
+                        </div>
+                    </div>
+                    <div id="success_message">
+                        <div class="alert alert-success hidden">
+                            <strong>Well done!</strong> You Have successfully Added Holiday..!!
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
-<script>
-$("#holiday").on('submit',function(e) {
-    // alert('test');
-    // return false;
-    var leave_cat = $("#leave_cat").val();
-    var leave_cause = $("#leave_cause").val();
-    var leave_date = $("#leave_date").val();
-    var leave_datee = $("#leave_datee").val();
-    //var comment = $("#comment").val();
-    
-    if(leave_cat == "" &&  leave_cause == "" && leave_date == "" && leave_datee == "") {
-        // $("#error_message").show().html("All Fields are Required");
-    } else {
-        // $("#error_message").html("").hide();
-        $.ajax({
-            type: "POST",
-            url: "holidaysdb.php",
-            data: "leave_cat="+leave_cat+"&leave_cause="+leave_cause+"&leave_date="+leave_date+"&leave_datee="+leave_datee,
-            success: function(data){
-                // $('#success_message').fadeIn().html(data);
-                // setTimeout(function() {
-                //     $('#success_message').fadeOut("slow");
-                // }, 2000 );
-                //alert('test');
-            var response = JSON.parse(data);
-            // console.log(response.status);
-            if(response.status == true){
-                // alert('Success');
-                $('.alert-success').removeClass('hidden');
-                $('.alert-danger').addClass('hidden');
-            }else{
-                // alert('Error');
-                $('.alert-success').addClass('hidden');
-                $('.alert-danger').removeClass('hidden');
-            }
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
 
+        $(document).ready(function(){
+    $('#day').on('change', function() {
+      if ( this.value == 'singleday')
+      {
+        $("#single").show();
+        $("#multiple").hide();
+        
+      }
+      else  if ( this.value == 'multipleday')
+      {
+        $("#single").hide();
+        $("#multiple").show(); 
+      }
+
+    });
+});
+
+        $("#holiday").on('submit',function(e) {
+            // alert('test');
+            // return false;
+            var day = $("#day").val();
+            var sdd = $("#sdd").val();
+            var leave_cat = $("#leave_cat").val();
+            var leave_cause = $("#leave_cause").val();
+            var leave_date = $("#leave_date").val();
+            var leave_datee = $("#leave_datee").val();
+            //var comment = $("#comment").val();
+            
+            if(day == "" && sdd == "" && leave_cat == "" &&  leave_cause == "" && leave_date == "" && leave_datee == "") {
+                // $("#error_message").show().html("All Fields are Required");
+            } else {
+                // $("#error_message").html("").hide();
+                $.ajax({
+                    type: "POST",
+                    url: "holidaysdb.php",
+                    data: "leave_cat="+leave_cat+"&leave_cause="+leave_cause+"&leave_date="+leave_date+"&leave_datee="+leave_datee+"&day="+day+"&sdd="+sdd,
+                    success: function(data){
+                        // $('#success_message').fadeIn().html(data);
+                        // setTimeout(function() {
+                        //     $('#success_message').fadeOut("slow");
+                        // }, 2000 );
+                        //alert('test');
+                    var response = JSON.parse(data);
+                    // console.log(response.status);
+                    if(response.status == true){
+                        // alert('Success');
+                        $('.alert-success').removeClass('hidden');
+                        $('.alert-danger').addClass('hidden');
+                    }else{
+                        // alert('Error');
+                        $('.alert-success').addClass('hidden');
+                        $('.alert-danger').removeClass('hidden');
+                    }
+        
+                    }
+        
+                });
             }
+            e.preventDefault();
+        document.getElementById("holiday").reset();
 
         });
-    }
-    e.preventDefault();
-});
-</script>   
+    </script>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -175,7 +222,7 @@ $("#holiday").on('submit',function(e) {
     <!-- Validation Plugin Js -->
     <script src="../../plugins/jquery-validation/jquery.validate.js"></script>
     <!-- Custom Js -->
-   
+
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
