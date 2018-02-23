@@ -142,7 +142,31 @@ session_start();
                             <div class="text">LOGOUT</div>
                         </div>
                     </div>
-                </div></div>
+                </div>
+
+                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-pink">
+                           <div class="m-b--35 font-bold">
+                         
+                          
+
+<?php
+include "check.php";
+$user = $_SESSION['email'];
+$res=mysqli_query($con,"select * from profile  where user='$user'");
+$pics=$res->fetch_assoc();
+ echo "<img src='pages/upload/$pics[url]' height='100%' width='100%'/>";
+?>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
 
             <!-- Widgets -->
             <div class="row clearfix">

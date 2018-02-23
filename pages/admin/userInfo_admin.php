@@ -10,15 +10,15 @@ $email = $_SESSION['email'];
    <div class="user-info">
        <div class="image">
        <?php
-                include 'check.php';
+//                 include 'check.php';
                 
-$res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
+// $res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
 
        
-         while($r=mysqli_fetch_row($res))
-         { 
-                 echo "<img  height='100' width='100' src='".$r[2]."'>";        
-        }
+//          while($r=mysqli_fetch_row($res))
+//          { 
+//                  echo "<img  height='100' width='100' src='".$r[2]."'>";        
+//         }
 
                 ?>
            <!-- <img src="images/user.png" width="48" height="48" alt="User" /> -->

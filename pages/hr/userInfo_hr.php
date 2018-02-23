@@ -1,25 +1,16 @@
 <?php
 //print_r($_SESSION);die();
 // $id = $_SESSION['visitor_id'];
-$fullname = $_SESSION['fullname']; 
+$user = $_SESSION['fullname']; 
 $email = $_SESSION['email']; 
      //echo $id;die();
+include "check.php";
 ?>
 <div class="user-info">
-                <div class="image">
-                <?php
-                include 'check.php';
-                
-$res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
+     <div class="image">
 
-       
-         while($r=mysqli_fetch_row($res))
-         { 
-                 echo "<img class='btn popup_image' height='100' width='100' src='".$r[2]."'>";        
-        }
 
-                ?>
-                    <!-- <img src="images/user.png" width="48" height="48" alt="User" /> -->
+           <!-- <img src="images/user.png" width="48" height="48" alt="User" /> -->
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fullname ?></div>
@@ -30,6 +21,7 @@ $res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
 
  <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li> 
  <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
+  <li><a href="pages/hr/img.php"><i class="material-icons">person</i>img</a></li>
 <!--  <li><a href="pages/examples/changepassword.php"><i class="material-icons">person</i>Reset Password</a></li>  -->
 <!-- <li><a href="javascript:void(0);"><i class="material-icons">person</i>Reset Password</a></li> -->
 

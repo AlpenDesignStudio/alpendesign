@@ -1,5 +1,5 @@
 <?php
-print_r($_POST["file"]);die;
+// print_r($_POST["file"]);die;
 	if (!empty($_POST["file"])) {
 		print "<div class='alert alert-success' id='success_message'>
                                 <strong>Well done!</strong>  successfully.
