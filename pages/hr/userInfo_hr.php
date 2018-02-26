@@ -7,19 +7,7 @@ $email = $_SESSION['email'];
 include "check.php";
 ?>
 <div class="user-info">
-    <div class="image">
-        <?php
-            include 'check.php';
-                
-            $res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
-
-            while($r=mysqli_fetch_row($res))
-            { 
-                 echo "<img class='btn popup_image' height='100' width='100' src='".$r[2]."'>"; 
-            }
-
-            ?>
-    </div>
+ 
 
     <div class="info-container">
         <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fullname ?></div>
@@ -28,9 +16,9 @@ include "check.php";
             <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
             <ul class="dropdown-menu pull-right">
 
-            <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li> 
+         <!--    <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li> 
 
-            <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
+            <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li> -->
 
             <li><a href="pages/hr/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>

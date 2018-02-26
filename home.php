@@ -154,9 +154,16 @@ session_start();
 <?php
 include "check.php";
 $user = $_SESSION['email'];
+$res1=mysqli_query($con,"select url from profile  where user='$user'");
+$pics1=$res1->fetch_assoc();
+
 $res=mysqli_query($con,"select * from profile  where user='$user'");
 $pics=$res->fetch_assoc();
- echo "<img src='pages/upload/$pics[url]' height='100%' width='100%'/>";
+if(empty($pics1)){
+ echo "<img src='pages/upload/d.png' height='100%' width='100%'/>";
+}else{
+    echo "<img src='pages/upload/$pics[url]' height='100%' width='100%'/>";
+}
 ?>
 </div>
                         </div>

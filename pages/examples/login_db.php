@@ -50,8 +50,8 @@ if ($numrows!=0){
   $gender = $row_data['gender'];
   $_SESSION['gender']=$gender;
 
-  $DateOfBirth = $row_data['dob'];
-  $_SESSION['dob']=$DateOfBirth;
+  $DateOfJoining = $row_data['doj'];
+  $_SESSION['doj']=$DateOfJoining;
 
    $address = $row_data['address'];
   $_SESSION['address']=$address;

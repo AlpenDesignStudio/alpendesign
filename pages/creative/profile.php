@@ -111,11 +111,11 @@ $DateOfJoining = $_SESSION['doj'];
             <!-- Left Sidebar -->
             <aside id="leftsidebar" class="sidebar">
                 <!-- User Info -->
-                <?php include ("userInfo_hr.php"); ?>
+                <?php include ("userInfo_creative.php"); ?>
                 <!-- #User Info -->
                 <!-- Menu -->
 
-                <?php include ("../../templates/hr_menu.php"); ?>
+                <?php include ("../../templates/creative_menu.php"); ?>
                 <!-- #Menu -->
                 <!-- Footer -->
                 <?php include ("../../templates/footer.php"); ?>
