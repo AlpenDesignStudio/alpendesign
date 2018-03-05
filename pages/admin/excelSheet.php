@@ -103,18 +103,41 @@ $email = $_SESSION['email'];
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
-                                            <th class="view"> Sr No</th>
-                                            <th class="view"> Name</th>
-                                            <th class="view"> Code</th>
-                                            <th class="view"> Reason</th>
-                                            <th class="view"> From</th>
-                                            <th class="view"> To</th>
-                                            <th class="view"> Weekend</th>
-                                            <th class="view"> Credit</th>
-                                            <th class="view"> Debit</th>
-                                            <th class="view"> Closing</th>
-                                            <th class="view"> Type</th>
-                                            <th class="view"> Nature</th>
+                                            <th class="view"> 1</th>
+                                            <th class="view"> 2</th>
+                                            <th class="view"> 3</th>
+                                            <th class="view"> 4</th>
+                                            <th class="view"> 5</th>
+                                            <th class="view"> 6</th>
+                                            <th class="view"> 7</th>
+                                            <th class="view"> 8</th>
+                                            <th class="view"> 9</th>
+                                            <th class="view"> 10</th>
+                                            <th class="view"> 11</th>
+                                            <th class="view"> 12</th>
+
+                                             <th class="view"> 13</th>
+                                            <th class="view"> 14</th>
+                                            <th class="view"> 15</th>
+                                            <th class="view"> 16</th>
+                                            <th class="view"> 17</th>
+                                            <th class="view"> 18</th>
+                                            <th class="view"> 19</th>
+                                            <th class="view"> 20</th>
+                                            <th class="view"> 21</th>
+                                            <th class="view"> 22</th>
+                                            <th class="view"> 23</th>
+                                            <th class="view"> 24</th>
+
+                                            <th class="view"> 25</th>
+                                            <th class="view"> 26</th>
+                                            <th class="view"> 27</th>
+                                            <th class="view"> 28</th>
+                                            <th class="view"> 29</th>
+                                            <th class="view"> 30</th>
+                                            <th class="view"> 31</th>
+
+
                                          
                                         </tr>
                                     </thead>
@@ -150,6 +173,29 @@ $email = $_SESSION['email'];
                  echo "<td alig='center' width=''> $r[9]</td>";
                  echo "<td alig='center' width=''> $r[10]</td>";
                  echo "<td alig='center' width=''> $r[11]</td>";
+
+                 echo "<td alig='center' width=''> $r[12]</td>";
+                 echo "<td alig='center' width=''> $r[13]</td>";
+                 echo "<td alig='center' width=''> $r[14]</td>";
+                 echo "<td alig='center' width=''> $r[15]</td>";
+                 echo "<td alig='center' width=''> $r[16]</td>";
+                 echo "<td alig='center' width=''> $r[17]</td>";
+                 echo "<td alig='center' width=''> $r[18]</td>";
+                 echo "<td alig='center' width=''> $r[19]</td>";
+                 echo "<td alig='center' width=''> $r[20]</td>";
+                 echo "<td alig='center' width=''> $r[21]</td>";
+                 echo "<td alig='center' width=''> $r[22]</td>";
+
+                 echo "<td alig='center' width=''> $r[23]</td>";
+                 echo "<td alig='center' width=''> $r[24]</td>";
+                 echo "<td alig='center' width=''> $r[25]</td>";
+                 echo "<td alig='center' width=''> $r[26]</td>";
+                 echo "<td alig='center' width=''> $r[27]</td>";
+                 echo "<td alig='center' width=''> $r[28]</td>";
+                 echo "<td alig='center' width=''> $r[29]</td>";
+                 echo "<td alig='center' width=''> $r[30]</td>";
+              
+
 
                  // echo "<td alig='center' width=''><img class='btn popup_image' height='100' width='100' src='".$r[2]."'></td>";
                  echo "</tr>";

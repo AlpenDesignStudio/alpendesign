@@ -1,18 +1,17 @@
 <?php
 session_start();
+include "check.php";
 $fullname = $_SESSION['fullname']; 
-$email = $_SESSION['email'];
- 
+$email = $_SESSION['email']; 
 ?>
     <!DOCTYPE html>
     <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.2.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Leave Display</title>
+        <title> View Payroll</title>
         <!-- Favicon-->
         <link rel="icon" href="../../favicon.ico" type="image/x-icon">
         <!-- Google Fonts -->
@@ -46,10 +45,12 @@ $email = $_SESSION['email'];
         <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
         <!-- Waves Effect Plugin Js -->
         <script src="../../plugins/node-waves/waves.js"></script>
+        <!-- SweetAlert Plugin Js -->
+        <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
     </head>
     <body class="theme-red">
         <!-- Page Loader -->
-        <div class="page-loader-wrapper">
+   <!--      <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="preloader">
                     <div class="spinner-layer pl-red">
@@ -63,7 +64,7 @@ $email = $_SESSION['email'];
                 </div>
                 <p>Please wait...</p>
             </div>
-        </div>
+        </div> -->
         <!-- #END# Page Loader -->
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
@@ -95,200 +96,143 @@ $email = $_SESSION['email'];
                 <?php include ("../../templates/footer.php"); ?>
                 <!-- #Footer -->
             </aside>
-            <!-- #END# Left Sidebar -->
-            <!-- Right Sidebar -->
-            <!-- #END# Right Sidebar -->
         </section>
         <section class="content">
             <div class="container-fluid">
-                <!-- Basic Examples -->
+                <!-- File Upload | Drag & Drop OR With Click & Choose -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="card">
+                            <div class="header" style="background-color: #673AB7;">
+                                <h2 style="text-align: center;color: #ffffff;">
+                                    VIEW PAYROLL
+                                </h2>
+                            </div>
                             <div class="body">
-                            <div class="header" style="background-color: #673AB7;text-align: center;">
-                                <h2 style="color: #ffffff;">
-                                    HOLIDAY APPLICATIONS
-                                </h2></div>
-
-                                <div class="header">
-                                    <h2 style="text-align: center;">
-                                        SINGLE DAY HOLIDAY
-                                    </h2>
-                                </div>
+                            
                                 <div class="table-responsive">
+                                    
+                                    <?php 
 
-<?php 
 include "check.php";
 if(isset($_GET['action'])) {
     $id = $_GET['id'];
+
+    $sql =mysqli_query($con,"DELETE FROM payroll WHERE id = '$id'");
+
+    if ($sql) {
     
- if($_GET['action'] =='submit1'){
-    $sql =mysqli_query($con,"DELETE FROM holidays WHERE id = '$id'");
-  }  
+          echo " <div class='alert alert-success'>
+          <strong>Well done! </strong> You Have successfully Deleted Payroll Entry..!!</div>";  
+        }
+        // else{
+        //   echo "<div class='alert alert-danger'>
+        //   <strong>Not Deleted</strong></div>";
+        // }
+    
+    // else{
+    //   echo "Error: " . $sql . "<br>" . mysqli_error($con);
+    // }
 }
 ?>
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead>
                                             <tr>
+                                                <!-- <th class="view">Full Name</th> -->
+                                                <!-- <th class="view">Department</th> -->
+                                                <th class="view">email</th>
+                                                <!-- <th class="view">position</th> -->
+                                                <th class="view">init</th>
+                                                <th class="view">Basic Pay</th>
+                                                 <th class="view">Days Worked</th> 
+                                          <th class="view">Overtime Rate/Hr</th>
+                                          <th class="view">OT Hours </th>
+                                          <th class="view">Allowances</th>
+                                          <th class="view">Gross Pay</th>
+                                           <th class="view">W/Tax </th>
+                                          <th class="view">Advances</th>
+                                          <th class="view">Insurance</th>
                                           
-                                                <th class="view">Leave Category</th>
-                                                <th class="view">Day</th>
-                                                <th class="view">Date</th>
-                                                <th class="view">Occasion</th>
-                                                <th class="view">Action</th>
+                                          <th class="view">Total Deductions</th>
+                                          <th class="view">Net Pay</th>
+                                          <th class="view">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-
-
-
                                             <?php
 // connect to the database
 include('connect-db.php');
 
-$day='singleday';
 
 // get the records from the database
-if ($result = $mysqli->query("SELECT * FROM holidays WHERE day='$day' " ))
-    //SELECT DATE_FORMAT(leave_date, '%m/%d/%Y ') FROM holidays;
-    //ROW SET leave_date  = DATE_FORMAT(NOW(), '%d-%m-%Y');
+if ($result = $mysqli->query("SELECT *  FROM payroll"))
 {
 // display records if there are records to display
 if ($result->num_rows > 0)
 {
+ 
 // display records in a table
 // echo "<table border='1' cellpadding='10'>";
-
 // set table headers
 // echo "<tr><th>ID</th><th>;Leave Date</th><th>Leave Cause</th><th>Actions</th><th></th></tr>";
-
-while ($row = $result->fetch_object())
-{
-$id= $row->id;
-$sdd=date('d-m-Y ',strtotime($row->sdd));
-   
-// set up a row for each record
-echo "<tr>";
-
-// echo "<td>" . $row->id . "</td>";
-echo "<td>" . $row->leave_cat . "</td>";
-echo "<td>" . $row->day . "</td>";
-echo "<td>" . $row->sdd . "</td>";
-echo "<td>" . $row->leave_cause . "</td>";
-echo "<td>
-
-<form action='?action=submit1&id=$id' method='post'>
-<button style='width: 100% !important;' type='submit' class='btn1 bg-red waves-effect'>
-     <i class='material-icons'>close</i>
-      </button></form>
-</td>";
-// echo "<td><a href='delete.php?id=" . $row->id . "'>Delete</a></td>";
-echo "</tr>";
-}
-
-echo "</table>";
-}
-// if there are no records in the database, display an alert message
-else
-{
-echo "No results to display!";
-}
-}
-// show an error if there is an issue with the database query
-else
-{
-echo "Error: " . $mysqli->error;
-}
-
-// close database connection
-$mysqli->close();
-
-?>
-                                        </tbody>
-
-
-
-                                    </table>
-                                </div>
-
-                                <div class="header">
-                                    <h2 style="text-align: center;">
-                                        MULTIPLE DAY HOLIDAY
-                                    </h2>
-                                </div>
-                                <div class="table-responsive">
-<?php 
-include "check.php";
-if(isset($_GET['action'])) {
-    $id = $_GET['id'];
-    
- if($_GET['action'] =='submit2'){
-    $sql =mysqli_query($con,"DELETE FROM holidays WHERE id = '$id'");
-  }  
-}
-?>
-                                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                        <thead>
-                                            <tr>
-                                               
-                                                <th class="view">Leave Category</th>
-                                                <th class="view">Day</th>
-                                                <th class="view">From</th>
-                                                <th class="view">To</th>
-                                                <th class="view">Occasion</th>
-                                                <th class="view">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-
-
-                                            <?php
-// connect to the database
-include('connect-db.php');
-
-$day='multipleday';
-
-// get the records from the database
-if ($result = $mysqli->query("SELECT * FROM holidays WHERE day='$day' " ))
-    //SELECT DATE_FORMAT(leave_date, '%m/%d/%Y ') FROM holidays;
-    //ROW SET leave_date  = DATE_FORMAT(NOW(), '%d-%m-%Y');
-{
-// display records if there are records to display
-if ($result->num_rows > 0)
-{
-// display records in a table
-// echo "<table border='1' cellpadding='10'>";
-
-// set table headers
-// echo "<tr><th>ID</th><th>;Leave Date</th><th>Leave Cause</th><th>Actions</th><th></th></tr>";
-
 while ($row = $result->fetch_object())
 {
 
-$dt=date('d-m-Y ',strtotime($row->leave_date));
-$dtt=date('d-m-Y ',strtotime($row->leave_datee ));
+ $gross = ($row->pay * $row->dayswork) + ($row->otrate * $row->others) + $row->allow;
+
+  if ($gross>=50000)
+   $tax = $gross * .15;
+  if ($gross>=30000 && $gross <=49999)
+   $tax = $gross * .10;
+  if ($gross>=10000 && $gross <=29999)
+   $tax = $gross * .05;
+  if ($gross>=5000 && $gross <=9999)
+   $tax = $gross * .03;
+  if ($gross < 5000)
+    $tax = 0;
     
-// set up a row for each record
-echo "<tr>";
+  $totdeduct = $tax + $row->advances + $row->insurance;
+  $netpay = $gross - $totdeduct;
 
 $id=$row->id;
-echo "<td>" . $row->leave_cat . "</td>";
-echo "<td>" . $row->day . "</td>";
-echo "<td>" . $dt . "</td>";
-echo "<td>" . $dtt . "</td>";
-echo "<td>" . $row->leave_cause . "</td>";
+    
+// set up a row for each record
+echo "<tr>";
+//echo "<td>" . $row->fullname . "</td>";
+// echo "<td>" . $row->dpt . "</td>";
+echo "<td>" . $row->email . "</td>";
+// echo "<td>" . $row->position . "</td>";
+echo "<td>" . $row->init . "</td>";
+echo "<td>" . $row->pay . "</td>";
+echo "<td>" . $row->dayswork . "</td>";
+echo "<td>" . $row->otrate . "</td>";
+echo "<td>" . $row->others . "</td>";
+echo "<td>" . $row->allow . "</td>";
+echo "<td>" . $gross . "</td>";
+ echo '<td>'.$tax.'</td>'; 
+echo "<td>" . $row->advances . "</td>";
+echo "<td>" . $row->insurance . "</td>";
+echo "<td>" . $totdeduct . "</td>";
+echo "<td>" . $netpay . "</td>";
 echo "<td>
-<form action='?action=submit2&id=$id' method='post'>
-<button style='width: 100% !important;' type='submit' class='btn1 bg-red waves-effect'>
-     <i class='material-icons'>close</i>
-      </button></form>
-</td>";
+
+
+<a href='payroll.php?id=".$id."'>
+<button style='width:  !important;' type='submit' class='btn bg-green waves-effect'>
+     <i class='material-icons'>check</i>
+      </button></a>
+
+<form action='?action=submit&id=$id' method='post'>
+<button style='width:  !important;' type='submit' class='btn bg-red waves-effect'>
+      <i class='material-icons'>close</i>
+      </button>
+
+      </form>
+      </td>";
+
 // echo "<td><a href='delete.php?id=" . $row->id . "'>Delete</a></td>";
 echo "</tr>";
 }
-
 echo "</table>";
 }
 // if there are no records in the database, display an alert message
@@ -302,23 +246,20 @@ else
 {
 echo "Error: " . $mysqli->error;
 }
-
 // close database connection
 $mysqli->close();
-
 ?>
-                                        </tbody>
+</tbody>
+</table>
+</div>
+<!-- #END# HOUR DAY  -->
 
-
-
-                                    </table>
-                                </div>                                
-                            </div>
-
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                             
+</div>
+</div>
+</div>
+</div>
+            </div>
         </section>
         <!-- Jquery Core Js -->
         <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -328,8 +269,8 @@ $mysqli->close();
         <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
         <!-- Slimscroll Plugin Js -->
         <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-        <!-- Bootstrap Notify Plugin Js -->
-        <script src="../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+        <!-- Waves Effect Plugin Js -->
+        <script src="../../plugins/node-waves/waves.js"></script>
         <!-- SweetAlert Plugin Js -->
         <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
         <!-- Bootstrap Colorpicker Js -->
@@ -348,7 +289,6 @@ $mysqli->close();
         <script src="../../plugins/node-waves/waves.js"></script>
         <!-- Custom Js -->
         <script src="../../js/admin.js"></script>
-        <script src="../../js/pages/forms/advanced-form-elements.js"></script>
         <!-- Demo Js -->
         <script src="../../js/demo.js"></script>
     </body>

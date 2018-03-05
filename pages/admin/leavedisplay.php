@@ -121,10 +121,6 @@ $email = $_SESSION['email'];
 if(isset($_GET['action'])) {
     $id = $_GET['id'];
     
-<<<<<<< HEAD
-=======
-    
->>>>>>> 69fa91e02f5f6709e177235e74a00e2edf66f3db
     if($_GET['action'] =='submit1'){
       $approval = 'APPROVED';
     }else{
@@ -135,11 +131,10 @@ if(isset($_GET['action'])) {
     if (mysqli_query($con,$sql)) {
         if($approval == 'APPROVED'){
           echo " <div class='alert alert-success'>
-          <strong>LEAVE APPROVED </strong></div>"; 
-
+          <strong>APPROVED ID  </strong></div>";  
         }else{
           echo "<div class='alert alert-danger'>
-          <strong>LEAVE DISAPPROVED </strong></div>";
+          <strong>DIS APPROVE  </strong></div>";
         }
     }else{
       echo "Error: " . $sql . "<br>" . mysqli_error($con);
@@ -189,14 +184,13 @@ echo "<td>" . $row->title . "</td>";
 echo "<td>
 
 <form action='?action=submit1&id=$id' method='post'>
-<button style='width: 100% !important;' type='submit'  class='btn bg-green waves-effect' >
-     <i class='material-icons'>check</i> 
+<button style='width: 100% !important;' type='submit' class='btn bg-green waves-effect'>
+     <i class='material-icons'>check</i>
       </button></form>
       </td>";
-
 echo "<td>
 <form action='?action=submit2&id=$id' method='post'>
-      <button style='width: 100% !important;' type='submit' class='btn bg-red waves-effect'  >
+      <button style='width: 100% !important;' type='submit' class='btn bg-red waves-effect'>
       <i class='material-icons'>close</i>
       </button></form>
 </td>";
@@ -319,7 +313,7 @@ $mysqli->close();
                                                 <th class="view">Date To</th>
                                                 <th class="view">Priority</th>
                                                 <th class="view">Reason</th>
-                                                <th class="view">Approve</th> 
+                                                  <th class="view">Approve</th> 
                                           <th class="view">Dis Approve</th>
                                             </tr>
                                         </thead>
@@ -389,12 +383,6 @@ $mysqli->close();
 </div>
             </div>
         </section>
-
-
-
-
-
-
         <!-- Jquery Core Js -->
         <script src="../../plugins/jquery/jquery.min.js"></script>
         <!-- Bootstrap Core Js -->

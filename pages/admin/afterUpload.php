@@ -44,7 +44,7 @@ $email = $_SESSION['email'];
 
 <body class="theme-red">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+   <!--  <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
                 <div class="spinner-layer pl-red">
@@ -58,7 +58,7 @@ $email = $_SESSION['email'];
             </div>
             <p>Please wait...</p>
         </div>
-    </div>
+    </div> -->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -104,7 +104,7 @@ $email = $_SESSION['email'];
                     <div class="card">
                         <div class="header">
                             <h2>
-                                DOWNLOADED IMAGE
+                                SHEET
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -152,12 +152,26 @@ if(isset($_POST['Submit'])){
 
                                         
         $html="";
-        $html.="<tr><th>Title</th><th>Description</th>
-        <th>Title</th><th>Description</th>
-        <th>Title</th><th>Description</th>
-        <th>Title</th><th>Description</th>
-        <th>Title</th><th>Description</th>
-        <th>Title</th>
+        $html.="<tr>
+        <th>1</th><th>2</th>
+        <th>3</th><th>4</th>
+        <th>5</th><th>6</th>
+        <th>7</th><th>8</th>
+        <th>9</th><th>10</th>
+
+        <th>11</th><th>12</th>
+        <th>13</th><th>14</th>
+        <th>15</th><th>16</th>
+        <th>17</th><th>18</th>
+        <th>19</th><th>20</th>
+        <th>21</th><th>22</th>
+        <th>23</th><th>24</th>
+
+        <th>25</th>
+        <th>26</th><th>27</th>
+        <th>28</th><th>29</th>
+        <th>30</th><th>31</th>
+
 
         </tr>";
 
@@ -170,7 +184,7 @@ if(isset($_POST['Submit'])){
                                     <tbody>
      <?php
 
-
+include "check.php";
 /* For Loop for all sheets */
         for($i=0;$i<$totalSheet;$i++){
 
@@ -180,35 +194,82 @@ if(isset($_POST['Submit'])){
                 $html.="<tr>";
                
                 /* Check If sheet not emprt */
-                $Sr = isset($Row[0]) ? $Row[0] : '';
-                $Name = isset($Row[1]) ? $Row[1] : '';
-                $Code = isset($Row[2]) ? $Row[2] : '';
-                $Reason = isset($Row[3]) ? $Row[3] : '';
-                $tt = isset($Row[4]) ? $Row[4] : '';
-                $Weekend = isset($Row[5]) ? $Row[5] : '';
-                $Credit = isset($Row[6]) ? $Row[6] : '';
-                $Debit = isset($Row[7]) ? $Row[7] : '';
-                $Closing = isset($Row[8]) ? $Row[8] : '';
-                $Type = isset($Row[9]) ? $Row[9] : '';
-                $Nature = isset($Row[10]) ? $Row[10] : '';
+                $a = isset($Row[0]) ? $Row[0] : '';
+                $b = isset($Row[1]) ? $Row[1] : '';
+                $c = isset($Row[2]) ? $Row[2] : '';
+                $d = isset($Row[3]) ? $Row[3] : '';
+                $e = isset($Row[4]) ? $Row[4] : '';
+                $f = isset($Row[5]) ? $Row[5] : '';
+                $g = isset($Row[6]) ? $Row[6] : '';
+                $h = isset($Row[7]) ? $Row[7] : '';
+                $i = isset($Row[8]) ? $Row[8] : '';
+                $j = isset($Row[9]) ? $Row[9] : '';
+                $k = isset($Row[10]) ? $Row[10] : '';
 
-                $html.="<td>".$Sr."</td>";
-                $html.="<td>".$Name."</td>";
-                $html.="<td>".$Code."</td>";
-                $html.="<td>".$Reason."</td>";
-                $html.="<td>".$tt."</td>";
-                $html.="<td>".$Weekend."</td>";
-                $html.="<td>".$Credit."</td>";
-                $html.="<td>".$Debit."</td>";
-                $html.="<td>".$Closing."</td>";
-                $html.="<td>".$Type."</td>";
-                $html.="<td>".$Nature."</td>";
+                $l = isset($Row[11]) ? $Row[11] : '';
+                $m = isset($Row[12]) ? $Row[12] : '';
+                $n = isset($Row[13]) ? $Row[13] : '';
+                $o = isset($Row[14]) ? $Row[14] : '';
+                $p = isset($Row[15]) ? $Row[15] : '';
+                $q = isset($Row[16]) ? $Row[16] : '';
+                $r = isset($Row[17]) ? $Row[17] : '';
+                $s = isset($Row[18]) ? $Row[18] : '';
+                $t = isset($Row[19]) ? $Row[19] : '';
+                $u = isset($Row[20]) ? $Row[20] : '';
+                $v = isset($Row[21]) ? $Row[21] : '';
+
+                $w = isset($Row[22]) ? $Row[22] : '';
+                $x = isset($Row[23]) ? $Row[23] : '';
+                $y = isset($Row[24]) ? $Row[24] : '';
+                $z = isset($Row[25]) ? $Row[25] : '';
+                $aa = isset($Row[26]) ? $Row[26] : '';
+                $bb = isset($Row[27]) ? $Row[27] : '';
+                $cc = isset($Row[28]) ? $Row[28] : '';
+                $dd = isset($Row[29]) ? $Row[29] : '';
+                $ee = isset($Row[30]) ? $Row[30] : '';
+              
+         
+
+                $html.="<td>".$a."</td>";
+                $html.="<td>".$b."</td>";
+                $html.="<td>".$c."</td>";
+                $html.="<td>".$d."</td>";
+                $html.="<td>".$e."</td>";
+                $html.="<td>".$f."</td>";
+                $html.="<td>".$g."</td>";
+                $html.="<td>".$h."</td>";
+                $html.="<td>".$i."</td>";
+                $html.="<td>".$j."</td>";
+                $html.="<td>".$k."</td>";
+
+                $html.="<td>".$l."</td>";
+                $html.="<td>".$m."</td>";
+                $html.="<td>".$n."</td>";
+                $html.="<td>".$o."</td>";
+                $html.="<td>".$p."</td>";
+                $html.="<td>".$q."</td>";
+                $html.="<td>".$r."</td>";
+                $html.="<td>".$s."</td>";
+                $html.="<td>".$t."</td>";
+                $html.="<td>".$u."</td>";
+                $html.="<td>".$v."</td>";
+
+                $html.="<td>".$w."</td>";
+                $html.="<td>".$x."</td>";
+                $html.="<td>".$y."</td>";
+                $html.="<td>".$z."</td>";
+                $html.="<td>".$aa."</td>";
+                $html.="<td>".$bb."</td>";
+                $html.="<td>".$cc."</td>";
+                $html.="<td>".$dd."</td>";
+                $html.="<td>".$ee."</td>";
+         
 
                $html.="</tr>";
 
-                $query = "insert into excel(Sr,Name,Code,Reason,tt,Weekend,Credit,Debit,Closing,Type,Nature) values('".$Sr."','".$Name."','".$Code."','".$Reason."','".$tt."','".$Weekend."','".$Credit."','".$Debit."','".$Closing."','".$Type."','".$Nature."')";
-     // echo $query;die();
-                $mysqli->query($query);
+    $query=mysqli_query($con,"insert into excel(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee) values('".$a."','".$b."','".$c."','".$d."','".$e."','".$f."','".$g."','".$h."','".$i."','".$j."','".$k."','".$l."','".$m."','".$n."','".$o."','".$p."','".$q."','".$r."','".$s."','".$t."','".$u."','".$v."','".$w."','".$x."','".$y."','".$z."','".$aa."','".$bb."','".$cc."','".$dd."','".$ee."')");
+      // echo $query;die();
+                // $mysqli->query($query);
             }
 
         }

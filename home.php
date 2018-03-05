@@ -159,6 +159,7 @@ $pics1=$res1->fetch_assoc();
 
 $res=mysqli_query($con,"select * from profile  where user='$user'");
 $pics=$res->fetch_assoc();
+
 if(empty($pics1)){
  echo "<img src='pages/upload/d.png' height='100%' width='100%'/>";
 }else{

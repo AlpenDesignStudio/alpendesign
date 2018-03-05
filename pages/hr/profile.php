@@ -301,7 +301,8 @@ $DateOfJoining = $_SESSION['doj'];
                                         <b>Update Your Profile Pic</b>
                                         <?php 
 include "check.php";
-$user = $_SESSION['email']; 
+$user = $_SESSION['email'];
+$fullname = $_SESSION['fullname'] ;
 // $res=mysqli_query($con,"Select * from profile where user='".$user."'");
 
 $sql=mysqli_query($con,"INSERT INTO profile (user)
@@ -346,9 +347,9 @@ if ((($_FILES["file"]["type"] == "image/gif")
             $pic=$_FILES["file"]["name"];
             $conv=explode(".",$pic);
             $ext=$conv['1'];
-            move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $user.".".$ext);
-            echo "Stored in as: " . "../upload/".$user.".".$ext;
-            $url=$user.".".$ext;
+            move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $fullname.".".$ext);
+            echo "Stored in as: " . "../upload/".$fullname.".".$ext;
+            $url=$fullname.".".$ext;
              // $d='<img src="upload/d.png">';
              // echo $d;die();
        

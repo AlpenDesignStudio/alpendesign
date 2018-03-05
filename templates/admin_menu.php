@@ -75,6 +75,18 @@
                             <li>
                                 <a href="pages/admin/excelSheet.php" id="sheet">Uploaded Sheet</a>
                             </li>
+                             <li>
+                                <a href="pages/admin/viewSheet.php" id="viewSheet">View Sheet</a>
+                            </li>
+                               <li>
+                                <a href="pages/admin/payroll.php" id="payroll">Add Payroll</a>
+                            </li>
+                              <li>
+                                <a href="pages/admin/viewpayroll.php" id="viewpayroll">View Payroll</a>
+                            </li>
+                            <li>
+                                <a href="pages/admin/salary.php" id="salary">Salary</a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -125,6 +137,11 @@
                         $('#ias').attr('href','pages/admin/IAS.php');
                         $('#coverletter').attr('href','pages/admin/coverletter.php');
                         $('#timesheet').attr('href','pages/admin/timesheet.php');
+                         $('#viewSheet').attr('href','pages/admin/viewSheet.php');
+
+                          $('#payroll').attr('href','pages/admin/payroll.php');
+                         $('#viewpayroll').attr('href','pages/admin/viewpayroll.php');
+                         $('#salary').attr('href','pages/admin/salary.php');
                         
                         
                     }else{
@@ -141,7 +158,10 @@
                         $('#ias').attr('href','IAS.php');
                         $('#coverletter').attr('href','coverletter.php');
                         $('#timesheet').attr('href','timesheet.php');
-                        
+                         $('#viewSheet').attr('href','viewSheet.php');
+                         $('#payroll').attr('href','payroll.php');
+                         $('#viewpayroll').attr('href','viewpayroll.php');
+                         $('#salary').attr('href','salary.php');
                         
                     }
                 });

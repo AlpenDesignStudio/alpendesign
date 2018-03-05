@@ -302,8 +302,8 @@ $DateOfJoining = $_SESSION['doj'];
                                         <?php 
 include "check.php";
 $user = $_SESSION['email']; 
+$fullname = $_SESSION['fullname']; 
 // $res=mysqli_query($con,"Select * from profile where user='".$user."'");
-
 $sql=mysqli_query($con,"INSERT INTO profile (user)
 SELECT '$user' WHERE NOT EXISTS (SELECT * FROM profile WHERE user='$user')");
 // echo "<img src='/image/'.$image.'' width='50px' height='40px'>";
@@ -346,20 +346,16 @@ if ((($_FILES["file"]["type"] == "image/gif")
             $pic=$_FILES["file"]["name"];
             $conv=explode(".",$pic);
             $ext=$conv['1'];
-            move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $user.".".$ext);
-            // echo "Stored in as: " . "../upload/".$user.".".$ext;
-            $url=$user.".".$ext;
+            move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $fullname.".".$ext);
+            echo "Stored in as: " . "../upload/".$fullname.".".$ext;
+            $url=$fullname.".".$ext;
              // $d='<img src="upload/d.png">';
              // echo $d;die();
        
 
             $query=mysqli_query($con,"update profile set url='$url', lastUpload=now() where user='$user'");
             if($upl = $query){
-            echo "<br/>
-                        <div class='alert alert-success hidden'>
-                            <strong>Well done!</strong> You Have successfully Updated Your Profile Picture..!!
-                        </div>
-                    ";
+            echo "<br/>Saved to Database successfully";
             }
          }
     }

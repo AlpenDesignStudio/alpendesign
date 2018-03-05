@@ -302,10 +302,10 @@ $DateOfJoining = $_SESSION['doj'];
                                         <?php 
 include "check.php";
 $user = $_SESSION['email']; 
+$fullname = $_SESSION['fullname']; 
 // $res=mysqli_query($con,"Select * from profile where user='".$user."'");
-
 $sql=mysqli_query($con,"INSERT INTO profile (user)
-SELECT '$user' WHERE NOT EXISTS (SELECT * FROM profile) WHERE user='$user'");
+SELECT '$user' WHERE NOT EXISTS (SELECT * FROM profile WHERE user='$user')");
 // echo "<img src='/image/'.$image.'' width='50px' height='40px'>";
 // $d='upload/d.png';
 // $sql1=mysqli_query($con,"INSERT INTO profile (url)
@@ -329,13 +329,13 @@ if ((($_FILES["file"]["type"] == "image/gif")
     }
     else
     {
-        echo '<div class="plus">';
-        echo "Uploaded Successully";
-        echo '</div>';echo"<br/><b><u>Image Details</u></b><br/>";
+        // echo '<div class="plus">';
+        // echo "Uploaded Successully";
+        // echo '</div>';echo"<br/><b><u>Image Details</u></b><br/>";
 
-        echo "Name: " . $_FILES["file"]["name"] . "<br/>";
-        echo "Type: " . $_FILES["file"]["type"] . "<br/>";
-        echo "Size: " . ceil(($_FILES["file"]["size"] / 1024)) . " KB";
+        // echo "Name: " . $_FILES["file"]["name"] . "<br/>";
+        // echo "Type: " . $_FILES["file"]["type"] . "<br/>";
+        // echo "Size: " . ceil(($_FILES["file"]["size"] / 1024)) . " KB";
 
         if (file_exists("../upload/" . $_FILES["file"]["name"]))
         {
@@ -346,9 +346,9 @@ if ((($_FILES["file"]["type"] == "image/gif")
             $pic=$_FILES["file"]["name"];
             $conv=explode(".",$pic);
             $ext=$conv['1'];
-            move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $user.".".$ext);
-            echo "Stored in as: " . "../upload/".$user.".".$ext;
-            $url=$user.".".$ext;
+            move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $fullname.".".$ext);
+            echo "Stored in as: " . "../upload/".$fullname.".".$ext;
+            $url=$fullname.".".$ext;
              // $d='<img src="upload/d.png">';
              // echo $d;die();
        
