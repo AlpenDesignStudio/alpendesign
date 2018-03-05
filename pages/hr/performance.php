@@ -39,7 +39,7 @@ $email = $_SESSION['email'];
 
     <body class="theme-red">
         <!-- Page Loader -->
-        <div class="page-loader-wrapper">
+    <!--     <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="preloader">
                     <div class="spinner-layer pl-red">
@@ -53,7 +53,7 @@ $email = $_SESSION['email'];
                 </div>
                 <p>Please wait...</p>
             </div>
-        </div>
+        </div> -->
         <!-- #END# Page Loader -->
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
@@ -76,10 +76,10 @@ $email = $_SESSION['email'];
             <!-- Left Sidebar -->
             <aside id="leftsidebar" class="sidebar">
                 <!-- User Info -->
-                <?php include ("userInfo_admin.php"); ?>
+                <?php include ("userInfo_hr.php"); ?>
                 <!-- #User Info -->
                 <!-- Menu -->
-                <?php include ("../../templates/admin_menu.php"); ?>
+                <?php include ("../../templates/hr_menu.php"); ?>
                 <!-- #Menu -->
                 <!-- Footer -->
                 <?php include ("../../templates/footer.php"); ?>
@@ -95,44 +95,34 @@ $email = $_SESSION['email'];
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="logo" style="font-size: 36px;display: block;width: 100%;text-align: center;color: #fff;padding-bottom: 2%;">
-                            NOTICE <b> REGISTER </b>
+                        <div class="logo" style="font-size: 36px;display: block;width: 100%;text-align: center;color: #000000;padding-bottom: 2%;">
+                            ACTIVITY <b> LOG </b>
                         </div>
                         <div class="card">
-                            <body class="body" style="background-image: url(notice.jpg);background-repeat: no-repeat;background-size: cover;">
+                            <body class="body" style="background-image: url(wall.jpg);background-repeat: no-repeat;background-size: cover;">
                                     <div class="signup-box">
                                         <div class="card">
                                             <div class="body">
-                                                <form id="notice_form" action="#">
-                                                    <div class="msg" style="text-align: center;padding-bottom: 2%;">Add a new Notice</div>
+                                                <form id="per" action="#">
+                                                    <div class="msg" style="text-align: center;padding-bottom: 2%;">Add your daily activity</div>
 
                                                     <div class="input-group">
                                                         <span class="input-group-addon">
-                            <i class="material-icons">perm_contact_calendar</i>
-                        </span>
+                                                        <i class="material-icons">perm_contact_calendar</i>
+                                                        </span>
                                                         <div class="form-line">
-                                                            <input id="notice_date" type="date" class="form-control" placeholder="" name="notice_date" required autofocus>
+                                                            <input id="dt" type="date" class="form-control" placeholder="" name="dt" required autofocus>
 
                                                         </div>
                                                     </div>
 
                                                     <div class="input-group">
                                                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
-                        </span>
-                                                        <div class="form-line">
-                                                            <input id="headline" type="text" class="form-control" name="headline" placeholder="Notice headline" required autofocus>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                            <i class="material-icons">domain</i>
-                        </span>
+                                                    <i class="material-icons">toc</i>
+                                                    </span>
                                                         <div class="form-group">
                                                             <div class="form-line">
-                                                                <textarea id="notice" name="notice" rows="1" class="form-control no-resize auto-growth" placeholder="Notice.."></textarea>
+                                                                <textarea id="task" name="task" rows="2" class="form-control no-resize auto-growth" placeholder="Your daily activity" required></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,28 +132,17 @@ $email = $_SESSION['email'];
                                                     <br><br>
                                                     <div id="error_message">
                                                         <div class="alert alert-danger hidden">
-                                                            <strong>Oh snap!</strong> Failed To Register..Try Again..!!
+                                                            <strong>Oh snap!</strong> Failed To Add Performance..Try Again..!!
                                                         </div>
                                                     </div>
                                                     <div id="success_message">
                                                         <div class="alert alert-success hidden">
-                                                            <strong>Well done!</strong> You Have successfully Registered Your Account..!!
+                                                            <strong>Well done!</strong> You Have successfully Added your Activity!!
                                                         </div>
                                                     </div>
 
 
                                                 </form>
-
-
-                                                <div class="row m-t-15 m-b--20">
-                                                    <div class="col-xs-6">
-                                                        <a href="view_notice.php">All Notice</a>
-                                                    </div>
-                                                    <div class="col-xs-6 align-right">
-                                                        <a href="../../home.php">Back to Dashboard</a>
-                                                    </div>
-                                                </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -174,30 +153,81 @@ $email = $_SESSION['email'];
                 </div>
             </div>
 
-        </section>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
+
+<div class="card">
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover js-basic-example dataTable" style="text-align: center;">
+            <thead>
+                <tr> 
+                <th class="view"> Date</th>
+                <th class="view"> Activity</th> 
+                </tr>
+            </thead>
+                             
+            <tbody>
+
+ <?php
+// get the records from the database
+
+include('check.php');
+
+if ($result = mysqli_query($con,"SELECT dt,task from activity"))
+{
+if ($result->num_rows > 0)
+{
+while ($row = $result->fetch_object())
+{
+
+$dt=date('d-m-Y ',strtotime($row->dt));
+// set up a row for each record
+
+echo "<tr>";
+echo "<td>" . $dt . "</td>";
+echo "<td>" . $row->task . "</td>";
+echo "</tr>";
+}
+
+echo "</table>";
+}
+// if there are no records in the database, display an alert message
+else
+{
+echo "No results to display!";
+}
+}
+
+
+
+// close database connection
+
+?>
+ 
+        </tbody> 
+    </table>
+</div></div>
+
+</section>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>         
 <script>
-$("#notice_form").on('submit',function(e) {
+$("#per").on('submit',function(e) {
 
     // alert('test');
     // return false;
-    var notice_date = $("#notice_date").val();
-    var headline = $("#headline").val();
-    var notice = $("#notice").val();
-   
-
+    var dt = $("#dt").val();
+    var task = $("#task").val();
+    
     //var comment = $("#comment").val();
     
-    if(notice_date == "" &&  headline == "" && notice == "" ) {
+    if( dt == ""  && task == "" ) {
         // $("#error_message").show().html("All Fields are Required");
     } else {
         // $("#error_message").html("").hide();
         $.ajax({
             type: "POST",
-            url: "notice_db.php",
+            url: "performance_db.php",
             //data: "opwd="+opwd+"&npwd="+npwd+"&cpwd="+cpwd,
 
-            data: "notice_date="+notice_date+"&headline="+headline+"&notice="+notice,
+            data: "&dt="+dt+"&task="+task,
             success: function(data){
                 // $('#success_message').fadeIn().html(data);
                 // setTimeout(function() {
@@ -221,7 +251,7 @@ $("#notice_form").on('submit',function(e) {
         });
     }
     e.preventDefault();
-    document.getElementById("notice_form").reset();
+    document.getElementById("per").reset();
 
 });
 </script>        

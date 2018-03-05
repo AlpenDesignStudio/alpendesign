@@ -1,0 +1,4 @@
+http://demo.phptpoint.com/AMS/index.php
+http://forum.codecall.net/topic/50187-clock-inout-system/
+https://softwareengineering.stackexchange.com/questions/299415/tracking-hours-with-clock-in-out
+https://codecanyon.net/item/timesheet-attendance-management-system/9332842

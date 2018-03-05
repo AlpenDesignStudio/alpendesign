@@ -74,22 +74,6 @@ include("check.php");
     </head>
 
     <body class="theme-red">
-        <!-- Page Loader -->
-  <!--       <div class="page-loader-wrapper">
-            <div class="loader">
-                <div class="preloader">
-                    <div class="spinner-layer pl-red">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
-                        </div>
-                    </div>
-                </div>
-                <p>Please wait...</p>
-            </div>
-        </div> -->
         <!-- #END# Page Loader -->
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
@@ -138,7 +122,7 @@ include("check.php");
                                 </div>
                                <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable" style="text-align: center;">
                                     <thead>
                                         <tr> 
                                          <th class="view"> SR NO</th>
@@ -153,29 +137,58 @@ include("check.php");
                                     <tbody>
 
  <?php
-  if($_SERVER['REQUEST_METHOD'] == "GET")
-  {        
-            $res=mysqli_query($con,"Select * from notice");
 
-       
-         while($r=mysqli_fetch_row($res))
-         {
-             
-          echo "<tr>";
-                 echo "<td align='center'>$r[0]</td>";
-                 //echo $r[0];die;
-                 echo "<td alig='center' width=''> $r[1]</td>";
-                  echo "<td alig='center' width=''> $r[2]</td>";
-                   echo "<td alig='center' width=''> $r[3]</td>";
-                   
 
-                 echo "</tr>";
+// get the records from the database
 
-        }
+include('connect-db.php');
 
-    }
- 
-?> 
+
+if ($result = $mysqli->query("SELECT id,notice_date,headline,notice from notice"))
+   
+{
+
+if ($result->num_rows > 0)
+{
+
+
+while ($row = $result->fetch_object())
+{
+
+$notice_date=date('d-m-Y ',strtotime($row->notice_date));
+
+
+   
+// set up a row for each record
+echo "<tr>";
+
+echo "<td>" . $row->id . "</td>";
+echo "<td>" . $notice_date . "</td>";
+echo "<td>" . $row->headline . "</td>";
+echo "<td>" . $row->notice . "</td>";
+
+
+echo "</tr>";
+}
+
+echo "</table>";
+}
+// if there are no records in the database, display an alert message
+else
+{
+echo "No results to display!";
+}
+}
+// show an error if there is an issue with the database query
+else
+{
+echo "Error: " . $mysqli->error;
+}
+
+// close database connection
+$mysqli->close();
+
+?>
                             </tbody>
  
        
