@@ -111,11 +111,11 @@ $DateOfJoining = $_SESSION['doj'];
             <!-- Left Sidebar -->
             <aside id="leftsidebar" class="sidebar">
                 <!-- User Info -->
-                <?php include ("userInfo_hr.php"); ?>
+                <?php include ("userInfo_admin.php"); ?>
                 <!-- #User Info -->
                 <!-- Menu -->
 
-                <?php include ("../../templates/hr_menu.php"); ?>
+                <?php include ("../../templates/admin_menu.php"); ?>
                 <!-- #Menu -->
                 <!-- Footer -->
                 <?php include ("../../templates/footer.php"); ?>
@@ -329,13 +329,13 @@ if ((($_FILES["file"]["type"] == "image/gif")
     }
     else
     {
-        echo '<div class="plus">';
-        echo "Uploaded Successully";
-        echo '</div>';echo"<br/><b><u>Image Details</u></b><br/>";
+        // echo '<div class="plus">';
+        // echo "Uploaded Successully";
+        // echo '</div>';echo"<br/><b><u>Image Details</u></b><br/>";
 
-        echo "Name: " . $_FILES["file"]["name"] . "<br/>";
-        echo "Type: " . $_FILES["file"]["type"] . "<br/>";
-        echo "Size: " . ceil(($_FILES["file"]["size"] / 1024)) . " KB";
+        // echo "Name: " . $_FILES["file"]["name"] . "<br/>";
+        // echo "Type: " . $_FILES["file"]["type"] . "<br/>";
+        // echo "Size: " . ceil(($_FILES["file"]["size"] / 1024)) . " KB";
 
         if (file_exists("../upload/" . $_FILES["file"]["name"]))
         {
@@ -347,7 +347,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
             $conv=explode(".",$pic);
             $ext=$conv['1'];
             move_uploaded_file($_FILES["file"]["tmp_name"],"../upload/". $user.".".$ext);
-            echo "Stored in as: " . "../upload/".$user.".".$ext;
+            // echo "Stored in as: " . "../upload/".$user.".".$ext;
             $url=$user.".".$ext;
              // $d='<img src="upload/d.png">';
              // echo $d;die();
@@ -355,7 +355,11 @@ if ((($_FILES["file"]["type"] == "image/gif")
 
             $query=mysqli_query($con,"update profile set url='$url', lastUpload=now() where user='$user'");
             if($upl = $query){
-            echo "<br/>Saved to Database successfully";
+            echo "<br/>
+                        <div class='alert alert-success hidden'>
+                            <strong>Well done!</strong> You Have successfully Updated Your Profile Picture..!!
+                        </div>
+                    ";
             }
          }
     }

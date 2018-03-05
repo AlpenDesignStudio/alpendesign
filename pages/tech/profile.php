@@ -111,11 +111,11 @@ $DateOfJoining = $_SESSION['doj'];
             <!-- Left Sidebar -->
             <aside id="leftsidebar" class="sidebar">
                 <!-- User Info -->
-                <?php include ("userInfo_hr.php"); ?>
+                <?php include ("userInfo_tech.php"); ?>
                 <!-- #User Info -->
                 <!-- Menu -->
 
-                <?php include ("../../templates/hr_menu.php"); ?>
+                <?php include ("../../templates/tech_menu.php"); ?>
                 <!-- #Menu -->
                 <!-- Footer -->
                 <?php include ("../../templates/footer.php"); ?>
@@ -305,7 +305,7 @@ $user = $_SESSION['email'];
 // $res=mysqli_query($con,"Select * from profile where user='".$user."'");
 
 $sql=mysqli_query($con,"INSERT INTO profile (user)
-SELECT '$user' WHERE NOT EXISTS (SELECT * FROM profile WHERE user='$user')");
+SELECT '$user' WHERE NOT EXISTS (SELECT * FROM profile) WHERE user='$user'");
 // echo "<img src='/image/'.$image.'' width='50px' height='40px'>";
 // $d='upload/d.png';
 // $sql1=mysqli_query($con,"INSERT INTO profile (url)

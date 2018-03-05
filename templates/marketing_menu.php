@@ -8,7 +8,12 @@
                 <span>Admin</span>
             </a>
         </li>
-
+         <li>
+                        <a href="pages/marketing/profile.php" id="profile">
+                            <i class="material-icons">settings</i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
         <li>
                         <a href="pages/marketing/holidays.php" id="holidays">
                             <i class="material-icons">folder</i>
@@ -111,6 +116,7 @@
         console.log(window.location.pathname);
         if (window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php') {
             // alert('Home');
+            $('#profile').attr('href','pages/marketing/profile.php');
             $('#leaveapplication').attr('href', 'pages/marketing/leaveapplication.php');
             $('#leavedisplay').attr('href', 'pages/marketing/leavedisplay.php');
             $('#socialmedia').attr('href', 'pages/marketing/socialmedia.php');
@@ -130,6 +136,7 @@
             $('#timesheet').attr('href', 'pages/marketing/timesheet.php');
         } else {
             // alert('HR');
+            $('#profile').attr('href','profile.php');
             $('#leaveapplication').attr('href', 'leaveapplication.php');
             $('#leavedisplay').attr('href', 'leavedisplay.php');
             $('#socialmedia').attr('href', 'socialmedia.php');

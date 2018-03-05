@@ -5,18 +5,16 @@ $email = $_SESSION['email'];
      //echo $id;die();
 ?>
 <div class="user-info">
-                <div class="image">
-                    <img src="images/user.png" width="48" height="48" alt="User" />
-                </div>
+               
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fullname ?></div>
                     <div class="email"><?php echo $email ?></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-
+<!-- 
  <li><a href="pages/examples/reset_password.php"><i class="material-icons">person</i>Reset Password</a></li> 
- <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li>
+ <li><a href="pages/examples/forgot-password.php"><i class="material-icons">person</i>Forgot Password</a></li> -->
 
                             
                             <li><a href="pages/hr/logout.php" id="logout"><i class="material-icons">input</i>Sign Out</a></li>

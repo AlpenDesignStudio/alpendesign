@@ -5,21 +5,7 @@ $email = $_SESSION['email'];
      //echo $id;die();
 ?>
 <div class="user-info">
-                <div class="image">
-                <?php
-                include 'check.php';
-                
-$res=mysqli_query($con,"Select * from profile where fullname='".$fullname."'");
-
-       
-         while($r=mysqli_fetch_row($res))
-         { 
-                 echo "<img class='btn popup_image' height='100' width='100' src='".$r[2]."'>";        
-        }
-
-                ?>
-                    <!-- <img src="images/user.png" width="48" height="48" alt="User" /> -->
-                </div>
+          
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $fullname ?></div>
                     <div class="email"><?php echo $email ?></div>
