@@ -47,7 +47,7 @@
                             <i class="material-icons">business_center</i>
                         </span>
                         <div class="form-line">
-                            <select id="dpt" name="dpt" class="form-control show-tick">
+                            <select id="dpt" name="dpt" class="form-control show-tick" required>
                                 <option value="">Please select Department</option>
                                 <option value="Admin">Admin</option>
                                 <option value="HR">HR</option>
@@ -74,7 +74,7 @@
                             <i class="material-icons">phone</i>
                         </span>
                         <div class="form-line">
-                            <input id="no" type="text" class="form-control" name="no" placeholder="Contact Number" required autofocus>
+                            <input id="no" type="text" class="form-control" maxlength="10" name="no" placeholder="Contact Number" required autofocus>
                         </div>
                     </div>
 
@@ -92,7 +92,7 @@
                             <i class="material-icons">wc</i>
                         </span>
                         <div class="form-line">
-                            <select id="gender" name="gender" class="form-control show-tick">
+                            <select id="gender" name="gender" class="form-control show-tick" required>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
@@ -203,7 +203,7 @@ $("#sign_up").on('submit',function(e) {
         });
     }
     e.preventDefault();
-    document.getElementById("sign_up").reset();
+    //document.getElementById("sign_up").reset();
 
 });
 </script>   

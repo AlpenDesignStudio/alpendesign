@@ -156,6 +156,8 @@ while ($row = $result->fetch_object())
 {
 
 $sdd=date('d-m-Y ',strtotime($row->sdd));
+
+
    
 // set up a row for each record
 echo "<tr>";
@@ -163,7 +165,7 @@ echo "<tr>";
 echo "<td>" . $row->id . "</td>";
 echo "<td>" . $row->leave_cat . "</td>";
 echo "<td>" . $row->day . "</td>";
-echo "<td>" . $row->sdd . "</td>";
+echo "<td>" . $sdd . "</td>";
 echo "<td>" . $row->leave_cause . "</td>";
 echo "<td>
 

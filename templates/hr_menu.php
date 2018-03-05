@@ -10,16 +10,32 @@
                     </li>
 
                     <li>
-                        <a href="pages/hr/profile.php" id="profile">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">settings</i>
-                            <span>Profile</span>
+                            <span>Performance</span>
                         </a>
+                        <ul class="ml-menu">
+                              <li>
+                                <a href="pages/hr/performance.php" id="performance" >Daily Activity Log</a>
+                            </li>
+                             <li>
+                                <a href="pages/hr/appraisal.php" id="appraisal">Appraisal</a>
+                            </li>
+
+                        </ul>
                     </li>
 
                     <li>
                         <a href="pages/hr/holidays.php" id="holidays">
                             <i class="material-icons">folder</i>
                             <span>Holidays</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pages/hr/profile.php" id="profile">
+                            <i class="material-icons">settings</i>
+                            <span>Profile</span>
                         </a>
                     </li>
 
@@ -118,25 +134,32 @@
                     if(window.location.pathname == '/alpendesign/home.php' || window.location.pathname == 'home.php'){
                             // alert('Home');
                         $('#profile').attr('href','pages/hr/profile.php');
+                        $('#holidays').attr('href', 'pages/hr/holidays.php');
+                        $('#leaveapplication').attr('href','pages/hr/leaveapplication.php');
+                        $('#leavedisplay').attr('href','pages/hr/leavedisplay.php');
+                        $('#performance').attr('href','pages/hr/performance.php');
+
+                        $('#appraisal').attr('href','pages/hr/appraisal.php');
                         $('#fileupload').attr('href','pages/hr/fileupload.php');
                         $('#leave_reg').attr('href','pages/hr/excel.php');
                         $('#uploaded').attr('href','pages/hr/excelSheet.php');
                         $('#view').attr('href','pages/hr/view.php');
-                        $('#leaveapplication').attr('href','pages/hr/leaveapplication.php');
-                        $('#leavedisplay').attr('href','pages/hr/leavedisplay.php');
+                        
                         $('#leave').attr('href','pages/hr/leave.php');
                         $('#ias').attr('href','pages/hr/IAS.php');
                         $('#cover').attr('href','pages/hr/coverletter.php');
-                        $('#holidays').attr('href', 'pages/hr/holidays.php');
+                        
                         $('#timesheet').attr('href','pages/hr/timesheet.php');
                     }else{
                         // alert('HR');
                         $('#profile').attr('href','profile.php');
+                        $('#performance').attr('href','performance.php');
+                        $('#appraisal').attr('href','appraisal.php');
                         $('#fileupload').attr('href','fileupload.php');
                         $('#leave_reg').attr('href','excel.php');
                         $('#uploaded').attr('href','excelSheet.php');
                         $('#view').attr('href','view.php');
-                        $('#leaveapp').attr('href','leaveapplication.php');
+                        $('#leaveapplication').attr('href','leaveapplication.php');
                         $('#leavedisplay').attr('href','leavedisplay.php');
                         $('#leave').attr('href','leave.php');
                         $('#ias').attr('href','IAS.php');

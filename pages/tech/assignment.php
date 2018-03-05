@@ -4,7 +4,7 @@ session_start();
 $fullname = $_SESSION['fullname']; 
 $email = $_SESSION['email']; 
 
-include_once 'dbconfig.php';
+include'dbconfig.php';
 ?>
 
 <!DOCTYPE html>

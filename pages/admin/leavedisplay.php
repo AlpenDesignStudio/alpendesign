@@ -96,7 +96,7 @@ $email = $_SESSION['email'];
                         <div class="card">
                             <div class="header" style="background-color: #673AB7;">
                                 <h2 style="text-align: center;color: #ffffff;">
-                                    VIEW HOLIDAYS
+                                    VIEW LEAVES
                                 </h2>
                             </div>
                             <div class="body">
